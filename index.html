@@ -163,9 +163,9 @@
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo { display: flex; align-items: center; gap: 14px; }
-  .nav-logo img { width: 44px; height: 44px; border-radius: 0; background: transparent; }
-  .nav-logo span { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.15em; color: var(--gold); }
+  .nav-logo { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .nav-logo img { width: 44px; height: 44px; border-radius: 0; background: transparent; flex-shrink: 0; }
+  .nav-logo span { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.15em; color: var(--gold); min-width: 0; }
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
   .nav-links a:hover { opacity: 1; color: var(--gold); }
@@ -863,20 +863,22 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: start;
+    min-width: 0;
   }
   @media (max-width: 800px) { .mice-proceeds-layout { grid-template-columns: 1fr; } }
 
   /* Left: bar chart */
-  .mice-bar-list { display: flex; flex-direction: column; gap: 14px; }
+  .mice-bar-list { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
   .mice-bar-row { display: flex; flex-direction: column; gap: 6px; }
-  .mice-bar-meta { display: flex; justify-content: space-between; align-items: center; }
-  .mice-bar-label { font-size: 0.82rem; color: var(--cream); font-weight: 500; }
-  .mice-bar-pct  { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold); font-weight: 700; }
+  .mice-bar-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-width: 0; }
+  .mice-bar-label { font-size: 0.82rem; color: var(--cream); font-weight: 500; min-width: 0; flex: 1; }
+  .mice-bar-pct  { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
   .mice-bar-track {
     height: 8px;
     background: rgba(255,255,255,0.06);
     border-radius: 4px;
     overflow: hidden;
+    width: 100%;
   }
   .mice-bar-fill {
     height: 100%;
@@ -910,6 +912,8 @@
 
   /* old classes kept for safety */
   .mice-revenue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
+  .products-grid > div { min-width: 0; }
   .mice-rev-item {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -1598,142 +1602,6 @@
 
 <div class="gold-divider"></div>
 
-<!-- FINANCIAL PROJECTIONS -->
-<section id="financials" class="finance-section">
-  <div class="section-inner">
-    <span class="section-label">Capital Structure</span>
-    <h2 class="section-title">Financial Projections</h2>
-    <div class="gold-line"></div>
-    <p class="section-desc">Conservative estimates based solely on realized cash inflows (USD/USDT). All projections exclude speculative MIC token valuation. Runway calculations do not rely on token price appreciation.</p>
-
-    <!-- Capital Formation Overview -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px;">
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px;">
-        <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 16px;">SEED ROUND</div>
-        <div style="font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: var(--cream);">~$425,000</div>
-        <div style="color: var(--text-dim); font-size: 0.82rem; margin-top: 6px;">Net Cash (after 15% sales costs)</div>
-        <div style="margin-top: 20px; display: grid; gap: 10px;">
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Gross Target</span><span style="color: var(--cream);">$500,000</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Protocol Engineering</span><span style="color: var(--cream);">35%</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Initial Liquidity (L_ref)</span><span style="color: var(--cream);">30%</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Security Audits & Legal</span><span style="color: var(--cream);">10%</span></div>
-        </div>
-      </div>
-      <div style="background: var(--card-bg); border: 1px solid rgba(201,168,76,0.4); border-radius: 12px; padding: 28px;">
-        <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 16px;">PRE-SALE</div>
-        <div style="font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: var(--cream);">~$1,005,000</div>
-        <div style="color: var(--text-dim); font-size: 0.82rem; margin-top: 6px;">Net Cash (after 33% total costs)</div>
-        <div style="margin-top: 20px; display: grid; gap: 10px;">
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Gross Target</span><span style="color: var(--cream);">$1,500,000</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Affiliate Incentives (capped)</span><span style="color: var(--cream);">15%</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Group Performance Bonus</span><span style="color: var(--cream);">8%</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Marketing & Social Media</span><span style="color: var(--cream);">10%</span></div>
-        </div>
-      </div>
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px;">
-        <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 16px;">MICE — YEAR 1 (BASE)</div>
-        <div style="font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: var(--cream);">~$300,000</div>
-        <div style="color: var(--text-dim); font-size: 0.82rem; margin-top: 6px;">Net Ops Cash (12% of USDT proceeds)</div>
-        <div style="margin-top: 20px; display: grid; gap: 10px;">
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">MICE Activated (Base)</span><span style="color: var(--cream);">20,000</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Average Price</span><span style="color: var(--cream);">$250</span></div>
-          <div style="display: flex; justify-content: space-between; font-size: 0.82rem;"><span style="color: var(--text-dim);">Gross Sales Volume</span><span style="color: var(--cream);">$5,000,000</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Runway Stats -->
-    <div style="margin-top: 48px; background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(107,26,42,0.08)); border: 1px solid rgba(201,168,76,0.25); border-radius: 16px; padding: 36px;">
-      <h3 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1rem; text-align: center; letter-spacing: 0.12em; margin-bottom: 32px;">CONSOLIDATED NET CASH & RUNWAY</h3>
-      <div class="runway-stats">
-        <div class="runway-stat"><div class="runway-stat-val">$1,843,500</div><div class="runway-stat-lbl">Total Net Cash (Base Case)</div></div>
-        <div class="runway-stat"><div class="runway-stat-val">~33.5 Mo</div><div class="runway-stat-lbl">Estimated Runway (Base Case)</div></div>
-        <div class="runway-stat"><div class="runway-stat-val">$55,000</div><div class="runway-stat-lbl">Monthly Burn Rate</div></div>
-        <div class="runway-stat"><div class="runway-stat-val">$113,500</div><div class="runway-stat-lbl">Year 1 Ecosystem Revenue (Base)</div></div>
-      </div>
-    </div>
-
-    <!-- Scenario Analysis -->
-    <div style="margin-top: 48px;">
-      <h3 style="font-family: 'Cinzel', serif; color: var(--cream); font-size: 1.1rem; text-align: center; margin-bottom: 28px;">Scenario Analysis</h3>
-      <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
-          <thead>
-            <tr style="border-bottom: 1px solid var(--border);">
-              <th style="text-align: left; padding: 12px 16px; color: var(--gold); font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.1em;">METRIC</th>
-              <th style="text-align: center; padding: 12px 16px; color: var(--text-dim); font-size: 0.8rem;">Worst Case</th>
-              <th style="text-align: center; padding: 12px 16px; color: var(--gold); font-size: 0.8rem;">Base Case</th>
-              <th style="text-align: center; padding: 12px 16px; color: var(--text-dim); font-size: 0.8rem;">Best Case</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid rgba(201,168,76,0.1);">
-              <td style="padding: 10px 16px; color: var(--text-dim);">SEED Raise</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">$250,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--gold); font-weight: 600;">$500,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">$568,750</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(201,168,76,0.1);">
-              <td style="padding: 10px 16px; color: var(--text-dim);">PRE-SALE Raise</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">$750,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--gold); font-weight: 600;">$1,500,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">$1,500,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(201,168,76,0.1);">
-              <td style="padding: 10px 16px; color: var(--text-dim);">MICE Activated (Year 1)</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">8,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--gold); font-weight: 600;">20,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">40,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(201,168,76,0.1);">
-              <td style="padding: 10px 16px; color: var(--text-dim);">Total Net Cash</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">~$827,000</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--gold); font-weight: 600;">~$1,843,500</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">~$2,668,438</td>
-            </tr>
-            <tr>
-              <td style="padding: 10px 16px; color: var(--text-dim);">Estimated Runway</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">~15 months</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--gold); font-weight: 600;">~33.5 months</td>
-              <td style="padding: 10px 16px; text-align: center; color: var(--cream);">~48 months</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="color: var(--text-dim); font-size: 0.78rem; text-align: center; margin-top: 16px;">All projections exclude unrealized MIC token valuation. Reviewed quarterly by Economic Oracle.</p>
-    </div>
-
-    <!-- Ecosystem Revenue Year 1 -->
-    <div style="margin-top: 48px;">
-      <h3 style="font-family: 'Cinzel', serif; color: var(--cream); font-size: 1.1rem; text-align: center; margin-bottom: 8px;">Ecosystem Product Revenue — Year 1 (Base)</h3>
-      <p style="color: var(--text-dim); font-size: 0.85rem; text-align: center; margin-bottom: 28px;">New in v1.3 — Mission Learn, Work & Social application revenue streams</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center;">
-          <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.4rem; font-weight: 700;">$30,000</div>
-          <div style="color: var(--text-dim); font-size: 0.78rem; margin-top: 6px;">B2B Employer Verification</div>
-        </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center;">
-          <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.4rem; font-weight: 700;">$20,000</div>
-          <div style="color: var(--text-dim); font-size: 0.78rem; margin-top: 6px;">Faith Org Subscriptions</div>
-        </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center;">
-          <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.4rem; font-weight: 700;">$18,000</div>
-          <div style="color: var(--text-dim); font-size: 0.78rem; margin-top: 6px;">Task Board Platform Fees</div>
-        </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center;">
-          <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.4rem; font-weight: 700;">$12,000</div>
-          <div style="color: var(--text-dim); font-size: 0.78rem; margin-top: 6px;">Premium Subscriptions</div>
-        </div>
-        <div style="background: var(--card-bg); border: 1px solid rgba(201,168,76,0.4); border-radius: 10px; padding: 20px; text-align: center;">
-          <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.6rem; font-weight: 700;">$113,500</div>
-          <div style="color: var(--text-dim); font-size: 0.78rem; margin-top: 6px;">Total Ecosystem Revenue</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gold-divider"></div>
 
 <!-- PRODUCT SPECIFICATIONS -->
 <section id="products" style="background: linear-gradient(180deg, #080510 0%, rgba(44,26,62,0.2) 50%, #080510 100%); padding: 100px 40px;">
@@ -1743,7 +1611,7 @@
     <div class="gold-line"></div>
     <p class="section-desc">Mission Chain's ecosystem is built on nine specialized products across three application pillars — designed for progressive deployment with zero upfront cash, scaling as community and capital grow.</p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px;">
+    <div class="products-grid">
       <!-- Mission Learn -->
       <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px;">
         <div style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 8px;">MISSION LEARN</div>
@@ -2458,42 +2326,6 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     'Community NFT Pool': 'Community NFT Pool',
     'Group Performance Bonus': 'Group Performance Bonus',
     'DAO Treasury & Ops': 'DAO Treasury & V\u1eadn H\u00e0nh',
-    // FINANCIALS
-    'Capital Structure': 'C\u01a1 C\u1ea5u V\u1ed1n',
-    'Financial Projections': 'D\u1ef1 B\u00e1o T\u00e0i Ch\u00ednh',
-    'Net Cash (after 15% sales costs)': 'Ti\u1ec1n M\u1eb7t R\u00f2ng (sau 15% chi ph\u00ed b\u00e1n)',
-    'Gross Target': 'M\u1ee5c Ti\u00eau G\u1ed9p',
-    'Protocol Engineering': 'K\u1ef9 Thu\u1eadt Protocol',
-    'Initial Liquidity (L_ref)': 'Thanh Kho\u1ea3n Ban \u0110\u1ea7u (L_ref)',
-    'Security Audits & Legal': 'Ki\u1ec3m To\u00e1n B\u1ea3o M\u1eadt & Ph\u00e1p L\u00fd',
-    'Net Cash (after 33% total costs)': 'Ti\u1ec1n M\u1eb7t R\u00f2ng (sau 33% t\u1ed5ng chi ph\u00ed)',
-    'Affiliate Incentives (capped)': 'Kh\u1ee7c Kh\u00edch Affiliate (gi\u1edbi h\u1ea1n)',
-    'Marketing & Social Media': 'Marketing & M\u1ea1ng X\u00e3 H\u1ed9i',
-    'MICE \u2014 YEAR 1 (BASE)': 'MICE \u2014 N\u0102M 1 (C\u01a0 S\u1edc)',
-    'Net Ops Cash (12% of USDT proceeds)': 'Ti\u1ec1n M\u1eb7t V\u1eadn H\u00e0nh R\u00f2ng (12% USDT)',
-    'MICE Activated (Base)': 'MICE \u0110\u01b0\u1ee3c K\u00edch Ho\u1ea1t (C\u01a1 S\u1edf)',
-    'Average Price': 'Gi\u00e1 Trung B\u00ecnh',
-    'Gross Sales Volume': 'Kh\u1ed1i L\u01b0\u1ee3ng B\u00e1n H\u00e0ng G\u1ed9p',
-    'CONSOLIDATED NET CASH & RUNWAY': 'TI\u1ec0N M\u1eb6T R\u00d2NG T\u1ed4NG H\u1ee2P & TH\u1edcI GIAN HO\u1ea0T \u0110\u1ed8NG',
-    'Total Net Cash (Base Case)': 'T\u1ed5ng Ti\u1ec1n M\u1eb7t R\u00f2ng (Tr\u01b0\u1eddng H\u1ee3p C\u01a1 S\u1edf)',
-    'Estimated Runway (Base Case)': 'Th\u1eddi Gian Ho\u1ea1t \u0110\u1ed9ng (Tr\u01b0\u1eddng H\u1ee3p C\u01a1 S\u1edf)',
-    'Monthly Burn Rate': 'Chi Ph\u00ed V\u1eadn H\u00e0nh H\u00e0ng Th\u00e1ng',
-    'Year 1 Ecosystem Revenue (Base)': 'Doanh Thu H\u1ec7 Sinh Th\u00e1i N\u0103m 1 (C\u01a2 S\u1edc)',
-    'Scenario Analysis': 'Ph\u00e2n T\u00edch K\u1ecbch B\u1ea3n',
-    'METRIC': 'CH\u1ec6 S\u1ed0',
-    'Worst Case': 'Tr\u01b0\u1eddng H\u1ee3p X\u1ea5u Nh\u1ea5t',
-    'Base Case': 'Tr\u01b0\u1eddng H\u1ee3p C\u01a2 S\u1edc',
-    'Best Case': 'Tr\u01b0\u1eddng H\u1ee3p T\u1ed1t Nh\u1ea5t',
-    'SEED Raise': 'Huy \u0110\u1ed9ng SEED',
-    'PRE-SALE Raise': 'Huy \u0110\u1ed9ng PRE-SALE',
-    'MICE Activated (Year 1)': 'MICE K\u00edch Ho\u1ea1t (N\u0103m 1)',
-    'Total Net Cash': 'T\u1ed5ng Ti\u1ec1n M\u1eb7t R\u00f2ng',
-    'Estimated Runway': 'Th\u1eddi Gian Ho\u1ea1t \u0110\u1ed9ng \u01af\u1edbc T\u00ednh',
-    'Ecosystem Product Revenue \u2014 Year 1 (Base)': 'Doanh Thu S\u1ea3n Ph\u1ea9m \u2014 N\u0103m 1 (C\u01a2 S\u1edc)',
-    'B2B Employer Verification': 'X\u00e1c Minh Nh\u00e0 Tuy\u1ec3n D\u1ee5ng B2B',
-    'Faith Org Subscriptions': '\u0110\u0103ng K\u00fd T\u1ed5 Ch\u1ee9c T\u00f4n Gi\u00e1o',
-    'Task Board Platform Fees': 'Ph\u00ed N\u1ec1n T\u1ea3ng Task Board',
-    'Total Ecosystem Revenue': 'T\u1ed5ng Doanh Thu H\u1ec7 Sinh Th\u00e1i',
     // PRODUCTS
     'Product Architecture': 'Ki\u1ebfn Tr\u00fac S\u1ea3n Ph\u1ea9m',
     'Products & Services': 'S\u1ea3n Ph\u1ea9m & D\u1ecbch V\u1ee5',
@@ -2820,43 +2652,6 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     'Community NFT Pool': 'Pool Community NFT',
     'Group Performance Bonus': 'Group Performance Bonus',
     'DAO Treasury & Ops': 'DAO Treasury & Operaciones',
-    // FINANCIALS
-    'Capital Structure': 'Estructura de Capital',
-    'Financial Projections': 'Proyecciones Financieras',
-    'Net Cash (after 15% sales costs)': 'Efectivo Neto (despu\u00e9s del 15% costos de venta)',
-    'Gross Target': 'Objetivo Bruto',
-    'Protocol Engineering': 'Ingenier\u00eda del Protocol',
-    'Initial Liquidity (L_ref)': 'Liquidez Inicial (L_ref)',
-    'Security Audits & Legal': 'Auditor\u00edas de Seguridad & Legal',
-    'Net Cash (after 33% total costs)': 'Efectivo Neto (despu\u00e9s del 33% costos totales)',
-    'Affiliate Incentives (capped)': 'Incentivos de Afiliados (limitados)',
-    'Marketing & Social Media': 'Marketing & Redes Sociales',
-    'MICE \u2014 YEAR 1 (BASE)': 'MICE \u2014 A\u00d1O 1 (BASE)',
-    'Net Ops Cash (12% of USDT proceeds)': 'Efectivo Operativo Neto (12% de ingresos USDT)',
-    'MICE Activated (Base)': 'MICE Activados (Base)',
-    'Average Price': 'Precio Promedio',
-    'Gross Sales Volume': 'Volumen de Ventas Bruto',
-    'CONSOLIDATED NET CASH & RUNWAY': 'EFECTIVO NETO CONSOLIDADO & RUNWAY',
-    'Total Net Cash (Base Case)': 'Efectivo Neto Total (Caso Base)',
-    'Estimated Runway (Base Case)': 'Runway Estimado (Caso Base)',
-    'Monthly Burn Rate': 'Tasa de Quema Mensual',
-    'Year 1 Ecosystem Revenue (Base)': 'Ingresos del Ecosistema A\u00f1o 1 (Base)',
-    'Scenario Analysis': 'An\u00e1lisis de Escenarios',
-    'METRIC': 'M\u00c9TRICA',
-    'Worst Case': 'Caso Peor',
-    'Base Case': 'Caso Base',
-    'Best Case': 'Mejor Caso',
-    'SEED Raise': 'Recaudaci\u00f3n SEED',
-    'PRE-SALE Raise': 'Recaudaci\u00f3n PRE-SALE',
-    'MICE Activated (Year 1)': 'MICE Activados (A\u00f1o 1)',
-    'Total Net Cash': 'Efectivo Neto Total',
-    'Estimated Runway': 'Runway Estimado',
-    'Ecosystem Product Revenue \u2014 Year 1 (Base)': 'Ingresos de Productos del Ecosistema \u2014 A\u00f1o 1 (Base)',
-    'B2B Employer Verification': 'Verificaci\u00f3n de Empleadores B2B',
-    'Faith Org Subscriptions': 'Suscripciones de Organizaciones Religiosas',
-    'Task Board Platform Fees': 'Tarifas de la Plataforma Task Board',
-    'Premium Subscriptions': 'Suscripciones Premium',
-    'Total Ecosystem Revenue': 'Ingresos Totales del Ecosistema',
     // PRODUCTS
     'Product Architecture': 'Arquitectura de Productos',
     'Products & Services': 'Productos & Servicios',
@@ -3201,43 +2996,6 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     'Community NFT Pool': 'Pool Community NFT',
     'Group Performance Bonus': 'Group Performance Bonus',
     'DAO Treasury & Ops': 'DAO Treasury & Opera\u00e7\u00f5es',
-    // FINANCIALS
-    'Capital Structure': 'Estrutura de Capital',
-    'Financial Projections': 'Proje\u00e7\u00f5es Financeiras',
-    'Net Cash (after 15% sales costs)': 'Caixa L\u00edquido (ap\u00f3s 15% custos de venda)',
-    'Gross Target': 'Meta Bruta',
-    'Protocol Engineering': 'Engenharia do Protocol',
-    'Initial Liquidity (L_ref)': 'Liquidez Inicial (L_ref)',
-    'Security Audits & Legal': 'Auditorias de Seguran\u00e7a & Jur\u00eddico',
-    'Net Cash (after 33% total costs)': 'Caixa L\u00edquido (ap\u00f3s 33% custos totais)',
-    'Affiliate Incentives (capped)': 'Incentivos de Afiliados (limitados)',
-    'Marketing & Social Media': 'Marketing & Redes Sociais',
-    'MICE \u2014 YEAR 1 (BASE)': 'MICE \u2014 ANO 1 (BASE)',
-    'Net Ops Cash (12% of USDT proceeds)': 'Caixa Operacional L\u00edquido (12% das receitas USDT)',
-    'MICE Activated (Base)': 'MICE Ativados (Base)',
-    'Average Price': 'Pre\u00e7o M\u00e9dio',
-    'Gross Sales Volume': 'Volume Bruto de Vendas',
-    'CONSOLIDATED NET CASH & RUNWAY': 'CAIXA L\u00cdQUIDO CONSOLIDADO & RUNWAY',
-    'Total Net Cash (Base Case)': 'Caixa L\u00edquido Total (Caso Base)',
-    'Estimated Runway (Base Case)': 'Runway Estimado (Caso Base)',
-    'Monthly Burn Rate': 'Taxa de Queima Mensal',
-    'Year 1 Ecosystem Revenue (Base)': 'Receita do Ecossistema Ano 1 (Base)',
-    'Scenario Analysis': 'An\u00e1lise de Cen\u00e1rios',
-    'METRIC': 'M\u00c9TRICA',
-    'Worst Case': 'Pior Caso',
-    'Base Case': 'Caso Base',
-    'Best Case': 'Melhor Caso',
-    'SEED Raise': 'Capta\u00e7\u00e3o SEED',
-    'PRE-SALE Raise': 'Capta\u00e7\u00e3o PRE-SALE',
-    'MICE Activated (Year 1)': 'MICE Ativados (Ano 1)',
-    'Total Net Cash': 'Caixa L\u00edquido Total',
-    'Estimated Runway': 'Runway Estimado',
-    'Ecosystem Product Revenue \u2014 Year 1 (Base)': 'Receita de Produtos do Ecossistema \u2014 Ano 1 (Base)',
-    'B2B Employer Verification': 'Verifica\u00e7\u00e3o de Empregadores B2B',
-    'Faith Org Subscriptions': 'Assinaturas de Organiza\u00e7\u00f5es Religiosas',
-    'Task Board Platform Fees': 'Taxas da Plataforma Task Board',
-    'Premium Subscriptions': 'Assinaturas Premium',
-    'Total Ecosystem Revenue': 'Receita Total do Ecossistema',
     // PRODUCTS
     'Product Architecture': 'Arquitetura de Produtos',
     'Products & Services': 'Produtos & Servi\u00e7os',
@@ -3581,43 +3339,6 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     'Community NFT Pool': 'Community NFT \ud480',
     'Group Performance Bonus': 'Group Performance Bonus',
     'DAO Treasury & Ops': 'DAO Treasury & \uc6b4\uc601',
-    // FINANCIALS
-    'Capital Structure': '\uc790\ubcf8 \uad6c\uc870',
-    'Financial Projections': '\uc7ac\ubb34 \uc608\uce21',
-    'Net Cash (after 15% sales costs)': '\uc21c\ud604\uae08 (15% \ud310\ub9e4 \ube44\uc6a9 \ucc28\uac10 \ud6c4)',
-    'Gross Target': '\ucd1d \ubaa9\ud45c',
-    'Protocol Engineering': '\ud504\ub85c\ud1a0\ucf5c \uc5d4\uc9c0\ub2c8\uc5b4\ub9c1',
-    'Initial Liquidity (L_ref)': '\ucd08\uae30 \uc720\ub3d9\uc131 (L_ref)',
-    'Security Audits & Legal': '\ubcf4\uc548 \uac10\uc0ac & \ubc95\ub960',
-    'Net Cash (after 33% total costs)': '\uc21c\ud604\uae08 (33% \ucd1d \ube44\uc6a9 \ucc28\uac10 \ud6c4)',
-    'Affiliate Incentives (capped)': '\uc5b4\ud544\ub9ac\uc5d0\uc774\ud2b8 \uc778\uc13c\ud2f0\ube0c (\ud55c\ub3c4\uc801)',
-    'Marketing & Social Media': '\ub9c8\ucf00\ud305 & \uc18c\uc15c \ubbf8\ub514\uc5b4',
-    'MICE \u2014 YEAR 1 (BASE)': 'MICE \u2014 1\ub144\ucc28 (\uae30\ubcf8)',
-    'Net Ops Cash (12% of USDT proceeds)': '\uc21c \uc6b4\uc601 \ud604\uae08 (USDT \uc218\uc775\uc758 12%)',
-    'MICE Activated (Base)': 'MICE \ud65c\uc131\ud654 (\uae30\ubcf8)',
-    'Average Price': '\ud3c9\uade0 \uac00\uaca9',
-    'Gross Sales Volume': '\ucd1d \ud310\ub9e4\ub7c9',
-    'CONSOLIDATED NET CASH & RUNWAY': '\uc5f0\uacb0 \uc21c\ud604\uae08 & \ub7f0\uc6e8\uc774',
-    'Total Net Cash (Base Case)': '\ucd1d \uc21c\ud604\uae08 (\uae30\ubcf8 \ucf00\uc774\uc2a4)',
-    'Estimated Runway (Base Case)': '\uc608\uc0c1 \ub7f0\uc6e8\uc774 (\uae30\ubcf8 \ucf00\uc774\uc2a4)',
-    'Monthly Burn Rate': '\uc6d4\uac04 \ubc88 \ub808\uc774\ud2b8',
-    'Year 1 Ecosystem Revenue (Base)': '1\ub144\ucc28 \uc0dd\ud0dc\uacc4 \uc218\uc775 (\uae30\ubcf8)',
-    'Scenario Analysis': '\uc2dc\ub098\ub9ac\uc624 \ubd84\uc11d',
-    'METRIC': '\uc9c0\ud45c',
-    'Worst Case': '\ucd5c\uc545 \ucf00\uc774\uc2a4',
-    'Base Case': '\uae30\ubcf8 \ucf00\uc774\uc2a4',
-    'Best Case': '\ucd5c\uc120 \ucf00\uc774\uc2a4',
-    'SEED Raise': 'SEED \ubaa8\uc9d1',
-    'PRE-SALE Raise': 'PRE-SALE \ubaa8\uc9d1',
-    'MICE Activated (Year 1)': 'MICE \ud65c\uc131\ud654 (1\ub144\ucc28)',
-    'Total Net Cash': '\ucd1d \uc21c\ud604\uae08',
-    'Estimated Runway': '\uc608\uc0c1 \ub7f0\uc6e8\uc774',
-    'Ecosystem Product Revenue \u2014 Year 1 (Base)': '\uc0dd\ud0dc\uacc4 \uc81c\ud488 \uc218\uc775 \u2014 1\ub144\ucc28 (\uae30\ubcf8)',
-    'B2B Employer Verification': 'B2B \uace0\uc6a9\uc8fc \uac80\uc99d',
-    'Faith Org Subscriptions': '\uc885\uad50 \ub2e8\uccb4 \uad6c\ub3c5',
-    'Task Board Platform Fees': 'Task Board \ud50c\ub7ab\ud3fc \uc218\uc218\ub8cc',
-    'Premium Subscriptions': '\ud504\ub9ac\ubbf8\uc5c4 \uad6c\ub3c5',
-    'Total Ecosystem Revenue': '\uc0dd\ud0dc\uacc4 \ucd1d \uc218\uc775',
     // PRODUCTS
     'Product Architecture': '\uc81c\ud488 \uc544\ud0a4\ud150\ucc98',
     'Products & Services': '\uc81c\ud488 & \uc11c\ube44\uc2a4',
