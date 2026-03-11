@@ -18,6 +18,10 @@
     --text-dim: rgba(245,237,216,0.7);
     --card-bg: rgba(255,255,255,0.04);
     --border: rgba(201,168,76,0.25);
+    --body-bg: #0D0812;
+    --nav-bg: rgba(13, 8, 18, 0.85);
+    --dropdown-bg: rgba(13,8,18,0.97);
+    --shadow-soft: rgba(0,0,0,0.5);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
@@ -25,9 +29,23 @@
   
   body {
     font-family: 'Raleway', sans-serif;
-    background: #0D0812;
+    background: var(--body-bg);
     color: var(--cream);
     overflow-x: hidden;
+  }
+  body.theme-light {
+    --burgundy: #8A6A4A;
+    --deep-purple: #D8CCBC;
+    --gold: #9F7922;
+    --gold-light: #C79A33;
+    --cream: #231B15;
+    --text-dim: rgba(35,27,21,0.72);
+    --card-bg: rgba(255,255,255,0.72);
+    --border: rgba(159,121,34,0.22);
+    --body-bg: #F7F1E6;
+    --nav-bg: rgba(250,245,237,0.92);
+    --dropdown-bg: rgba(255,251,246,0.98);
+    --shadow-soft: rgba(67,46,18,0.12);
   }
 
   /* Korean language font override */
@@ -149,6 +167,7 @@
     z-index: 1000;
     opacity: 0.4;
   }
+  body.theme-light::before { opacity: 0.08; }
 
   /* NAV */
   nav {
@@ -159,7 +178,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(13, 8, 18, 0.85);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
@@ -169,6 +188,32 @@
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; opacity: 0.8; transition: opacity 0.2s, color 0.2s; }
   .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.02);
+  }
+  .theme-btn {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .theme-btn:hover,
+  .theme-btn.active {
+    background: rgba(201,168,76,0.14);
+    color: var(--gold);
+  }
 
   /* DROPDOWN */
   .nav-dropdown { position: relative; }
@@ -182,10 +227,10 @@
   .nav-submenu {
     display: none; position: absolute; top: calc(100% + 14px); left: 50%;
     transform: translateX(-50%);
-    background: rgba(13,8,18,0.97); border: 1px solid var(--border);
+    background: var(--dropdown-bg); border: 1px solid var(--border);
     border-radius: 8px; overflow: hidden; min-width: 210px; z-index: 999;
     backdrop-filter: blur(20px); padding: 6px 0;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 32px var(--shadow-soft);
   }
   .nav-submenu::before {
     content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
@@ -205,7 +250,7 @@
   .lang-selected { display: flex; align-items: center; gap: 6px; background: transparent; color: var(--cream); border: 1px solid var(--border); padding: 8px 14px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; letter-spacing: 0.08em; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
   .lang-selected:hover { border-color: var(--gold); color: var(--gold); }
   .lang-selected::after { content: '▾'; font-size: 0.65rem; opacity: 0.7; margin-left: 2px; }
-  .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 6px); background: rgba(13,8,18,0.97); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; min-width: 120px; z-index: 999; backdrop-filter: blur(20px); }
+  .lang-dropdown { display: none; position: absolute; right: 0; top: calc(100% + 6px); background: var(--dropdown-bg); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; min-width: 120px; z-index: 999; backdrop-filter: blur(20px); box-shadow: 0 8px 24px var(--shadow-soft); }
   .lang-switcher.open .lang-dropdown { display: block; }
   .lang-option { display: flex; align-items: center; gap: 8px; padding: 9px 14px; font-family: 'Raleway', sans-serif; font-size: 0.78rem; color: var(--cream); cursor: pointer; transition: background 0.15s; opacity: 0.8; white-space: nowrap; }
   .lang-option:hover { background: rgba(201,168,76,0.1); color: var(--gold); opacity: 1; }
@@ -243,6 +288,9 @@
     background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
     bottom: 50px; right: -100px;
     animation: float 10s ease-in-out infinite reverse;
+  }
+  body.theme-light .hero-bg {
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.18) 0%, rgba(216,204,188,0.55) 45%, #F7F1E6 100%);
   }
   @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
   
@@ -702,6 +750,33 @@
     border-top: 1px solid var(--border);
     padding: 80px 40px;
   }
+  body.theme-light .market-section,
+  body.theme-light .eco-section,
+  body.theme-light .tokenomics-section,
+  body.theme-light .rounds-section,
+  body.theme-light .roadmap-section,
+  body.theme-light .risk-section,
+  body.theme-light .gov-section,
+  body.theme-light .team-section,
+  body.theme-light .legal-section,
+  body.theme-light .docs-section,
+  body.theme-light .social-section {
+    background: transparent !important;
+  }
+  body.theme-light #products {
+    background: linear-gradient(180deg, #F7F1E6 0%, rgba(201,168,76,0.08) 50%, #F7F1E6 100%) !important;
+  }
+  body.theme-light .mice-proceeds-wrapper,
+  body.theme-light .mice-total-badge {
+    background: rgba(255,255,255,0.7) !important;
+    box-shadow: 0 18px 40px rgba(159,121,34,0.08);
+  }
+  body.theme-light .mice-bar-track {
+    background: rgba(35,27,21,0.08);
+  }
+  body.theme-light footer {
+    background: #EFE6D7;
+  }
   .social-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
   .social-links { display: flex; justify-content: center; gap: 16px; margin-top: 48px; flex-wrap: wrap; }
   .social-btn {
@@ -1049,7 +1124,7 @@
     }
     .nav-logo {
       gap: 10px;
-      max-width: calc(100% - 116px);
+      max-width: calc(100% - 170px);
     }
     .nav-logo img {
       width: 36px;
@@ -1064,6 +1139,18 @@
       padding: 8px 10px;
       font-size: 0.72rem;
       letter-spacing: 0.04em;
+    }
+    .nav-controls {
+      gap: 8px;
+    }
+    .theme-switcher {
+      gap: 4px;
+      padding: 3px;
+    }
+    .theme-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 0.82rem;
     }
     .hero {
       padding: 110px 20px 72px;
@@ -1159,14 +1246,20 @@
     <a href="#team">Team</a>
     <a href="#community">Community</a>
   </div>
-  <div class="lang-switcher" id="langSwitcher">
-    <div class="lang-selected" id="langSelected" onclick="toggleLang()">🇬🇧 EN</div>
-    <div class="lang-dropdown" id="langDropdown">
-      <div class="lang-option active" onclick="setLang('en','🇬🇧 EN',this)">🇬🇧 EN</div>
-      <div class="lang-option" onclick="setLang('es','🇪🇸 ES',this)">🇪🇸 ES</div>
-      <div class="lang-option" onclick="setLang('pt','🇧🇷 PT',this)">🇧🇷 PT</div>
-      <div class="lang-option" onclick="setLang('ko','🇰🇷 KO',this)">🇰🇷 KO</div>
-      <div class="lang-option" onclick="setLang('vi','🇻🇳 VI',this)">🇻🇳 VI</div>
+  <div class="nav-controls">
+    <div class="theme-switcher" aria-label="Theme switcher">
+      <button class="theme-btn active" id="themeDaylight" type="button" onclick="setTheme('daylight')" title="Daylight mode">☀</button>
+      <button class="theme-btn" id="themeNight" type="button" onclick="setTheme('night')" title="Night mode">☾</button>
+    </div>
+    <div class="lang-switcher" id="langSwitcher">
+      <div class="lang-selected" id="langSelected" onclick="toggleLang()">🇬🇧 EN</div>
+      <div class="lang-dropdown" id="langDropdown">
+        <div class="lang-option active" onclick="setLang('en','🇬🇧 EN',this)">🇬🇧 EN</div>
+        <div class="lang-option" onclick="setLang('es','🇪🇸 ES',this)">🇪🇸 ES</div>
+        <div class="lang-option" onclick="setLang('pt','🇧🇷 PT',this)">🇧🇷 PT</div>
+        <div class="lang-option" onclick="setLang('ko','🇰🇷 KO',this)">🇰🇷 KO</div>
+        <div class="lang-option" onclick="setLang('vi','🇻🇳 VI',this)">🇻🇳 VI</div>
+      </div>
     </div>
   </div></nav>
 
@@ -3686,6 +3779,24 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     else if (lang === 'pt') applyPT();
     else if (lang === 'ko') applyKO();
   }
+
+  function setTheme(theme) {
+    var isLight = theme === 'night';
+    document.body.classList.toggle('theme-light', isLight);
+    var dayBtn = document.getElementById('themeDaylight');
+    var nightBtn = document.getElementById('themeNight');
+    if (dayBtn && nightBtn) {
+      dayBtn.classList.toggle('active', !isLight);
+      nightBtn.classList.toggle('active', isLight);
+    }
+    try { localStorage.setItem('missionchain-theme', theme); } catch (e) {}
+  }
+
+  (function restoreTheme() {
+    var savedTheme = 'daylight';
+    try { savedTheme = localStorage.getItem('missionchain-theme') || 'daylight'; } catch (e) {}
+    setTheme(savedTheme);
+  })();
 
   document.addEventListener('click', function(e) {
     var sw = document.getElementById('langSwitcher');
