@@ -70,8 +70,9 @@ a{color:var(--blue2);text-decoration:none}
 a:hover{color:var(--purple2)}
 
 /* ── LANG BAR ── */
-#lang-bar{position:fixed;top:16px;right:20px;z-index:1000;display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:min(700px,calc(100vw - 28px));background:var(--langbar-bg);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:30px;padding:5px 8px}
+#lang-bar{position:fixed;top:16px;right:20px;z-index:1000;display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:min(920px,calc(100vw - 28px));background:var(--langbar-bg);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:30px;padding:5px 8px}
 .theme-toggle-group{display:flex;gap:5px;padding-right:4px;margin-right:4px;border-right:1px solid var(--border)}
+.docnav-group{display:flex;gap:5px;padding-right:4px;margin-right:4px;border-right:1px solid var(--border)}
 .theme-btn,.lbtn{padding:5px 13px;border-radius:20px;font-family:var(--font-d);font-size:11px;font-weight:700;letter-spacing:.05em;cursor:pointer;border:none;background:transparent;color:var(--gray);transition:all .2s}
 .theme-btn{min-width:34px;padding:5px 10px}
 .theme-btn.active,.lbtn.active{background:linear-gradient(90deg,#7B2D8B,#6B1428);color:#fff}
@@ -286,6 +287,11 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
     <button class="theme-btn active" onclick="setTheme('daylight')" id="theme-daylight" aria-label="Daylight theme">☀</button>
     <button class="theme-btn" onclick="setTheme('night')" id="theme-night" aria-label="Night theme">☾</button>
   </div>
+  <div class="docnav-group" aria-label="Document navigation">
+    <a class="lbtn" href="index.html">Website</a>
+    <a class="lbtn active" href="White_Paper.html">White Paper</a>
+    <a class="lbtn" href="Glossary_Brand_Terms.html">Glossary</a>
+  </div>
   <button class="lbtn active" onclick="setLang('en')" id="lb-en">EN</button>
   <button class="lbtn" onclick="setLang('es')" id="lb-es">ES</button>
   <button class="lbtn" onclick="setLang('pt')" id="lb-pt">PT</button>
@@ -306,6 +312,11 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
     <div class="nav-group-label" data-t="nav-overview">Overview</div>
     <button class="nav-link active" onclick="goTo('hero')" data-t="nav-home">⬛ Cover</button>
     <button class="nav-link" onclick="goTo('toc')" data-t="nav-toc">📋 Table of Contents</button>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Documents</div>
+    <a class="nav-link" href="index.html">Mission Website</a>
+    <a class="nav-link" href="Glossary_Brand_Terms.html">Glossary of Brand Terms</a>
   </div>
   <div class="nav-group">
     <div class="nav-group-label" data-t="nav-main">Main Sections</div>
