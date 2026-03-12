@@ -201,6 +201,10 @@ p strong{color:var(--white)}
 /* ── FORMULA BOX ── */
 .formula{background:var(--bg4);border:1px solid rgba(59,20,100,.25);border-radius:10px;padding:16px 20px;margin:16px 0;font-family:var(--font-m);font-size:.88rem;color:var(--teal);line-height:1.9;overflow-x:auto}
 .formula .comment{color:var(--gray2);font-size:.8rem}
+.formula .math,.wp-table .math{display:inline-block;font-family:var(--font-m);letter-spacing:.01em}
+.formula .math sub,.formula .math sup,.wp-table .math sub,.wp-table .math sup{font-size:.72em;line-height:0;position:relative;vertical-align:baseline}
+.formula .math sup,.wp-table .math sup{top:-.45em}
+.formula .math sub,.wp-table .math sub{bottom:-.15em}
 
 /* ── TIMELINE ── */
 .timeline{position:relative;padding-left:32px;margin:24px 0}
@@ -614,8 +618,8 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
   <p data-t="s7-mp1">85% of total MIC supply is distributed through a structured mining mechanism designed to reward sustained participation. Mining is scheduled over approximately 8 years (2,920 days), with a fixed base emission rate of <strong>2,037,671 MIC/day</strong>.</p>
   <h4 class="mini-title" data-t="s7-formula">Adaptive Emission Formula (Hindex Algorithm)</h4>
   <div class="formula">
-    E<sub>mine</sub>(t) = 2,037,671 × 6.5 × 0.95<sup>[t/90]</sup> × Clamp(TWAP<sub>7d</sub>(L<sub>t</sub>) / L<sub>ref</sub>)<br/>
-    <span class="comment">Where: t = days since genesis · 0.95^[t/90] = 5% decay every 90 days · TWAP7d = 7-day avg liquidity</span>
+    <span class="math">E<sub>mine</sub>(t) = 2,037,671 × 6.5 × 0.95<sup>t/90</sup> × Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span><br/>
+    <span class="comment">Where: t = days since genesis · 0.95<sup>t/90</sup> = 5% decay every 90 days · TWAP<sub>7d</sub> = 7-day average liquidity</span>
   </div>
 
   <h3 class="sub-title" data-t="s7-dist">Daily Mining Distribution</h3>
@@ -646,8 +650,8 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
     <div class="card card-b">
       <h4 class="mini-title" data-t="s7-mice-formula">MICE Daily Reward Formula</h4>
       <div class="formula" style="font-size:.8rem">
-        R_MICE_i(t) = (M_i / N_t) × 0.65 × E(t)<br/>
-        <span class="comment">M_i = licenses held · N_t = total active licenses · E(t) = daily emission</span>
+        <span class="math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span><br/>
+        <span class="comment">M<sub>i</sub> = licenses held · N<sub>t</sub> = total active licenses · E(t) = daily emission</span>
       </div>
     </div>
   </div>
@@ -855,7 +859,7 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
   <p data-t="appC-price">Mission Chain employs Dynamic Price Bands to align MICE pricing with prevailing on-chain liquidity conditions. Using a 7-day TWAP liquidity reference, effective emission is adjusted within fixed bounds to prevent over-issuance during low-liquidity periods. Price bands are DAO-governed and cannot be skipped.</p>
   <h3 class="sub-title" data-t="appC-s6">C.6 Miner Reward Formula</h3>
   <div class="formula">
-    R_MICE_i(t) = (M_i / N_t) × 0.65 × E(t)<br/>
+    <span class="math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span><br/>
     <span class="comment">Total mining rewards remain fixed · Per-license yield decreases as participation increases · No inflation amplification</span>
   </div>
   <h3 class="sub-title" data-t="appC-s7">C.7 Affiliate &amp; Performance Incentives (MICE Sale Only)</h3>
@@ -917,28 +921,28 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
   <p data-t="appE-p1">This appendix provides the formal mathematical specification of Mission Chain's economic mechanisms. It consolidates all core formulas governing token emission, reward distribution, and economic invariants. Intended for protocol auditors, economic reviewers, and implementation engineers.</p>
   <h3 class="sub-title" data-t="appE-inv">E.2 Economic Invariants (Immutable)</h3>
   <div class="formula">
-    S_max = 7,000,000,000 MIC<br/>
-    S_mining = 85% × S_max = 5,950,000,000 MIC<br/>
-    S_pre = 15% × S_max = 1,050,000,000 MIC<br/>
-    E_base = 2,037,671 MIC / day<br/>
+    <span class="math">S<sub>max</sub> = 7,000,000,000 MIC</span><br/>
+    <span class="math">S<sub>mining</sub> = 85% × S<sub>max</sub> = 5,950,000,000 MIC</span><br/>
+    <span class="math">S<sub>pre</sub> = 15% × S<sub>max</sub> = 1,050,000,000 MIC</span><br/>
+    <span class="math">E<sub>base</sub> = 2,037,671 MIC / day</span><br/>
     <span class="comment">Governance cannot modify these values.</span>
   </div>
   <h3 class="sub-title" data-t="appE-emit">E.3 Daily Emission Formula (Hindex-Controlled)</h3>
   <div class="formula">
-    E(t) = E_base × B × D(t) × L(t)<br/><br/>
-    B = 6.5  [bootstrapping coefficient — accelerates early activation]<br/>
-    D(t) = 0.95^(t/90)  [5% decay every 90 days]<br/>
-    L(t) = Clamp( (TWAP7d(L_t) / L_ref)^α, L_min, L_max )<br/>
-    <span class="comment">α = liquidity sensitivity (DAO-adjustable within bounds) · TWAP7d = 7-day time-weighted avg liquidity</span>
+    <span class="math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span><br/><br/>
+    <span class="math">B = 6.5</span> [bootstrapping coefficient — accelerates early activation]<br/>
+    <span class="math">D(t) = 0.95<sup>t/90</sup></span> [5% decay every 90 days]<br/>
+    <span class="math">L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span><br/>
+    <span class="comment">α = liquidity sensitivity (DAO-adjustable within bounds) · TWAP<sub>7d</sub> = 7-day time-weighted average liquidity</span>
   </div>
   <h3 class="sub-title" data-t="appE-dist">E.4 Distribution of Daily Emission</h3>
   <div class="wp-table-wrap">
     <table class="wp-table">
       <thead><tr><th>Pool</th><th data-t="appE-pct">Allocation %</th><th data-t="appE-formula">Formula Reference</th></tr></thead>
       <tbody>
-        <tr><td data-t="appE-mice">MICE Holders</td><td class="hl">65%</td><td class="mono">R_MICE_i = (M_i/N_t) × 0.65 × E(t)</td></tr>
-        <tr><td data-t="appE-comm">Community NFT</td><td class="hl">10%</td><td class="mono">R_COMM_i = (S_i/ΣS_eff) × 0.10 × E(t)</td></tr>
-        <tr><td data-t="appE-mfp">MFP-NFT</td><td class="hl">10%</td><td class="mono">R_MFP_i = (S_i/ΣS_MFP) × 0.10 × E(t)</td></tr>
+        <tr><td data-t="appE-mice">MICE Holders</td><td class="hl">65%</td><td class="mono"><span class="math">R<sub>MICE,i</sub> = (M<sub>i</sub>/N<sub>t</sub>) × 0.65 × E(t)</span></td></tr>
+        <tr><td data-t="appE-comm">Community NFT</td><td class="hl">10%</td><td class="mono"><span class="math">R<sub>COMM,i</sub> = (S<sub>i</sub>/ΣS<sub>eff</sub>) × 0.10 × E(t)</span></td></tr>
+        <tr><td data-t="appE-mfp">MFP-NFT</td><td class="hl">10%</td><td class="mono"><span class="math">R<sub>MFP,i</sub> = (S<sub>i</sub>/ΣS<sub>MFP</sub>) × 0.10 × E(t)</span></td></tr>
         <tr><td data-t="appE-dao">DAO/Treasury</td><td class="hl">10%</td><td class="mono">DAO-governed</td></tr>
         <tr><td data-t="appE-liq">Liquidity</td><td class="hl">5%</td><td class="mono">Protocol-allocated</td></tr>
       </tbody>
