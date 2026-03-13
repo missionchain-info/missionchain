@@ -382,7 +382,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
     <button class="nav-link" onclick="goTo('appE')" data-t="nav-appE">E. Market Entry Strategy</button>
     <button class="nav-link" onclick="goTo('appF')" data-t="nav-appF">F. Legal &amp; Privacy</button>
     <button class="nav-link" onclick="goTo('appG')" data-t="nav-appG">G. Financial Projections (Internal)</button>
-    <button class="nav-link" onclick="goTo('appH')" data-t="nav-appH">H. DAO Operations</button>
+    <button class="nav-link" onclick="goTo('appH')" data-t="nav-appH">H. DAO Operations (Internal)</button>
     <button class="nav-link" onclick="goTo('appI')" data-t="nav-appI">I. NIRA-AI Operations</button>
   </div>
 </nav>
@@ -2411,14 +2411,465 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </div>
 
 <!-- APPENDIX H -->
-<div id="appH" class="section">
+<div id="appH" class="section internal-gated">
   <div class="app-header">
     <div class="app-header-num">APPENDIX H</div>
     <h2>DAO Operations &amp; Governance (Internal)</h2>
   </div>
-  <p>Reserved for the approved internal DAO Operations &amp; Governance appendix.</p>
-  <div class="callout warn">
-    <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
+  <div class="internal-gate-panel">
+    <div class="internal-gate-eyebrow">Internal Access</div>
+    <h3>Appendix H is restricted for internal governance review</h3>
+    <p>This appendix contains confidential DAO operating rules, governance thresholds, treasury procedures, and decentralization details. Enter the internal password to unlock this section.</p>
+    <div class="internal-gate-actions">
+      <button class="internal-btn" type="button" onclick="openInternalAccess('appH')">Unlock Appendix H</button>
+    </div>
+  </div>
+  <div class="internal-protected">
+    <p>Credential System · Governance Tiers · Voting Rules · Treasury · Decentralization Roadmap</p>
+    <div class="callout warn">
+      <p><strong>Internal Document - Confidential:</strong> This appendix is an internal governance reference document. It contains the complete operational rules for Mission DAO, including credential requirements, voting mechanics, quorum thresholds, parameter classification, treasury procedures, and the decentralization roadmap.</p>
+    </div>
+
+    <h3 class="sub-title">H.1 Purpose &amp; Scope</h3>
+    <p>This appendix defines the complete operational governance framework for Mission DAO. It establishes the rules by which Mission Chain is governed, the rights and obligations of each credential class, the procedures for governance actions, the boundaries of what can and cannot be changed, and the roadmap by which authority is transferred from the founding team to the community.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Section</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td>H.2</td><td>Mission DAO Architecture - Three-Tier Overview</td></tr>
+          <tr><td>H.3</td><td>MFP-NFT Constitutional Layer: issuance, rules, staking, obligations</td></tr>
+          <tr><td>H.4</td><td>Community NFT Tiers: Builder, Maker, Luminary - KPIs, rights, formulas</td></tr>
+          <tr><td>H.5</td><td>Governance Parameter Classification - Immutable / Framework / Product / Community</td></tr>
+          <tr><td>H.6</td><td>Governance Process Flow - Proposal to Execution</td></tr>
+          <tr><td>H.7</td><td>Voting Rules - Thresholds, quorum, duration, and timelock by tier</td></tr>
+          <tr><td>H.8</td><td>AI Economic Oracle - Role, scope, and strict limitations</td></tr>
+          <tr><td>H.9</td><td>Operations Committee - Composition, mandate, and oversight</td></tr>
+          <tr><td>H.10</td><td>DAO Treasury - Structure, governance, and deployment rules</td></tr>
+          <tr><td>H.11</td><td>Hub Leader Governance - Election, rights, accountability, and compensation</td></tr>
+          <tr><td>H.12</td><td>Anti-Capture Safeguards - Constitutional protections and governance integrity</td></tr>
+          <tr><td>H.13</td><td>Decentralization Roadmap - Phase-by-phase authority transfer</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.2 Mission DAO Architecture - Three-Tier Overview</h3>
+    <p>Mission DAO is organized in three governance tiers, each reflecting a different level of verified contribution and constitutional authority. Tiers are not a hierarchy of privilege. They are a hierarchy of verified responsibility.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Tier</th><th>Credential</th><th>How Membership Is Earned</th><th>Governance Layer</th></tr></thead>
+        <tbody>
+          <tr><td>Constitutional Steward</td><td>MFP-NFT</td><td>Capital investment, founding contribution, or DAO-approved exceptional contribution</td><td>Constitutional &amp; Framework Layer</td></tr>
+          <tr><td>Strategic Contributor</td><td>Luminary NFT</td><td>12+ months active Maker status, 3 Mission Learn tracks, top-tier Mission Work history, and peer endorsement</td><td>Strategic + Product + Community Layers</td></tr>
+          <tr><td>Active Contributor</td><td>Maker NFT</td><td>6+ months active Builder status, added Mission Learn completion, expanded Mission Work history</td><td>Product + Community Layers</td></tr>
+          <tr><td>Contributor</td><td>Builder NFT</td><td>Mission Learn completion plus verified Mission Work history and KPI re-verification</td><td>Community Layer</td></tr>
+          <tr><td>Participant</td><td>No credential</td><td>Wallet created and ecosystem use only</td><td>No governance rights until credentials are earned</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>The Staking Principle:</strong> Credential tier determines governance scope. MIC stake determines voting weight and reward share within that tier. No MIC stake means no voting weight and no pool share regardless of how many NFTs are held.</p>
+    </div>
+
+    <h3 class="sub-title">H.3 MFP-NFT - Constitutional Steward Credentials</h3>
+    <h4 class="mini-title">H.3.1 Issuance Pathways</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Pathway</th><th>Recipients</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Capital &amp; Strategic</td><td>SEED investors and strategic sale participants</td><td>Earliest and highest-risk financial commitment</td></tr>
+          <tr><td>Founding Contribution</td><td>Founding members</td><td>Brand, IP, organizational infrastructure, or foundational effort before launch</td></tr>
+          <tr><td>Active Contributor</td><td>DAO-approved contributors</td><td>Exceptional ongoing contribution approved by governance</td></tr>
+          <tr><td>Supply Architecture</td><td>Tranche 1 up to 25,000 MFP-NFTs</td><td>Total hard cap of 25,000 across all pathways; immutable</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.3.2 Transfer, Sale, and Lock Rules</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Rule</th><th>Detail</th><th>Rationale</th></tr></thead>
+        <tbody>
+          <tr><td>Minimum lock period</td><td>1 year from issuance, with no transfer or sale permitted</td><td>Prevents immediate flipping during foundation phase</td></tr>
+          <tr><td>Sale of ≤ 50% of holdings</td><td>Permitted after the 1-year lock</td><td>Balances liquidity needs with governance continuity</td></tr>
+          <tr><td>Sale of &gt; 50% of holdings</td><td>Requires DAO majority vote approving the specific transfer</td><td>Prevents destabilizing constitutional exits</td></tr>
+          <tr><td>Fractional transfer</td><td>Not permitted</td><td>Prevents fragmentation of constitutional rights</td></tr>
+          <tr><td>Transfer to non-KYC wallet</td><td>Not permitted</td><td>Reduces anonymous governance capture</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.3.3 Activity Requirements &amp; Consequences</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Status</th><th>Activity Requirement</th><th>Rights &amp; Pool Share</th><th>Path to Reinstatement</th></tr></thead>
+        <tbody>
+          <tr><td>Active Steward</td><td>Minimum MIC stake and at least 1 governance vote per quarter</td><td>Full constitutional rights and full MFP-NFT pool share</td><td>Maintain activity</td></tr>
+          <tr><td>Inactive (1-2 quarters)</td><td>Below minimum stake or no vote in 1-2 consecutive quarters</td><td>Pool share suspended; signaling only; NFT retained</td><td>Re-stake above minimum and cast 1 vote</td></tr>
+          <tr><td>Legacy Status (4+ quarters)</td><td>Inactive for 4+ consecutive quarters</td><td>No pool share and no governance weight; NFT retained as historical record</td><td>DAO vote required for restoration</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.3.4 Staking, Voting Weight &amp; Pool Share Formulas</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Formula Element</th><th>Formula</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Voting Weight</td><td class="mono">VW_MFP_i = S_i / Σ S_MFP_active</td><td>S_i is the MIC staked by holder i</td></tr>
+          <tr><td>Pool Share per day</td><td class="mono">PS_MFP_i(t) = (S_i / Σ S_MFP_active) × 0.10 × E(t)</td><td>10% of daily emission goes to the MFP pool</td></tr>
+          <tr><td>Zero Rights Condition</td><td class="mono">S_i = 0 → VW_MFP_i = 0 and PS_MFP_i = 0</td><td>No stake means zero rights and zero rewards</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.3.5 What MFP-NFT Holders Govern</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Governance Category</th><th>Specific Powers</th><th>Threshold Required</th></tr></thead>
+        <tbody>
+          <tr><td>Constitutional Core</td><td>Read-only immutable constants such as total supply, mining allocation, MFP-NFT cap, and base emission structure</td><td>No vote possible; permanently immutable</td></tr>
+          <tr><td>Framework Parameters</td><td>Hindex bounds, MICE pricing bands, license duration, pool distribution percentages, and Layer 2 launch parameters</td><td>66% supermajority, 30% quorum, 72-hour timelock</td></tr>
+          <tr><td>DAO Treasury Oversight</td><td>Major treasury deployments, strategic partnerships, emergency interventions</td><td>66% for constitutional items; simple majority for treasury actions</td></tr>
+          <tr><td>MFP-NFT Governance Itself</td><td>Legacy restoration, Pathway 3 approvals, large transfer approvals</td><td>&gt;50% of participating MFP-NFT voters</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.4 Community NFT Tiers - Contribution Credentials</h3>
+    <p>Community NFTs are Mission Chain's contribution credential system. Builder, Maker, and Luminary are non-transferable, cannot be purchased, and remain bound to the wallet that earned them.</p>
+    <h4 class="mini-title">H.4.1 Builder NFT</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Attribute</th><th>Specification</th></tr></thead>
+        <tbody>
+          <tr><td>Meaning</td><td>Builder - one who builds with hands and heart</td></tr>
+          <tr><td>How Earned</td><td>At least 1 full Mission Learn track, verified Mission Work history, and annual KPI re-verification</td></tr>
+          <tr><td>Voting Rights</td><td>Community-tier governance only</td></tr>
+          <tr><td>Voting Weight Formula</td><td class="mono">VW_Builder_i = S_i / Σ S_Builder_active</td></tr>
+          <tr><td>Transferability</td><td>Non-transferable and permanently bound to the earning wallet</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.4.2 Maker NFT</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Attribute</th><th>Specification</th></tr></thead>
+        <tbody>
+          <tr><td>Meaning</td><td>Maker - one who creates, sustains, and multiplies</td></tr>
+          <tr><td>How Earned</td><td>Active Builder for 6+ months, additional Mission Learn completion, expanded Mission Work history, semi-annual KPI checks</td></tr>
+          <tr><td>Voting Rights</td><td>Community-tier and Product-tier governance</td></tr>
+          <tr><td>Voting Weight Formula</td><td class="mono">2× weight multiplier vs Builder</td></tr>
+          <tr><td>Transferability</td><td>Non-transferable</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.4.3 Luminary NFT</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Attribute</th><th>Specification</th></tr></thead>
+        <tbody>
+          <tr><td>Meaning</td><td>Luminary - one whose light guides others</td></tr>
+          <tr><td>How Earned</td><td>Active Maker for 12+ months, 3+ Mission Learn tracks, sustained top-tier Mission Work history, peer endorsement, annual KPI review</td></tr>
+          <tr><td>Voting Rights</td><td>All governance tiers, including advisory constitutional participation</td></tr>
+          <tr><td>Voting Weight Formula</td><td class="mono">4× weight multiplier vs Builder</td></tr>
+          <tr><td>Transferability</td><td>Non-transferable</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.4.4 Complete Governance Rights Matrix</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Credential</th><th>Gov. Tier</th><th>Proposal Rights</th><th>Voting Scope</th><th>Weight</th><th>Pool Share</th></tr></thead>
+        <tbody>
+          <tr><td>MFP-NFT</td><td>Constitutional</td><td>All tiers</td><td>Constitutional + Framework + all below</td><td>S_i / Σ S_MFP</td><td>10% of E(t)</td></tr>
+          <tr><td>Luminary</td><td>Strategic</td><td>All tiers + Strategic</td><td>Strategic + Product + Community</td><td>4× multiplier</td><td>10% of E(t), highest tier weight</td></tr>
+          <tr><td>Maker</td><td>Product</td><td>Product + Community</td><td>Product + Community</td><td>2× multiplier</td><td>10% of E(t), mid tier weight</td></tr>
+          <tr><td>Builder</td><td>Community</td><td>Community only</td><td>Community only</td><td>1× base</td><td>10% of E(t), base tier weight</td></tr>
+          <tr><td>MICE Operator</td><td>Advisory</td><td>None</td><td>Non-binding input</td><td>Advisory</td><td>65% of E(t)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.5 Governance Parameter Classification</h3>
+    <p>Mission Chain parameters are classified into four categories reflecting constitutional protection levels. This classification defines what governance can and cannot change.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Classification</th><th>Protection Level</th><th>Change Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>IMMUTABLE</td><td>Absolute</td><td>Hardcoded in smart contracts with no upgrade path</td></tr>
+          <tr><td>FRAMEWORK</td><td>Supermajority</td><td>66% MFP-NFT supermajority + 30% quorum + 7-day deliberation + 72-hour timelock</td></tr>
+          <tr><td>PRODUCT</td><td>Simple Majority</td><td>Maker/Luminary + MFP-NFT co-vote, &gt;50% of weighted votes, 20% quorum, 48-hour timelock</td></tr>
+          <tr><td>COMMUNITY</td><td>Simple Majority</td><td>All active Community NFT tiers, &gt;50% weighted votes, 15% quorum, 24-hour timelock</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <p><strong>Constitutional Inviolability:</strong> No proposal that seeks to modify an immutable parameter may be accepted, voted on, or executed. Any attempt to circumvent an immutable constraint through indirect parameter changes is treated as a governance attack.</p>
+    </div>
+
+    <h3 class="sub-title">H.6 Governance Process Flow</h3>
+    <ol class="dot-list">
+      <li><strong>Step 1:</strong> AI Oracle monitoring or community proposal initiation.</li>
+      <li><strong>Step 2:</strong> Operations Committee review for constitutional bounds, data accuracy, and proposer eligibility.</li>
+      <li><strong>Step 3:</strong> Publication with full documentation and mandatory 48-hour public comment period.</li>
+      <li><strong>Step 4:</strong> Formal vote opening according to governance tier.</li>
+      <li><strong>Step 5:</strong> Timelock period with final compliance checks.</li>
+      <li><strong>Step 6:</strong> On-chain execution by governance smart contract.</li>
+      <li><strong>Step 7:</strong> Public monitoring report within 48 hours of execution.</li>
+    </ol>
+    <div class="callout">
+      <p><strong>Proposal Initiation Requirements:</strong> Community proposals require active Community NFT + minimum MIC stake. Product proposals require Maker or Luminary. Strategic proposals require Luminary. Framework proposals require active MFP-NFT or Oracle generation upon drift detection.</p>
+    </div>
+
+    <h3 class="sub-title">H.7 Voting Rules - Thresholds, Quorum &amp; Timelocks</h3>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Governance Tier</th><th>Who Votes</th><th>Decision Threshold</th><th>Quorum</th><th>Vote Duration</th><th>Timelock</th></tr></thead>
+        <tbody>
+          <tr><td>Constitutional Framework</td><td>Active MFP-NFT holders</td><td>66% supermajority</td><td>30%</td><td>72 hours</td><td>72 hours</td></tr>
+          <tr><td>Strategic Layer</td><td>Active Luminary + Maker; MFP-NFT may participate</td><td>&gt;50%</td><td>20%</td><td>48 hours</td><td>48 hours</td></tr>
+          <tr><td>Product Layer</td><td>Active Maker + Luminary; MFP-NFT may participate</td><td>&gt;50%</td><td>20%</td><td>48 hours</td><td>48 hours</td></tr>
+          <tr><td>Community Layer</td><td>All active Community NFT holders</td><td>&gt;50%</td><td>15%</td><td>24 hours</td><td>24 hours</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Outcome</th><th>Procedure</th></tr></thead>
+        <tbody>
+          <tr><td>Quorum not reached</td><td>Vote is voided and may be revised/resubmitted after a 7-day waiting period.</td></tr>
+          <tr><td>Threshold not met</td><td>Proposal is rejected and may be resubmitted after a 14-day cooling period with material changes.</td></tr>
+          <tr><td>Emergency Quorum Override</td><td>Allowed only in declared emergencies by MFP-NFT supermajority, at most once every 180 days.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.8 AI Economic Oracle - Role &amp; Limitations</h3>
+    <p>The AI Economic Oracle is Mission Chain's advisory monitoring and proposal-generation system. It has no execution authority and cannot move funds, change parameters, issue credentials, or interact with smart contracts directly.</p>
+    <h4 class="mini-title">H.8.1 What the Oracle Monitors</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Monitoring Domain</th><th>Specific Metrics</th></tr></thead>
+        <tbody>
+          <tr><td>Emission Health</td><td>Daily emission vs formula output, bootstrapping status, time-decay trajectory, Hindex liquidity response</td></tr>
+          <tr><td>MICE Activity</td><td>Active license count, activation rate, expiry/recycling pipeline, price band trajectory</td></tr>
+          <tr><td>Liquidity Depth</td><td>7-day TWAP, depth at price impact bands, trend vs MICE price thresholds</td></tr>
+          <tr><td>Reward Pool Concentration</td><td>Stake concentration and tier-distribution metrics</td></tr>
+          <tr><td>Platform Economic Health</td><td>Learn enrolment, Mission Work job volume, Arts licensing activity, revenue per active user</td></tr>
+          <tr><td>Governance Participation</td><td>Turnout, quorum rates, proposal outcomes, credential compliance rates</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.8.2 Oracle Output Types</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Output Type</th><th>Trigger</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td>Bounded Proposal Packet</td><td>Parameter drift beyond bounds</td><td>A/B/C options, simulations, risk assessment, recommendation, confidence level</td></tr>
+          <tr><td>Weekly Economic Health Snapshot</td><td>Every 7 days</td><td>Monitored metrics, trends, risk flags, suggested governance action</td></tr>
+          <tr><td>Monthly Governance Metrics Report</td><td>Every 30 days</td><td>Participation rates, proposal outcomes, credential issuance, compliance</td></tr>
+          <tr><td>Incident Alert</td><td>Anomaly detected</td><td>Immediate alert, public notification, recommended response options</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <p><strong>Oracle Absolute Prohibitions:</strong> The Oracle never executes smart contract interactions, moves treasury funds, issues or revokes credentials, casts votes, or bypasses Operations Committee review.</p>
+    </div>
+
+    <h3 class="sub-title">H.9 Operations Committee</h3>
+    <p>The Operations Committee is the human governance layer between the AI Economic Oracle and the DAO. It provides review, accountability, and constitutional compliance oversight. It is not an independent decision-making body.</p>
+    <h4 class="mini-title">H.9.1 Composition &amp; Appointment</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Member Profile</th><th>Appointment Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>At least 3 active MFP-NFT holders with governance history</td><td>Nominated by MFP-NFT community and confirmed by MFP-NFT majority vote</td></tr>
+          <tr><td>At least 1 active Luminary holder</td><td>Nominated by Luminary community and confirmed by Maker/Luminary vote</td></tr>
+          <tr><td>At least 1 technical representative</td><td>Nominated by technical committee and confirmed by MFP-NFT vote</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>Term:</strong> 6 months, renewable. No member may serve more than 3 consecutive terms without a 6-month gap.</p>
+    </div>
+    <h4 class="mini-title">H.9.2 Mandate &amp; Authority</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Function</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Proposal Validation</td><td>Review all proposals for constitutional bounds, data accuracy, and proposer eligibility.</td></tr>
+          <tr><td>Oracle Oversight</td><td>Review Oracle-generated packets and document any rejections with rationale.</td></tr>
+          <tr><td>Timelock Compliance Check</td><td>Final compliance review during timelock before execution.</td></tr>
+          <tr><td>Incident Response</td><td>First responders to governance and protocol anomalies.</td></tr>
+          <tr><td>Public Reporting</td><td>Monthly report on reviewed proposals, rejections, compliance issues, and Oracle performance.</td></tr>
+          <tr><td>Hub Leader Certification</td><td>Administer certification reviews and KPI verification on behalf of the DAO.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.9.3 What the Operations Committee Cannot Do</h4>
+    <ul class="dot-list">
+      <li>Cannot cast DAO votes as a committee body.</li>
+      <li>Cannot override valid DAO outcomes.</li>
+      <li>Cannot deploy treasury funds without governance approval.</li>
+      <li>Cannot issue or revoke credentials directly.</li>
+      <li>Cannot pause the protocol except under defined emergency conditions.</li>
+    </ul>
+    <h4 class="mini-title">H.9.4 Emergency Protocol</h4>
+    <div class="callout gold">
+      <p><strong>Emergency Pause:</strong> The Operations Committee may unanimously declare an emergency pause for up to 72 hours only for active exploits, Oracle anomalies, governance attack patterns, or critical security vulnerabilities. Any extension requires MFP-NFT supermajority approval.</p>
+    </div>
+
+    <h3 class="sub-title">H.10 DAO Treasury - Structure, Governance &amp; Deployment</h3>
+    <h4 class="mini-title">H.10.1 Treasury Composition</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Treasury Stream</th><th>Source</th><th>Governance Tier</th></tr></thead>
+        <tbody>
+          <tr><td>DAO Emission Pool (15% of daily E(t))</td><td>Hindex daily MIC emission</td><td>Product/Strategic tier</td></tr>
+          <tr><td>MICE USDT - DAO/Ops Allocation (20%)</td><td>MICE license sales</td><td>Product tier above threshold; Committee approval below threshold</td></tr>
+          <tr><td>Mission Learn Treasury (20%)</td><td>Course fees</td><td>Community tier for scholarships/events, Product tier for strategic deployment</td></tr>
+          <tr><td>Platform Fees Treasury Portion</td><td>Mission Work platform fees</td><td>Product tier</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.10.2 Deployment Rules</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Deployment Amount</th><th>Approval Required</th><th>Process</th></tr></thead>
+        <tbody>
+          <tr><td>Below Tier 1 threshold</td><td>Operations Committee approval</td><td>48-hour notice then automatic execution if no objection</td></tr>
+          <tr><td>Tier 1 to Tier 2 threshold</td><td>Community-tier governance vote</td><td>Full 7-stage process with 24-hour timelock</td></tr>
+          <tr><td>Above Tier 2 threshold</td><td>Product-tier governance vote</td><td>Full 7-stage process with 48-hour timelock</td></tr>
+          <tr><td>Strategic deployments</td><td>MFP-NFT supermajority</td><td>Full 7-stage process with 72-hour timelock</td></tr>
+          <tr><td>Emergency deployment</td><td>Operations Committee + MFP-NFT emergency session</td><td>Emergency protocol with post-incident review</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.10.3 Treasury Transparency Requirements</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Requirement</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Real-time on-chain visibility</td><td>All treasury balances remain publicly visible on BNB Chain.</td></tr>
+          <tr><td>Deployment audit trail</td><td>Every deployment records proposal ID, vote outcome, approving body, amount, destination, and purpose.</td></tr>
+          <tr><td>Monthly treasury report</td><td>AI Oracle publishes treasury inflows, outflows, balances, runway, and deployment analysis.</td></tr>
+          <tr><td>Annual treasury audit</td><td>External smart-contract audit covers treasury contracts annually.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.11 Hub Leader Governance</h3>
+    <p>Hub Leaders are Mission Chain's real-world community nodes. They are independent operators who extend the digital ecosystem into local faith communities.</p>
+    <h4 class="mini-title">H.11.1 Minimum Qualification Requirements</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Requirement</th><th>Standard</th></tr></thead>
+        <tbody>
+          <tr><td>Credential</td><td>Minimum active Maker NFT with at least 2 Mission Learn tracks and verified Mission Work history</td></tr>
+          <tr><td>Community standing</td><td>Recognized local leader vouched for by 2 active credential holders or a recognized church/ministry</td></tr>
+          <tr><td>Commitment</td><td>Minimum 12 months of active Hub operation</td></tr>
+          <tr><td>Language &amp; culture</td><td>Fluent in local language and able to operate without translation dependency</td></tr>
+          <tr><td>KYC compliance</td><td>Full KYC verification completed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.11.2 Hub Leader Responsibilities</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Function</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Community Onboarding</td><td>Facilitate onboarding, wallet setup, KYC registration, and Builder NFT orientation.</td></tr>
+          <tr><td>Mission Work Client Recruitment</td><td>Bridge local ministry demand into verified Mission Work clients.</td></tr>
+          <tr><td>Dispute Mediation</td><td>Serve as first-line mediator for local Mission Work disputes.</td></tr>
+          <tr><td>Governance Participation</td><td>Represent regional interests in governance according to earned credential scope.</td></tr>
+          <tr><td>Monthly Community Event</td><td>Host at least one verified community event per month.</td></tr>
+          <tr><td>KPI Reporting</td><td>Submit monthly performance reports to the Operations Committee.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.11.3 Hub Leader Compensation &amp; Milestone Rewards</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Milestone</th><th>Reward</th></tr></thead>
+        <tbody>
+          <tr><td>Monthly active Hub operation</td><td>MIC monthly stipend set by DAO governance</td></tr>
+          <tr><td>First 100 KYC-verified community members</td><td>Bonus MIC grant and featured Hub profile</td></tr>
+          <tr><td>5 creators achieve Builder NFT</td><td>Hub Leader rating upgrade toward Luminary pathway</td></tr>
+          <tr><td>12 continuous months of active operation</td><td>Luminary nomination pathway</td></tr>
+          <tr><td>25 verified creators at Builder+ and 5 at Maker+</td><td>Permanent Mission Chain Hub Certification and proposal rights for regional Hub expansion</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.11.4 Hub Leader Accountability</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Violation</th><th>Consequence</th></tr></thead>
+        <tbody>
+          <tr><td>KPI below threshold for 1 month</td><td>Warning and recovery plan required within 14 days</td></tr>
+          <tr><td>KPI below threshold for 2 consecutive months</td><td>Stipend suspended and certification review initiated</td></tr>
+          <tr><td>KPI below threshold for 3 consecutive months</td><td>Hub certification revoked; reapplication delayed 6 months</td></tr>
+          <tr><td>Misconduct, fraud, or governance manipulation</td><td>Immediate certification revocation and community review of credential status</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.12 Anti-Capture Safeguards</h3>
+    <p>Mission Chain incorporates layered safeguards against governance capture by token concentration or credential concentration.</p>
+    <h4 class="mini-title">H.12.1 Constitutional Safeguards</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Safeguard</th><th>Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>Immutable core parameters</td><td>Core constants are hardcoded beyond the reach of any vote or team.</td></tr>
+          <tr><td>Dual credential + stake requirement</td><td>Governance requires both earned credentials and active MIC stake.</td></tr>
+          <tr><td>MFP-NFT transfer restrictions</td><td>1-year lock, DAO approval for large transfers, and KYC on receiving wallets.</td></tr>
+          <tr><td>Community credential non-transferability</td><td>Builder, Maker, and Luminary remain soulbound and cannot be financialized.</td></tr>
+          <tr><td>Supermajority + quorum</td><td>Framework changes require broad participation rather than a narrow majority.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.12.2 Economic Safeguards</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Safeguard</th><th>Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>Credential KPI requirements</td><td>Higher-tier credentials require sustained time-based contribution that capital cannot accelerate.</td></tr>
+          <tr><td>Activity requirements</td><td>Inactive MFP-NFT holders lose rights and pool share after sustained inactivity.</td></tr>
+          <tr><td>Hindex emission governance</td><td>Emission cannot be altered to buy votes or concentrate power.</td></tr>
+          <tr><td>Pool concentration monitoring</td><td>AI Oracle monitors stake concentration and raises incident alerts on anomalies.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">H.12.3 Procedural Safeguards</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Safeguard</th><th>Mechanism</th></tr></thead>
+        <tbody>
+          <tr><td>Operations Committee proposal review</td><td>Constitutional capture attempts are screened before voting.</td></tr>
+          <tr><td>Mandatory 48-hour public comment</td><td>Creates visibility and coordinated response time before voting opens.</td></tr>
+          <tr><td>Timelocks on all executions</td><td>Provides a response window if harmful outcomes are detected before execution.</td></tr>
+          <tr><td>Emergency Pause authority</td><td>Allows a short-term circuit breaker in case of governance attack patterns.</td></tr>
+          <tr><td>Proposal resubmission limits</td><td>Prevents governance spam and exhaustion attacks.</td></tr>
+          <tr><td>Post-execution monitoring reports</td><td>Detects unintended consequences quickly and supports follow-up governance action.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">H.13 Decentralization Roadmap</h3>
+    <p>Mission Chain's founding team has a defined mandate: build the foundation, establish the infrastructure, and then hand governance authority to the community through a staged, metric-gated process.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase</th><th>Period</th><th>DAO Status</th><th>Community Authority</th><th>Founding Team Role</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I</td><td>Q1-Q2 2026</td><td>Founding governance</td><td>MFP-NFT holders activated; first community proposals accepted; Builder KPI framework published</td><td>Active governance leadership building the foundation</td></tr>
+          <tr><td>Phase II</td><td>Q3-Q4 2026</td><td>Community activation</td><td>Builder, Maker, Luminary governance active; first Framework vote possible</td><td>Active participants, one voice among many</td></tr>
+          <tr><td>Phase III</td><td>Q1-Q2 2027</td><td>Full DAO</td><td>All governance tiers fully active; first Strategic proposals from Luminary community</td><td>No special authority beyond equivalent credentials and stake</td></tr>
+          <tr><td>Phase IV</td><td>Year 2+</td><td>Complete decentralization</td><td>50+ self-sustaining Mission Hubs and fully live Layer 2 governance</td><td>Historical contributors only; no founding authority</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout gold">
+      <p><strong>Founding Team Final Commitment:</strong> By Phase IV, the founding team holds no governance authority beyond what their credentials and MIC stake grant them. They remain subject to the same transfer restrictions, activity requirements, and sale rules as every other equivalent credential holder.</p>
+    </div>
+    <div class="callout green">
+      <p><strong>Appendix H Summary:</strong> Mission DAO is a responsibility-based governance system where credential tier sets scope, stake determines weight, and immutable constitutional locks preserve monetary integrity. Anti-capture safeguards, Operations Committee review, Oracle monitoring, and a staged decentralization roadmap combine to ensure authority is progressively earned and responsibly transferred.</p>
+    </div>
   </div>
 </div>
 
@@ -2495,7 +2946,7 @@ const LANG = {
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacy',
     "nav-appG": 'G. Financial Projections (Internal)',
-    "nav-appH": 'H. DAO Operations',
+    "nav-appH": 'H. DAO Operations (Internal)',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Official White Paper · v3.5',
     "hero-sub": 'NETWORK',
@@ -2868,7 +3319,7 @@ const LANG = {
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacidad',
     "nav-appG": 'G. Financial Projections (Internal)',
-    "nav-appH": 'H. DAO Operations',
+    "nav-appH": 'H. DAO Operations (Internal)',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Libro Blanco Oficial · v3.5',
     "hero-sub": 'RED',
@@ -3241,7 +3692,7 @@ const LANG = {
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacidade',
     "nav-appG": 'G. Financial Projections (Internal)',
-    "nav-appH": 'H. DAO Operations',
+    "nav-appH": 'H. DAO Operations (Internal)',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Whitepaper Oficial · v3.5',
     "hero-sub": 'REDE',
@@ -3614,7 +4065,7 @@ const LANG = {
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. 법적 & 개인정보',
     "nav-appG": 'G. Financial Projections (Internal)',
-    "nav-appH": 'H. DAO Operations',
+    "nav-appH": 'H. DAO Operations (Internal)',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": '공식 백서 · v3.5',
     "hero-sub": '네트워크',
@@ -3987,7 +4438,7 @@ const LANG = {
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Pháp lý & Quyền riêng tư',
     "nav-appG": 'G. Financial Projections (Internal)',
-    "nav-appH": 'H. DAO Operations',
+    "nav-appH": 'H. DAO Operations (Internal)',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Sách Trắng Chính Thức · v3.5',
     "hero-sub": 'MẠNG LƯỚI',
@@ -4363,7 +4814,7 @@ function setTheme(theme) {
 
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 
-const INTERNAL_GATES = { appG: 'MIC022026@@' };
+const INTERNAL_GATES = { appG: 'MIC022026@@', appH: 'MIC022026@@' };
 const INTERNAL_SESSION_PREFIX = 'missionchain-internal-';
 let pendingInternalTarget = null;
 
