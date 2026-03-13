@@ -1467,33 +1467,184 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
 <div id="appD" class="section">
   <div class="app-header">
     <div class="app-header-num">APPENDIX D</div>
-    <h2 data-t="appD-title">Financial Projections &amp; Capital Allocation</h2>
+    <h2>Economic Formal Specification</h2>
   </div>
-  <p data-t="appD-p1">This appendix outlines Mission Chain's capital requirements, expected burn rate, and projected runway for the initial execution phases. Figures are conservative estimates intended to support disciplined execution rather than aggressive growth assumptions.</p>
+  <p>Hindex Algorithm · Emission Model · Reward Distribution · Economic Invariants</p>
   <div class="callout warn">
-    <p data-t="appD-note">All financial projections are based solely on realized cash inflows (USD/USDT) and explicitly exclude any unrealized or speculative valuation of MIC tokens. Runway calculations do not rely on token price appreciation or future market assumptions. All figures represent internal planning estimates and are not guarantees of future performance.</p>
+    <p><strong>Intended Audience:</strong> Protocol auditors, economic reviewers, and implementation engineers. This appendix consolidates all core formulas governing token emission, reward distribution, and economic invariants. Readers may skip this appendix on first reading of the White Paper.</p>
   </div>
-  <h3 class="sub-title" data-t="appD-s1">D.1 Capital Formation Model</h3>
-  <p data-t="appD-model">Mission Chain applies a net-cash–oriented funding model, explicitly accounting for all sales, marketing, and operational costs across funding rounds. The protocol combines: early strategic capital (SEED), community-driven PRE-SALE capital, and non-dilutive, renewable protocol revenue via MICE activations.</p>
-  <h3 class="sub-title" data-t="appD-s5">D.5 Protocol Revenue — MICE (Non-Dilutive)</h3>
-  <ul class="fancy-list">
-    <li data-t="appD-mice1">MICE is a time-bound mining access license with 360-day activation period</li>
-    <li data-t="appD-mice2">Upon expiry, MICE is automatically reclaimed and may be reissued by DAO decision</li>
-    <li data-t="appD-mice3">Payment: 50% USDT + 50% MIC (auto-calculated at activation via TWAP)</li>
-    <li data-t="appD-mice4">MIC portion is allocated to burn, liquidity, or treasury per DAO governance</li>
-  </ul>
+  <h3 class="sub-title">D.1 Purpose &amp; Scope</h3>
+  <p>This appendix provides the formal mathematical specification of Mission Chain's economic mechanisms. It consolidates all core formulas governing token emission, reward distribution, and economic invariants and serves as the authoritative reference for protocol auditors, technical reviewers, and implementation engineers.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Scope of This Appendix</th><th>Coverage</th></tr></thead>
+      <tbody>
+        <tr><td>D.2</td><td>Economic Invariants — hard-coded, immutable protocol constants</td></tr>
+        <tr><td>D.3</td><td>Daily Emission Formula — Hindex Algorithm and its three components</td></tr>
+        <tr><td>D.4</td><td>Distribution of Daily Emission — how <span class="math">E(t)</span> is split across four allocation pools</td></tr>
+        <tr><td>D.5</td><td>MICE Reward Formula — per-participant daily mining reward calculation</td></tr>
+        <tr><td>D.6</td><td>Community NFT Reward Formula — stake-weighted pool distribution</td></tr>
+        <tr><td>D.7</td><td>MFP-NFT Reward Formula — Constitution-tier stake pool distribution</td></tr>
+        <tr><td>D.8</td><td>Economic Guarantees — formal invariants enforced at protocol level</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">D.2 Economic Invariants (Immutable at Protocol Level)</h3>
+  <p>The following parameters are hard-coded into the Mission Chain protocol. Governance cannot modify these values under any circumstances. They form the bedrock of monetary trust.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Parameter</th><th>Symbol</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Maximum MIC supply</td><td class="mono"><span class="math">S<sub>max</sub></span></td><td>7,000,000,000 MIC — hard cap, immutable</td></tr>
+        <tr><td>Mining allocation</td><td class="mono"><span class="math">S<sub>mining</sub></span></td><td><span class="math">85% × S<sub>max</sub> = 5,950,000,000 MIC</span></td></tr>
+        <tr><td>Pre-issued allocation</td><td class="mono"><span class="math">S<sub>pre</sub></span></td><td><span class="math">15% × S<sub>max</sub> = 1,050,000,000 MIC</span></td></tr>
+        <tr><td>Base emission rate</td><td class="mono"><span class="math">E<sub>base</sub></span></td><td>2,037,671 MIC / day</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p><strong>Immutability Guarantee:</strong> These four invariants cannot be overridden by any governance action, DAO vote, or protocol upgrade. <span class="math">S<sub>max</sub></span> ensures MIC remains deflationary over time. <span class="math">E<sub>base</sub></span>, combined with the Hindex decay and liquidity factors, guarantees cumulative emission never exceeds <span class="math">S<sub>mining</sub></span> regardless of participation levels.</p>
+  </div>
+
+  <h3 class="sub-title">D.3 Daily Emission Formula (Hindex-Controlled)</h3>
+  <p>The total MIC emitted on day <span class="math">t</span> is determined by the Hindex Algorithm. The formula integrates three multiplicative coefficients: bootstrapping, time-based decay, and real-time liquidity adjustment, ensuring emission is always bounded, adaptive, and auditable.</p>
   <div class="formula">
-    Net USDT from MICE (Year 1, Conservative): ~$300,000<br/>
-    <span class="comment">Conservative estimate only · DAO-governed · Not a guarantee</span>
+    <span class="math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span>
   </div>
-  <h3 class="sub-title" data-t="appD-s7">D.7 Financial Discipline Safeguards</h3>
+  <h4 class="mini-title">D.3.1 Bootstrapping Coefficient (B)</h4>
+  <div class="formula">
+    <span class="math">B = 6.5</span><br/>
+    <span class="comment">Applied during initial network activation to accelerate early ecosystem growth without increasing total supply.</span>
+  </div>
+  <p>The higher early emission is offset by the time-decay function <span class="math">D(t)</span>, preserving the hard cap <span class="math">S<sub>max</sub></span>.</p>
+
+  <h4 class="mini-title">D.3.2 Time-Based Decay D(t)</h4>
+  <div class="formula">
+    <span class="math">D(t) = 0.95<sup>t/90</sup></span><br/>
+    <span class="comment">Emission decays by 5% every 90 days in a continuous, deterministic manner.</span>
+  </div>
+
+  <h4 class="mini-title">D.3.3 Liquidity Adjustment L(t) — The Hindex Factor</h4>
+  <div class="formula">
+    <span class="math">L(t) = Clamp[(TWAP<sub>7d</sub>(L<sub>t</sub>) / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span>
+  </div>
+  <p><span class="math">L(t)</span> is the core innovation of the Hindex Algorithm. It dynamically adjusts daily emission based on real on-chain liquidity conditions, preventing over-issuance during low-activity periods and responsively scaling rewards during genuine ecosystem growth.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Variable</th><th>Description</th><th>Governance</th></tr></thead>
+      <tbody>
+        <tr><td><span class="math">TWAP<sub>7d</sub>(L<sub>t</sub>)</span></td><td>7-day time-weighted average on-chain DEX liquidity for the MIC/USDT pair</td><td>Oracle-fed, on-chain</td></tr>
+        <tr><td><span class="math">L<sub>ref</sub></span></td><td>Reference liquidity baseline against which current liquidity is measured</td><td>DAO-set, within bounds</td></tr>
+        <tr><td><span class="math">α</span></td><td>Liquidity sensitivity coefficient controlling how strongly emission responds to liquidity changes</td><td>DAO-adjustable, bounded</td></tr>
+        <tr><td><span class="math">L<sub>min</sub></span></td><td>Minimum emission multiplier floor guaranteeing baseline emission in low-liquidity conditions</td><td>Protocol-defined, immutable</td></tr>
+        <tr><td><span class="math">L<sub>max</sub></span></td><td>Maximum emission multiplier ceiling capping amplification in high-liquidity periods</td><td>Protocol-defined, immutable</td></tr>
+        <tr><td><span class="math">Clamp(x, a, b)</span></td><td>Returns <span class="math">max(a, min(b, x))</span> so <span class="math">L(t)</span> always remains within bounds</td><td>Deterministic, on-chain</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout gold">
+    <p><strong>Why Liquidity-Responsive Emission Matters:</strong> Static emission schedules distribute tokens on a fixed calendar regardless of actual network activity. The Hindex liquidity factor instead ties emission directly to on-chain DEX liquidity depth. When the ecosystem is actively used and liquidity is strong, emission is higher. When activity is low, emission is dampened.</p>
+  </div>
+
+  <h3 class="sub-title">D.4 Distribution of Daily Emission E(t)</h3>
+  <p>Each day's total emission <span class="math">E(t)</span> is distributed across four allocation pools. These percentages are fixed at the protocol level and cannot be altered by governance.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Allocation Pool</th><th>Percentage of E(t)</th><th>Formula Reference</th><th>Recipient</th></tr></thead>
+      <tbody>
+        <tr><td>Active MICE Participants</td><td class="hl">65%</td><td>Section D.5</td><td>Licensed MICE holders</td></tr>
+        <tr><td>DAO Treasury</td><td class="hl">15%</td><td>Direct transfer</td><td>Protocol treasury contract</td></tr>
+        <tr><td>MFP-NFT Reward Pool</td><td class="hl">10%</td><td>Section D.7</td><td>MFP-NFT stake holders</td></tr>
+        <tr><td>Community NFT Pool</td><td class="hl">10%</td><td>Section D.6</td><td>Community NFT stake holders</td></tr>
+        <tr><td>Total</td><td class="hl">100%</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">D.5 MICE Reward Formula</h3>
+  <div class="formula">
+    <span class="math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span>
+  </div>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Variable</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="math">E(t)</span></td><td>Total MIC emitted on day t, governed by the Hindex Algorithm</td></tr>
+        <tr><td><span class="math">N<sub>t</sub></span></td><td>Total number of active MICE licenses across all participants on day t</td></tr>
+        <tr><td><span class="math">M<sub>i</sub></span></td><td>Number of active MICE licenses held by participant i on day t</td></tr>
+        <tr><td><span class="math">0.65</span></td><td>Fixed MICE pool share — 65% of <span class="math">E(t)</span> allocated to MICE miners</td></tr>
+        <tr><td><span class="math">R<sub>MICE,i</sub>(t)</span></td><td>Daily MIC reward for MICE participant i on day t</td></tr>
+      </tbody>
+    </table>
+  </div>
   <ul class="dot-list">
-    <li data-t="appD-safe1">No guaranteed returns or fixed yield commitments</li>
-    <li data-t="appD-safe2">All incentive and marketing costs explicitly budgeted</li>
-    <li data-t="appD-safe3">Conservative assumptions only — no reliance on token price appreciation</li>
-    <li data-t="appD-safe4">DAO-governed capital allocation</li>
-    <li data-t="appD-safe5">No reliance on inflationary token issuance for runway</li>
+    <li>Emission is fixed regardless of participation count — total MIC emitted on day t does not change as more MICE licenses are activated.</li>
+    <li>Per-license yield dilutes as participation increases — by design, creating natural incentive to enter early.</li>
+    <li>No inflation amplification — additional MICE sales do not increase total protocol emission.</li>
+    <li>Fully on-chain and deterministic — all inputs are verifiable on-chain.</li>
   </ul>
+
+  <h3 class="sub-title">D.6 Community NFT Reward Formula</h3>
+  <div class="formula">
+    <span class="math">R<sub>COMM,i</sub>(t) = (S<sub>i</sub> / ΣS<sub>eff</sub>) × 0.10 × E(t)</span>
+  </div>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Variable</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="math">S<sub>i</sub></span></td><td>Effective MIC stake of Community NFT participant i on day t</td></tr>
+        <tr><td><span class="math">ΣS<sub>eff</sub></span></td><td>Total effective stake across all eligible Community NFT holders on day t</td></tr>
+        <tr><td><span class="math">0.10</span></td><td>Fixed Community NFT pool share — 10% of <span class="math">E(t)</span></td></tr>
+        <tr><td><span class="math">R<sub>COMM,i</sub>(t)</span></td><td>Daily MIC reward for Community NFT participant i on day t</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p><strong>Governance Conditions:</strong> Community NFT rewards are subject to tier-specific stake caps, active NFT validity, and governance-approved parameters. Builder, Maker, and Luminary tiers carry different maximum effective stake values, and eligibility rules remain DAO-adjustable within protocol bounds.</p>
+  </div>
+
+  <h3 class="sub-title">D.7 MFP-NFT Reward Formula</h3>
+  <div class="formula">
+    <span class="math">R<sub>MFP,i</sub>(t) = (S<sub>i</sub> / ΣS<sub>MFP</sub>) × 0.10 × E(t)</span>
+  </div>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Variable</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="math">S<sub>i</sub></span></td><td>MIC stake associated with MFP-NFT holder i on day t</td></tr>
+        <tr><td><span class="math">ΣS<sub>MFP</sub></span></td><td>Total stake of all eligible MFP-NFT holders on day t</td></tr>
+        <tr><td><span class="math">0.10</span></td><td>Fixed MFP-NFT pool share — 10% of <span class="math">E(t)</span></td></tr>
+        <tr><td><span class="math">R<sub>MFP,i</sub>(t)</span></td><td>Daily MIC reward for MFP-NFT holder i on day t</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout green">
+    <p><strong>MFP-NFT vs Community NFT — Structural Distinction:</strong> Both reward formulas share the same proportional stake structure, but the pools are entirely separate. MFP-NFT holders are Constitutional-tier participants tied to SEED governance rights and a distinct 10% emission pool. Community NFT holders are ecosystem participants earning from their own 10% pool with tier-specific stake caps. Neither pool dilutes the other.</p>
+  </div>
+
+  <h3 class="sub-title">D.8 Summary of Economic Guarantees</h3>
+  <p>The formal specification above guarantees the following properties at protocol level. These are mathematical consequences of the formulas defined in Sections D.2 through D.7.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Guarantee</th><th>Mechanism</th></tr></thead>
+      <tbody>
+        <tr><td>Total MIC supply is permanently capped at 7,000,000,000 tokens</td><td><span class="math">S<sub>max</sub></span> invariant — no formula or governance action can exceed this bound</td></tr>
+        <tr><td>Emission adapts only within bounded, governance-approved rules</td><td><span class="math">L(t)</span> clamp function enforces <span class="math">L<sub>min</sub> ≤ L(t) ≤ L<sub>max</sub></span> at all times</td></tr>
+        <tr><td>Rewards scale with participation share, not capital dominance</td><td>Proportional formulas in D.5-D.7: reward = <span class="math">(stake<sub>i</sub> / total stake) × pool</span></td></tr>
+        <tr><td>Governance cannot compromise monetary integrity</td><td><span class="math">S<sub>max</sub></span>, <span class="math">S<sub>mining</sub></span>, <span class="math">S<sub>pre</sub></span>, and <span class="math">E<sub>base</sub></span> are protocol-level constants</td></tr>
+        <tr><td>All calculations are deterministic, auditable, and reproducible</td><td>All inputs such as <span class="math">E(t)</span>, <span class="math">N<sub>t</sub></span>, <span class="math">M<sub>i</sub></span>, <span class="math">S<sub>i</sub></span>, and <span class="math">TWAP<sub>7d</sub></span> are on-chain verifiable</td></tr>
+        <tr><td>Early participants are structurally favored, not arbitrarily</td><td><span class="math">D(t)</span> decay reduces emission over time; early MICE activations yield more per license</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p><strong>Appendix D Summary:</strong> The Hindex Algorithm represents a contribution-adaptive, liquidity-responsive, and time-decaying mining protocol. It aligns emission with real economic activity rather than raw computation power or capital size, while keeping all monetary rules bounded by immutable invariants.</p>
+  </div>
+  <div class="formula">
+    <span class="math">Core Formula: E(t) = E<sub>base</sub> × B × D(t) × L(t)</span><br/>
+    <span class="comment">Hard Cap: 7,000,000,000 MIC · Base Rate: 2,037,671 MIC / day</span>
+  </div>
 </div>
 
 <!-- APPENDIX E -->
