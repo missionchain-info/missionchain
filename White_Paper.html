@@ -340,13 +340,15 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
   </div>
   <div class="nav-group">
     <div class="nav-group-label" data-t="nav-app">Appendices</div>
-    <button class="nav-link" onclick="goTo('appA')" data-t="nav-appA">A. Seed &amp; Private Sale</button>
-    <button class="nav-link" onclick="goTo('appB')" data-t="nav-appB">B. Pre-Sale Community</button>
+    <button class="nav-link" onclick="goTo('appA')" data-t="nav-appA">A. Seed Round</button>
+    <button class="nav-link" onclick="goTo('appB')" data-t="nav-appB">B. Pre-Sale</button>
     <button class="nav-link" onclick="goTo('appC')" data-t="nav-appC">C. MICE Sale Structure</button>
     <button class="nav-link" onclick="goTo('appD')" data-t="nav-appD">D. Economic Formal Spec</button>
-    <button class="nav-link" onclick="goTo('appE')" data-t="nav-appE">E. Economic Spec</button>
+    <button class="nav-link" onclick="goTo('appE')" data-t="nav-appE">E. Market Entry Strategy</button>
     <button class="nav-link" onclick="goTo('appF')" data-t="nav-appF">F. Legal &amp; Privacy</button>
-    <button class="nav-link" onclick="goTo('appG')" data-t="nav-appG">👩‍💻 G. NIRA AI Agent</button>
+    <button class="nav-link" onclick="goTo('appG')" data-t="nav-appG">G. Financial Projections</button>
+    <button class="nav-link" onclick="goTo('appH')" data-t="nav-appH">H. DAO Operations</button>
+    <button class="nav-link" onclick="goTo('appI')" data-t="nav-appI">I. NIRA-AI Operations</button>
   </div>
 </nav>
 
@@ -420,13 +422,15 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
     <a class="toc-item" onclick="goTo('s11')"><span class="toc-num">11</span><span class="toc-name">Risk &amp; Mitigation</span></a>
     <a class="toc-item" onclick="goTo('s12')"><span class="toc-num">12</span><span class="toc-name">Founding &amp; Executive Team</span></a>
     <a class="toc-item" onclick="goTo('s13')"><span class="toc-num">13</span><span class="toc-name">Conclusion</span></a>
-    <a class="toc-item" onclick="goTo('appA')"><span class="toc-num">A</span><span class="toc-name">Appendix A — Seed &amp; Private Sale</span></a>
-    <a class="toc-item" onclick="goTo('appB')"><span class="toc-num">B</span><span class="toc-name">Appendix B — Pre-Sale Community</span></a>
+    <a class="toc-item" onclick="goTo('appA')"><span class="toc-num">A</span><span class="toc-name">Appendix A — Seed Round (Private Sale to Early and Strategic Investors)</span></a>
+    <a class="toc-item" onclick="goTo('appB')"><span class="toc-num">B</span><span class="toc-name">Appendix B — Pre-Sale</span></a>
     <a class="toc-item" onclick="goTo('appC')"><span class="toc-num">C</span><span class="toc-name">Appendix C — MICE Sale Structure</span></a>
     <a class="toc-item" onclick="goTo('appD')"><span class="toc-num">D</span><span class="toc-name">Appendix D — Economic Formal Specification</span></a>
-    <a class="toc-item" onclick="goTo('appE')"><span class="toc-num">E</span><span class="toc-name">Appendix E — Economic Specification</span></a>
-    <a class="toc-item" onclick="goTo('appF')"><span class="toc-num">F</span><span class="toc-name">Appendix F — Legal &amp; Privacy</span></a>
-    <a class="toc-item" onclick="goTo('appG')"><span class="toc-num">G</span><span class="toc-name">Appendix G — NIRA AI Agent</span></a>
+    <a class="toc-item" onclick="goTo('appE')"><span class="toc-num">E</span><span class="toc-name">Appendix E — Market Entry Strategy</span></a>
+    <a class="toc-item" onclick="goTo('appF')"><span class="toc-num">F</span><span class="toc-name">Appendix F — Legal, Disclaimers &amp; Privacy Policy</span></a>
+    <a class="toc-item" onclick="goTo('appG')"><span class="toc-num">G</span><span class="toc-name">Appendix G — Financial Projections &amp; Capital Allocation (Internal)</span></a>
+    <a class="toc-item" onclick="goTo('appH')"><span class="toc-num">H</span><span class="toc-name">Appendix H — DAO Operations &amp; Governance (Internal)</span></a>
+    <a class="toc-item" onclick="goTo('appI')"><span class="toc-num">I</span><span class="toc-name">Appendix I — NIRA-AI Operations &amp; Governance Support (Internal)</span></a>
   </div>
 </div>
 
@@ -1651,37 +1655,11 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
 <div id="appE" class="section">
   <div class="app-header">
     <div class="app-header-num">APPENDIX E</div>
-    <h2 data-t="appE-title">Economic Formal Specification</h2>
+    <h2>Market Entry Strategy</h2>
   </div>
-  <p data-t="appE-p1">This appendix provides the formal mathematical specification of Mission Chain's economic mechanisms. It consolidates all core formulas governing token emission, reward distribution, and economic invariants. Intended for protocol auditors, economic reviewers, and implementation engineers.</p>
-  <h3 class="sub-title" data-t="appE-inv">E.2 Economic Invariants (Immutable)</h3>
-  <div class="formula">
-    <span class="math">S<sub>max</sub> = 7,000,000,000 MIC</span><br/>
-    <span class="math">S<sub>mining</sub> = 85% × S<sub>max</sub> = 5,950,000,000 MIC</span><br/>
-    <span class="math">S<sub>pre</sub> = 15% × S<sub>max</sub> = 1,050,000,000 MIC</span><br/>
-    <span class="math">E<sub>base</sub> = 2,037,671 MIC / day</span><br/>
-    <span class="comment">Governance cannot modify these values.</span>
-  </div>
-  <h3 class="sub-title" data-t="appE-emit">E.3 Daily Emission Formula (Hindex-Controlled)</h3>
-  <div class="formula">
-    <span class="math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span><br/><br/>
-    <span class="math">B = 6.5</span> [bootstrapping coefficient — accelerates early activation]<br/>
-    <span class="math">D(t) = 0.95<sup>t/90</sup></span> [5% decay every 90 days]<br/>
-    <span class="math">L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span><br/>
-    <span class="comment">α = liquidity sensitivity (DAO-adjustable within bounds) · TWAP<sub>7d</sub> = 7-day time-weighted average liquidity</span>
-  </div>
-  <h3 class="sub-title" data-t="appE-dist">E.4 Distribution of Daily Emission</h3>
-  <div class="wp-table-wrap">
-    <table class="wp-table">
-      <thead><tr><th>Pool</th><th data-t="appE-pct">Allocation %</th><th data-t="appE-formula">Formula Reference</th></tr></thead>
-      <tbody>
-        <tr><td data-t="appE-mice">MICE Holders</td><td class="hl">65%</td><td class="mono"><span class="math">R<sub>MICE,i</sub> = (M<sub>i</sub>/N<sub>t</sub>) × 0.65 × E(t)</span></td></tr>
-        <tr><td data-t="appE-comm">Community NFT</td><td class="hl">10%</td><td class="mono"><span class="math">R<sub>COMM,i</sub> = (S<sub>i</sub>/ΣS<sub>eff</sub>) × 0.10 × E(t)</span></td></tr>
-        <tr><td data-t="appE-mfp">MFP-NFT</td><td class="hl">10%</td><td class="mono"><span class="math">R<sub>MFP,i</sub> = (S<sub>i</sub>/ΣS<sub>MFP</sub>) × 0.10 × E(t)</span></td></tr>
-        <tr><td data-t="appE-dao">DAO/Treasury</td><td class="hl">10%</td><td class="mono">DAO-governed</td></tr>
-        <tr><td data-t="appE-liq">Liquidity</td><td class="hl">5%</td><td class="mono">Protocol-allocated</td></tr>
-      </tbody>
-    </table>
+  <p>Reserved for the approved Market Entry Strategy appendix.</p>
+  <div class="callout warn">
+    <p><strong>Status:</strong> This appendix slot has been reserved and renamed according to the current White Paper structure. Official content will be inserted from the approved source document in a later update.</p>
   </div>
 </div>
 
@@ -1689,32 +1667,11 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
 <div id="appF" class="section">
   <div class="app-header">
     <div class="app-header-num">APPENDIX F</div>
-    <h2 data-t="appF-title">Legal, Disclaimers &amp; Privacy Policy</h2>
+    <h2>Legal, Disclaimers &amp; Privacy Policy</h2>
   </div>
+  <p>Reserved for the approved Legal, Disclaimers &amp; Privacy Policy appendix.</p>
   <div class="callout warn">
-    <p data-t="appF-main"><strong>No Offer/No Solicitation:</strong> Nothing in this White Paper, appendices, website materials, or community communications constitutes an offer to sell, or solicitation of an offer to buy, any security, investment product, or regulated financial instrument. Participation is voluntary and subject to applicable laws.</p>
-  </div>
-  <h3 class="sub-title" data-t="appF-utility">F.3 Utility Nature — No Equity — No Guaranteed Returns</h3>
-  <ul class="fancy-list">
-    <li data-t="appF-mic">MIC is a utility and coordination asset — does not represent equity, ownership, or a claim on profits.</li>
-    <li data-t="appF-mice">MICE is a time-bound access license — not a token and not an investment instrument.</li>
-    <li data-t="appF-nft">Community NFT and MFP-NFT are credentials/roles — do not represent ownership, profit rights, or investment returns.</li>
-    <li data-t="appF-ret">No party should expect profits, yield, passive income, or price appreciation.</li>
-  </ul>
-  <h3 class="sub-title" data-t="appF-risk">F.5 Risk Disclosure (Non-Exhaustive)</h3>
-  <ul class="dot-list">
-    <li data-t="appF-r1">Smart contract vulnerabilities, exploits, or unexpected behavior</li>
-    <li data-t="appF-r2">Liquidity and market volatility</li>
-    <li data-t="appF-r3">Governance risks including proposal outcomes and execution timing</li>
-    <li data-t="appF-r4">Regulatory and compliance changes across jurisdictions</li>
-    <li data-t="appF-r5">Operational risks including outages, dependency failures, third-party services</li>
-  </ul>
-  <h3 class="sub-title" data-t="appF-priv">F.9 Privacy Policy (High-Level)</h3>
-  <div class="grid2">
-    <div class="card card-b"><h4 class="mini-title" data-t="appF-priv1h">Data Minimization</h4><p data-t="appF-priv1p">Collect only what is necessary for security, anti-fraud, compliance, or product functionality.</p></div>
-    <div class="card card-p"><h4 class="mini-title" data-t="appF-priv2h">Purpose Limitation</h4><p data-t="appF-priv2p">Use data only for stated purposes: access control, support, analytics, compliance.</p></div>
-    <div class="card card-green"><h4 class="mini-title" data-t="appF-priv3h">Security &amp; Retention</h4><p data-t="appF-priv3p">Apply reasonable technical and organizational safeguards. Retain data only as long as necessary; delete or anonymize where feasible.</p></div>
-    <div class="card card-teal"><h4 class="mini-title" data-t="appF-priv4h">On-Chain Data</h4><p data-t="appF-priv4p">On-chain data is public by design. Mission Chain cannot delete on-chain records.</p></div>
+    <p><strong>Status:</strong> This appendix slot has been reserved and renamed according to the current White Paper structure. Official content will be inserted from the approved source document in a later update.</p>
   </div>
 </div>
 
@@ -1722,32 +1679,36 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
 <div id="appG" class="section">
   <div class="app-header">
     <div class="app-header-num">APPENDIX G</div>
-    <h2 data-t="appG-title">👩‍💻 NIRA — AI Agent &amp; Governance Support</h2>
+    <h2>Financial Projections &amp; Capital Allocation (Internal)</h2>
   </div>
-  <p data-t="appG-p1">This Appendix defines the role of NIRA (AI Agent Mission Chain) — Mission Chain's intelligent governance assistant and operational analytics within Mission Chain. The AI layer enhances observability and proposal quality while preserving community authority and protocol guardrails.</p>
-  <div class="callout">
-    <p data-t="appG-core"><strong>Core Principle:</strong> NIRA MAY monitor, analyze, simulate scenarios, and generate bounded recommendations. NIRA MUST NOT execute parameter changes, move treasury assets, or access private keys. All critical actions require DAO processes and on-chain execution under timelocks/thresholds.</p>
+  <p>Reserved for the approved internal Financial Projections &amp; Capital Allocation appendix.</p>
+  <div class="callout warn">
+    <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
   </div>
-  <h3 class="sub-title" data-t="appG-monitors">G.3 What NIRA Monitors</h3>
-  <div class="grid2">
-    <div class="card card-teal"><h4 class="mini-title" data-t="appG-m1h">Emission &amp; Distribution Health</h4><p data-t="appG-m1p">E(t), pool allocations, concentration metrics, daily emission vs. baseline.</p></div>
-    <div class="card card-b"><h4 class="mini-title" data-t="appG-m2h">Liquidity &amp; Volatility</h4><p data-t="appG-m2p">On-chain liquidity depth, TWAP bands, volatility spikes, market integrity signals.</p></div>
-    <div class="card card-p"><h4 class="mini-title" data-t="appG-m3h">MICE Activity</h4><p data-t="appG-m3p">Active licenses (N_t), activation/expiry rates, mining participation health.</p></div>
-    <div class="card card-green"><h4 class="mini-title" data-t="appG-m4h">Reward Concentration</h4><p data-t="appG-m4p">Top-holder reward capture, stake distribution, Sybil patterns, abnormal volume.</p></div>
+</div>
+
+<!-- APPENDIX H -->
+<div id="appH" class="section">
+  <div class="app-header">
+    <div class="app-header-num">APPENDIX H</div>
+    <h2>DAO Operations &amp; Governance (Internal)</h2>
   </div>
-  <h3 class="sub-title" data-t="appG-workflow">G.6 Execution Workflow</h3>
-  <div class="timeline">
-    <div class="tl-item"><div class="tl-dot"></div><div class="tl-phase">Step 1</div><div class="tl-title" data-t="appG-step1">AI detects event and drafts governance support packet</div></div>
-    <div class="tl-item"><div class="tl-dot" style="border-color:var(--blue2)"><div style="width:8px;height:8px;background:var(--blue2);border-radius:50%"></div></div><div class="tl-phase" style="color:var(--blue2)">Step 2</div><div class="tl-title" data-t="appG-step2">Human review (Ops/committee) — validates bounds and correctness</div></div>
-    <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold)"><div style="width:8px;height:8px;background:var(--gold);border-radius:50%"></div></div><div class="tl-phase" style="color:var(--gold)">Step 3</div><div class="tl-title" data-t="appG-step3">Proposal submitted to DAO for community vote</div></div>
-    <div class="tl-item"><div class="tl-dot" style="border-color:var(--green)"><div style="width:8px;height:8px;background:var(--green);border-radius:50%"></div></div><div class="tl-phase" style="color:var(--green)">Step 4</div><div class="tl-title" data-t="appG-step4">Timelock delay → on-chain execution via governance contracts → post-change monitoring</div></div>
+  <p>Reserved for the approved internal DAO Operations &amp; Governance appendix.</p>
+  <div class="callout warn">
+    <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
   </div>
-  <h3 class="sub-title" data-t="appG-cadence">G.8 Transparency &amp; Reporting Cadence</h3>
-  <ul class="dot-list">
-    <li data-t="appG-c1">Weekly "Economic Health Snapshot"</li>
-    <li data-t="appG-c2">Monthly "Governance Metrics Report"</li>
-    <li data-t="appG-c3">Incident report within 24–72h for major anomalies (severity-based)</li>
-  </ul>
+</div>
+
+<!-- APPENDIX I -->
+<div id="appI" class="section">
+  <div class="app-header">
+    <div class="app-header-num">APPENDIX I</div>
+    <h2>NIRA-AI Operations &amp; Governance Support (Internal)</h2>
+  </div>
+  <p>Reserved for the approved internal NIRA-AI Operations &amp; Governance Support appendix.</p>
+  <div class="callout warn">
+    <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
+  </div>
 </div>
 
 <!-- ════ FOOTER ════ -->
@@ -1789,13 +1750,15 @@ const LANG = {
     "nav-s10": '10. Risk & Mitigation',
     "nav-s12": '11. Conclusion',
     "nav-app": 'Appendices',
-    "nav-appA": 'A. Seed & Private Sale',
-    "nav-appB": 'B. Pre-Sale Community',
+    "nav-appA": 'A. Seed Round',
+    "nav-appB": 'B. Pre-Sale',
     "nav-appC": 'C. MICE Sale Structure',
     "nav-appD": 'D. Economic Formal Spec',
-    "nav-appE": 'E. Economic Spec',
+    "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacy',
-    "nav-appG": '👩\u200d💻 G. NIRA AI Agent',
+    "nav-appG": 'G. Financial Projections',
+    "nav-appH": 'H. DAO Operations',
+    "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Official White Paper · v3.5',
     "hero-sub": 'NETWORK',
     "hero-tagline": 'Inspired by Faith. Built for People.',
@@ -1818,13 +1781,15 @@ const LANG = {
     "toc-9": 'Roadmap',
     "toc-10": 'Risk & Mitigation',
     "toc-12": 'Conclusion',
-    "toc-a": 'Appendix A — Seed & Private Sale',
-    "toc-b": 'Appendix B — Pre-Sale Community',
+    "toc-a": 'Appendix A — Seed Round (Private Sale to Early and Strategic Investors)',
+    "toc-b": 'Appendix B — Pre-Sale',
     "toc-c": 'Appendix C — MICE Sale Structure',
     "toc-d": 'Appendix D — Economic Formal Specification',
-    "toc-e": 'Appendix E — Economic Specification',
-    "toc-f": 'Appendix F — Legal & Privacy',
-    "toc-g": 'Appendix G — NIRA AI Agent',
+    "toc-e": 'Appendix E — Market Entry Strategy',
+    "toc-f": 'Appendix F — Legal, Disclaimers & Privacy Policy',
+    "toc-g": 'Appendix G — Financial Projections & Capital Allocation (Internal)',
+    "toc-h": 'Appendix H — DAO Operations & Governance (Internal)',
+    "toc-i": 'Appendix I — NIRA-AI Operations & Governance Support (Internal)',
     "s1-title": 'Abstract',
     "s1-lead": 'Mission Chain is a decentralized technological infrastructure designed to restore creative sovereignty, uphold human dignity, and enable purposeful value creation in the digital economy.',
     "s1-p1": 'Inspired by enduring ethical principles, the protocol operates as an open, neutral, and inclusive system — governed not by centralized authority, but by immutable rules of integrity, accountability, and collective trust. By integrating high-performance blockchain architecture, Artificial Intelligence (AI), and autonomous economic protocols, Mission Chain provides a transparent and sustainable foundation for creators, educators, innovators, and communities to co-create and exchange value.',
@@ -2158,13 +2123,15 @@ const LANG = {
     "nav-s10": '10. Riesgo & Mitigación',
     "nav-s12": '11. Conclusión',
     "nav-app": 'Apéndices',
-    "nav-appA": 'A. Venta Semilla & Privada',
-    "nav-appB": 'B. Pre-Venta Comunidad',
+    "nav-appA": 'A. Seed Round',
+    "nav-appB": 'B. Pre-Sale',
     "nav-appC": 'C. Estructura Venta MICE',
     "nav-appD": 'D. Especificación Económica',
-    "nav-appE": 'E. Especificación Económica',
+    "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacidad',
-    "nav-appG": '👩\u200d💻 G. NIRA AI Agent',
+    "nav-appG": 'G. Financial Projections',
+    "nav-appH": 'H. DAO Operations',
+    "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Libro Blanco Oficial · v3.5',
     "hero-sub": 'RED',
     "hero-tagline": 'Inspirado en la Fe. Construido para las Personas.',
@@ -2187,13 +2154,15 @@ const LANG = {
     "toc-9": 'Hoja de Ruta',
     "toc-10": 'Riesgos & Mitigación',
     "toc-12": 'Conclusión',
-    "toc-a": 'Apéndice A — Ronda Semilla & Venta Privada',
-    "toc-b": 'Apéndice B — Pre-Venta Comunidad',
+    "toc-a": 'Appendix A — Seed Round (Private Sale to Early and Strategic Investors)',
+    "toc-b": 'Appendix B — Pre-Sale',
     "toc-c": 'Apéndice C — Estructura de Venta MICE',
     "toc-d": 'Apéndice D — Especificación Económica Formal',
-    "toc-e": 'Apéndice E — Especificación Económica',
-    "toc-f": 'Apéndice F — Legal & Privacidad',
-    "toc-g": 'Apéndice G — NIRA Agente IA',
+    "toc-e": 'Appendix E — Market Entry Strategy',
+    "toc-f": 'Appendix F — Legal, Disclaimers & Privacy Policy',
+    "toc-g": 'Appendix G — Financial Projections & Capital Allocation (Internal)',
+    "toc-h": 'Appendix H — DAO Operations & Governance (Internal)',
+    "toc-i": 'Appendix I — NIRA-AI Operations & Governance Support (Internal)',
     "stat-supply": 'Oferta Máxima MIC',
     "stat-mining": 'Minería Progresiva',
     "stat-mice": 'Cap MICE',
@@ -2527,13 +2496,15 @@ const LANG = {
     "nav-s10": '10. Risco & Mitigação',
     "nav-s12": '11. Conclusão',
     "nav-app": 'Apêndices',
-    "nav-appA": 'A. Venda Semente & Privada',
-    "nav-appB": 'B. Pré-Venda Comunidade',
+    "nav-appA": 'A. Seed Round',
+    "nav-appB": 'B. Pre-Sale',
     "nav-appC": 'C. Estrutura de Venda MICE',
     "nav-appD": 'D. Especificação Econômica',
-    "nav-appE": 'E. Especificação Econômica',
+    "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacidade',
-    "nav-appG": '👩\u200d💻 G. NIRA AI Agent',
+    "nav-appG": 'G. Financial Projections',
+    "nav-appH": 'H. DAO Operations',
+    "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Whitepaper Oficial · v3.5',
     "hero-sub": 'REDE',
     "hero-tagline": 'Inspirado pela Fé. Construído para as Pessoas.',
@@ -2556,13 +2527,15 @@ const LANG = {
     "toc-9": 'Roteiro',
     "toc-10": 'Riscos & Mitigação',
     "toc-12": 'Conclusão',
-    "toc-a": 'Apêndice A — Rodada Semente & Venda Privada',
-    "toc-b": 'Apêndice B — Pré-Venda Comunidade',
+    "toc-a": 'Appendix A — Seed Round (Private Sale to Early and Strategic Investors)',
+    "toc-b": 'Appendix B — Pre-Sale',
     "toc-c": 'Apêndice C — Estrutura de Venda MICE',
     "toc-d": 'Apêndice D — Especificação Econômica Formal',
-    "toc-e": 'Apêndice E — Especificação Econômica',
-    "toc-f": 'Apêndice F — Legal & Privacidade',
-    "toc-g": 'Apêndice G — NIRA Agente IA',
+    "toc-e": 'Appendix E — Market Entry Strategy',
+    "toc-f": 'Appendix F — Legal, Disclaimers & Privacy Policy',
+    "toc-g": 'Appendix G — Financial Projections & Capital Allocation (Internal)',
+    "toc-h": 'Appendix H — DAO Operations & Governance (Internal)',
+    "toc-i": 'Appendix I — NIRA-AI Operations & Governance Support (Internal)',
     "stat-supply": 'Oferta Máxima MIC',
     "stat-mining": 'Mineração Progressiva',
     "stat-mice": 'Cap MICE',
@@ -2896,13 +2869,15 @@ const LANG = {
     "nav-s10": '10. 위험 & 완화',
     "nav-s12": '11. 결론',
     "nav-app": '부록',
-    "nav-appA": 'A. 시드 & 프라이빗 세일',
-    "nav-appB": 'B. 프리세일 커뮤니티',
+    "nav-appA": 'A. Seed Round',
+    "nav-appB": 'B. Pre-Sale',
     "nav-appC": 'C. MICE 판매 구조',
     "nav-appD": 'D. 경제 명세',
-    "nav-appE": 'E. 경제 공식 명세',
+    "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. 법적 & 개인정보',
-    "nav-appG": '👩\u200d💻 G. NIRA AI Agent',
+    "nav-appG": 'G. Financial Projections',
+    "nav-appH": 'H. DAO Operations',
+    "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": '공식 백서 · v3.5',
     "hero-sub": '네트워크',
     "hero-tagline": '믿음에서 영감을 받아. 사람들을 위해 구축되었습니다.',
@@ -2925,13 +2900,15 @@ const LANG = {
     "toc-9": '로드맵',
     "toc-10": '위험 & 완화',
     "toc-12": '결론',
-    "toc-a": '부록 A — 시드 라운드 & 프라이빗 세일',
-    "toc-b": '부록 B — 프리세일 커뮤니티',
+    "toc-a": 'Appendix A — Seed Round (Private Sale to Early and Strategic Investors)',
+    "toc-b": 'Appendix B — Pre-Sale',
     "toc-c": '부록 C — MICE 판매 구조',
     "toc-d": '부록 D — 경제 공식 명세',
-    "toc-e": '부록 E — 경제 공식 명세',
-    "toc-f": '부록 F — 법적 & 개인정보',
-    "toc-g": '부록 G — NIRA AI 에이전트',
+    "toc-e": 'Appendix E — Market Entry Strategy',
+    "toc-f": 'Appendix F — Legal, Disclaimers & Privacy Policy',
+    "toc-g": 'Appendix G — Financial Projections & Capital Allocation (Internal)',
+    "toc-h": 'Appendix H — DAO Operations & Governance (Internal)',
+    "toc-i": 'Appendix I — NIRA-AI Operations & Governance Support (Internal)',
     "stat-supply": 'MIC 최대 공급량',
     "stat-mining": '점진적 채굴',
     "stat-mice": 'MICE 한도',
@@ -3265,13 +3242,15 @@ const LANG = {
     "nav-s10": '10. Rủi ro & Giải pháp',
     "nav-s12": '11. Kết luận',
     "nav-app": 'Phụ lục',
-    "nav-appA": 'A. Seed & Private Sale',
-    "nav-appB": 'B. Pre-Sale Cộng đồng',
+    "nav-appA": 'A. Seed Round',
+    "nav-appB": 'B. Pre-Sale',
     "nav-appC": 'C. Cấu trúc Bán MICE',
     "nav-appD": 'D. Đặc tả Kinh tế',
-    "nav-appE": 'E. Đặc tả Kinh tế',
+    "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Pháp lý & Quyền riêng tư',
-    "nav-appG": '👩\u200d💻 G. NIRA AI Agent',
+    "nav-appG": 'G. Financial Projections',
+    "nav-appH": 'H. DAO Operations',
+    "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Sách Trắng Chính Thức · v3.5',
     "hero-sub": 'MẠNG LƯỚI',
     "hero-tagline": 'Lấy cảm hứng từ Đức tin. Xây dựng cho Con người.',
@@ -3294,13 +3273,15 @@ const LANG = {
     "toc-9": 'Lộ trình',
     "toc-10": 'Rủi ro & Giải pháp',
     "toc-12": 'Kết luận',
-    "toc-a": 'Phụ lục A — Vòng Hạt Giống & Bán Riêng tư',
-    "toc-b": 'Phụ lục B — Tiền bán Cộng đồng',
+    "toc-a": 'Appendix A — Seed Round (Private Sale to Early and Strategic Investors)',
+    "toc-b": 'Appendix B — Pre-Sale',
     "toc-c": 'Phụ lục C — Cấu trúc Bán MICE',
     "toc-d": 'Phụ lục D — Đặc tả Kinh tế Chính thức',
-    "toc-e": 'Phụ lục E — Đặc tả Kinh tế Chính thức',
-    "toc-f": 'Phụ lục F — Pháp lý & Quyền riêng tư',
-    "toc-g": 'Phụ lục G — NIRA AI Agent',
+    "toc-e": 'Appendix E — Market Entry Strategy',
+    "toc-f": 'Appendix F — Legal, Disclaimers & Privacy Policy',
+    "toc-g": 'Appendix G — Financial Projections & Capital Allocation (Internal)',
+    "toc-h": 'Appendix H — DAO Operations & Governance (Internal)',
+    "toc-i": 'Appendix I — NIRA-AI Operations & Governance Support (Internal)',
     "stat-supply": 'Cung tối đa MIC',
     "stat-mining": 'Đào tiến trình',
     "stat-mice": 'Giới hạn MICE',
