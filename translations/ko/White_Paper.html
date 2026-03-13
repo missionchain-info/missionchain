@@ -351,8 +351,8 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </div>
 <div class="nav-group">
 <div class="nav-group-label">문서</div>
-<a class="nav-link" href="index.html">미션 웹사이트</a>
-<a class="nav-link" href="Glossary_Brand_Terms.html">Glossary of Brand Terms</a>
+<a class="nav-link" href="index.html">Mission Chain 웹사이트</a>
+<a class="nav-link" href="Glossary_Brand_Terms.html">브랜드 용어집</a>
 </div>
 <div class="nav-group">
 <div class="nav-group-label">주요 섹션</div>
@@ -372,15 +372,15 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </div>
 <div class="nav-group">
 <div class="nav-group-label" data-t="nav-app">부록</div>
-<button class="nav-link" data-t="nav-appA" onclick="goTo('appA')">A. 시드 라운드</button>
-<button class="nav-link" data-t="nav-appB" onclick="goTo('appB')">B. 사전 판매</button>
+<button class="nav-link" data-t="nav-appA" onclick="goTo('appA')">A. Seed Round</button>
+<button class="nav-link" data-t="nav-appB" onclick="goTo('appB')">B. Pre-Sale</button>
 <button class="nav-link" data-t="nav-appC" onclick="goTo('appC')">C. MICE 판매 구조</button>
-<button class="nav-link" data-t="nav-appD" onclick="goTo('appD')">D. 경제적인 공식 스펙</button>
+<button class="nav-link" data-t="nav-appD" onclick="goTo('appD')">D. 경제 공식 명세</button>
 <button class="nav-link" data-t="nav-appE" onclick="goTo('appE')">E. 시장 진입 전략</button>
-<button class="nav-link" data-t="nav-appF" onclick="goTo('appF')">F. 법률 및 개인정보 보호</button>
-<button class="nav-link" data-t="nav-appG" onclick="goTo('appG')">G. 재무 전망(내부)</button>
-<button class="nav-link" data-t="nav-appH" onclick="goTo('appH')">H. DAO 운영(내부)</button>
-<button class="nav-link" data-t="nav-appI" onclick="goTo('appI')">I. NIRA-AI 운영(내부)</button>
+<button class="nav-link" data-t="nav-appF" onclick="goTo('appF')">F. 법률, 고지 및 개인정보</button>
+<button class="nav-link" data-t="nav-appG" onclick="goTo('appG')">G. 재무 전망 (내부)</button>
+<button class="nav-link" data-t="nav-appH" onclick="goTo('appH')">H. DAO 운영 (내부)</button>
+<button class="nav-link" data-t="nav-appI" onclick="goTo('appI')">I. NIRA-AI 운영 (내부)</button>
 </div>
 </nav>
 <!-- ── MAIN ── -->
@@ -454,7 +454,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <a class="toc-item" onclick="goTo('appA')"><span class="toc-num">A</span><span class="toc-name">부록 A - 시드 라운드(초기 및 전략적 투자자를 대상으로 한 비공개 판매)</span></a>
 <a class="toc-item" onclick="goTo('appB')"><span class="toc-num">B</span><span class="toc-name">부록 B - 사전 판매</span></a>
 <a class="toc-item" onclick="goTo('appC')"><span class="toc-num">C</span><span class="toc-name">부록 C - MICE 판매 구조</span></a>
-<a class="toc-item" onclick="goTo('appD')"><span class="toc-num">D</span><span class="toc-name">부록 D - 경제적 공식 사양</span></a>
+<a class="toc-item" onclick="goTo('appD')"><span class="toc-num">D</span><span class="toc-name">부록 D - 경제 공식 명세</span></a>
 <a class="toc-item" onclick="goTo('appE')"><span class="toc-num">E</span><span class="toc-name">부록 E - 시장 진출 전략</span></a>
 <a class="toc-item" onclick="goTo('appF')"><span class="toc-num">F</span><span class="toc-name">부록 F - 법률, 면책 조항 및 개인정보 보호정책</span></a>
 <a class="toc-item" onclick="goTo('appG')"><span class="toc-num">G</span><span class="toc-name">부록 G - 재무 전망 및 자본 배분(내부)</span></a>
@@ -803,7 +803,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <h3 class="sub-title">8.1 Hindex Algorithm</h3>
 <div class="formula">
 <span class="math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span><br/>
-<span class="comment">E<sub>base</sub> = 2,037,671 MIC/일 - 1단계 부트스트래핑 중 B = 6.5 - D(t) = 0.95<sup>t/90</sup> - L(t) = 클램프[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>분</sub>, L<sub>최대</sub>]</span>
+<span class="comment">E<sub>base</sub> = 2,037,671 MIC/일 - 1단계 부트스트래핑 중 B = 6.5 - D(t) = 0.95<sup>t/90</sup> - L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span>
 </div>
 <div class="wp-table-wrap" style="margin-top:18px">
 <table class="wp-table">
@@ -1519,7 +1519,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </div>
 <h4 class="mini-title">D.3.3 Liquidity 조정 L(t) - Hindex 계수</h4>
 <div class="formula">
-<span class="math">L(t) = 클램프[(TWAP<sub>7d</sub>(L<sub>t</sub>) / L<sub>ref</sub>)<sup>α</sup>, L<sub>분</sub>, L<sub>최대</sub>]</span>
+<span class="math">L(t) = Clamp[(TWAP<sub>7d</sub>(L<sub>t</sub>) / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span>
 </div>
 <p><span class="math">L(t)</span> 는 Hindex Algorithm의 핵심 혁신입니다. 실제 온체인 유동성 조건에 따라 일일 배출량을 동적으로 조정하여 활동이 적은 기간 동안 과도한 발행을 방지하고 진정한 생태계가 성장하는 동안 보상을 적절하게 확장합니다.</p>
 <div class="wp-table-wrap">
@@ -1529,8 +1529,8 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <tr><td><span class="math">TWAP<sub>7d</sub>(L<sub>t</sub>)</span></td><td>mCPLH00002/USDT 쌍에 대한 7일 시간 가중 평균 온체인 DEX 유동성</td><td>오라클 공급, 온체인</td></tr>
 <tr><td><span class="math">L<sub>ref</sub></span></td><td>현재 유동성을 측정하는 기준 유동성 기준선</td><td>DAO-세트, 범위 내</td></tr>
 <tr><td><span class="math">α</span></td><td>유동성 변화에 따라 배출이 얼마나 강하게 반응하는지를 제어하는 Liquidity 민감도 계수</td><td>DAO-조정 가능, 바운드</td></tr>
-<tr><td><span class="math">L<sub>분</sub></span></td><td>저유동성 조건에서 기준 배출량을 보장하는 최소 배출 승수 상한선</td><td>프로토콜 정의, 불변</td></tr>
-<tr><td><span class="math">L<sub>최대</sub></span></td><td>유동성이 높은 기간의 최대 방출 승수 상한 증폭 제한</td><td>프로토콜 정의, 불변</td></tr>
+<tr><td><span class="math">L<sub>min</sub></span></td><td>저유동성 조건에서 기준 배출량을 보장하는 최소 배출 승수 상한선</td><td>프로토콜 정의, 불변</td></tr>
+<tr><td><span class="math">L<sub>max</sub></span></td><td>유동성이 높은 기간의 최대 방출 승수 상한 증폭 제한</td><td>프로토콜 정의, 불변</td></tr>
 <tr><td><span class="math">Clamp(x, a, b)</span></td><td>반환 <span class="math">max(a, min(b, x))</span> 그래서 <span class="math">L(t)</span> 항상 범위 내에서 유지</td><td>결정론적, 온체인</td></tr>
 </tbody>
 </table>
@@ -1617,7 +1617,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <thead><tr><th>보증</th><th>메커니즘</th></tr></thead>
 <tbody>
 <tr><td>총 MIC 공급량은 영구적으로 7,000,000,000 토큰으로 제한됩니다</td><td><span class="math">S<sub>최대</sub></span> 불변 - 어떤 공식이나 거버넌스 조치도 이 한계를 초과할 수 없습니다</td></tr>
-<tr><td>거버넌스에서 승인한 제한적인 규칙 내에서만 배출이 조정됩니다</td><td><span class="math">L(t)</span> 클램프 기능 적용 <span class="math">L<sub>분</sub> ≤ L(t) ≤ L<sub>최대</sub></span> 항상</td></tr>
+<tr><td>거버넌스에서 승인한 제한적인 규칙 내에서만 배출이 조정됩니다</td><td><span class="math">L(t)</span> 클램프 기능 적용 <span class="math">L<sub>min</sub> ≤ L(t) ≤ L<sub>max</sub></span> 항상</td></tr>
 <tr><td>자본 우위가 아닌 참여 지분에 따라 보상이 확장됩니다</td><td>D.5-D.7의 비례 공식: 보상 = <span class="math">(스테이크<sub>i</sub> / 총 지분) × 풀</span></td></tr>
 <tr><td>거버넌스로 인해 금전적 무결성이 손상될 수 없습니다</td><td><span class="math">S<sub>최대</sub></span>, <span class="math">S<sub>마이닝</sub></span>, <span class="math">S<sub>pre</sub></span>및 <span class="math">E<sub>base</sub></span> 는 프로토콜 수준 상수입니다</td></tr>
 <tr><td>모든 계산은 결정론적이고 감사 가능하며 재현 가능합니다</td><td>다음과 같은 모든 입력 <span class="math">E(t)</span>, <span class="math">N<sub>t</sub></span>, <span class="math">M<sub>i</sub></span>, <span class="math">S<sub>i</sub></span>및 <span class="math">TWAP<sub>7d</sub></span> 온체인 검증 가능</td></tr>
@@ -4922,19 +4922,39 @@ const LANG = {
   }
 };
 
-let curLang = 'en';
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
+let curLang = detectLocale();
 const THEME_KEY = 'missionchain-theme';
+function syncWhitePaperLanguageButtons() {
+  document.querySelectorAll('[id^="lb-"]').forEach(btn => btn.classList.remove('active'));
+  const active = document.getElementById('lb-' + curLang);
+  if (active) active.classList.add('active');
+  document.documentElement.lang = curLang;
+}
 function setLang(lang) {
   curLang = lang;
-  const d = LANG[lang] || LANG.en;
-  document.querySelectorAll('[data-t]').forEach(el => {
-    const key = el.getAttribute('data-t');
-    if (d[key]) el.innerHTML = d[key];
-    else if (LANG.en[key]) el.innerHTML = LANG.en[key];
-  });
-  document.querySelectorAll('.lbtn').forEach(b => b.classList.remove('active'));
-  document.getElementById('lb-' + lang).classList.add('active');
-  document.documentElement.lang = lang;
+  syncWhitePaperLanguageButtons();
+  window.location.href = getLocalizedHref(lang, 'White_Paper.html');
 }
 
 function setTheme(theme) {
@@ -4945,6 +4965,7 @@ function setTheme(theme) {
   localStorage.setItem(THEME_KEY, theme);
 }
 
+syncWhitePaperLanguageButtons();
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 
 const INTERNAL_GATES = { appG: 'MIC022026@@', appH: 'MIC022026@@', appI: 'MIC022026@@' };

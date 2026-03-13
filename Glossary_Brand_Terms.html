@@ -121,6 +121,11 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
   <a class="top-btn" href="index.html">Website</a>
   <a class="top-btn" href="White_Paper.html">White Paper</a>
   <a class="top-btn active" href="Glossary_Brand_Terms.html">Glossary</a>
+  <button class="top-btn active" onclick="setLang('en')" id="lb-en" type="button">EN</button>
+  <button class="top-btn" onclick="setLang('es')" id="lb-es" type="button">ES</button>
+  <button class="top-btn" onclick="setLang('pt')" id="lb-pt" type="button">PT</button>
+  <button class="top-btn" onclick="setLang('ko')" id="lb-ko" type="button">한국어</button>
+  <button class="top-btn" onclick="setLang('vi')" id="lb-vi" type="button">VI</button>
 </div>
 <button id="toggle-sb" onclick="toggleSidebar()">☰</button>
 <nav id="sidebar">
@@ -360,7 +365,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
   </footer>
 </main>
 <script>
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
 const THEME_KEY = 'missionchain-theme';
+function syncGlossaryLanguageButtons() {
+  const current = detectLocale();
+  document.querySelectorAll('[id^="lb-"]').forEach(btn => btn.classList.remove('active'));
+  const active = document.getElementById('lb-' + current);
+  if (active) active.classList.add('active');
+  document.documentElement.lang = current;
+}
+function setLang(lang) {
+  window.location.href = getLocalizedHref(lang, 'Glossary_Brand_Terms.html');
+}
 function setTheme(theme) {
   const isLight = theme === 'night';
   document.body.classList.toggle('theme-light', isLight);
@@ -368,6 +404,7 @@ function setTheme(theme) {
   document.getElementById('theme-night').classList.toggle('active', isLight);
   localStorage.setItem(THEME_KEY, theme);
 }
+syncGlossaryLanguageButtons();
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 function goTo(id) {
   const el = document.getElementById(id);

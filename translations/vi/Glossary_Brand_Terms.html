@@ -114,19 +114,24 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </head>
 <body>
 <div id="lang-bar">
-<div aria-label="Trình chuyển đổi chủ đề" class="theme-toggle-group">
-<button aria-label="Chủ đề ánh sáng ban ngày" class="theme-btn active" id="theme-daylight" onclick="setTheme('daylight')">☀</button>
-<button aria-label="Chủ đề ban đêm" class="theme-btn" id="theme-night" onclick="setTheme('night')">☾</button>
-</div>
-<a class="top-btn" href="index.html">Trang web</a>
-<a class="top-btn" href="White_Paper.html">White Paper</a>
-<a class="top-btn active" href="Glossary_Brand_Terms.html">Bảng thuật ngữ</a>
+  <div class="theme-toggle-group" aria-label="Theme switcher">
+    <button class="theme-btn active" onclick="setTheme('daylight')" id="theme-daylight" aria-label="Daylight theme">☀</button>
+    <button class="theme-btn" onclick="setTheme('night')" id="theme-night" aria-label="Night theme">☾</button>
+  </div>
+  <a class="top-btn" href="index.html">Website Mission Chain</a>
+  <a class="top-btn" href="White_Paper.html">White Paper</a>
+  <a class="top-btn active" href="Glossary_Brand_Terms.html">Thuật ngữ</a>
+  <button class="top-btn" onclick="setLang('en')" id="lb-en" type="button">EN</button>
+  <button class="top-btn" onclick="setLang('es')" id="lb-es" type="button">ES</button>
+  <button class="top-btn" onclick="setLang('pt')" id="lb-pt" type="button">PT</button>
+  <button class="top-btn" onclick="setLang('ko')" id="lb-ko" type="button">한국어</button>
+  <button class="top-btn active" onclick="setLang('vi')" id="lb-vi" type="button">VI</button>
 </div>
 <button id="toggle-sb" onclick="toggleSidebar()">☰</button>
 <nav id="sidebar">
 <div class="sidebar-logo">
 <img alt="Mission Chain" src="../../mission-chain-logo-clear.png"/>
-<div class="sidebar-logo-text">Mission Chain<span>Glossary of Brand Terms</span></div>
+<div class="sidebar-logo-text">Mission Chain<span>Bang Thuat ngu Thuong hieu</span></div>
 </div>
 <div class="nav-group">
 <div class="nav-group-label">Bảng thuật ngữ</div>
@@ -143,7 +148,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </div>
 <div class="nav-group">
 <div class="nav-group-label">Tài liệu</div>
-<a class="nav-link" href="index.html">Trang web của Sứ mệnh</a>
+<a class="nav-link" href="index.html">Website Mission Chain</a>
 <a class="nav-link" href="White_Paper.html">White Paper</a>
 </div>
 </nav>
@@ -151,8 +156,8 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <section class="hero" id="hero">
 <div class="hero-grid">
 <div class="anim a1">
-<div class="hero-eyebrow">Mission Chain Tài liệu</div>
-<h1 class="hero-title">Từ điển thuật ngữ <span>Điều khoản thương hiệu</span></h1>
+<div class="hero-eyebrow">Tai lieu Mission Chain</div>
+<h1 class="hero-title">Từ điển thuật ngữ <span>Thuat ngu Thuong hieu</span></h1>
 <p class="hero-tagline">Ngôn ngữ không thể dịch cho các đội ngũ dịch thuật, chuyên gia truyền thông và đối tác trong hệ sinh thái</p>
 <div class="hero-quote">"Các con là ánh sáng của thế gian. Một thành phố trên núi không thể bị che khuất."<cite>Ma-thi-ơ 5:14</cite></div>
 <div class="hero-meta">
@@ -176,7 +181,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <a class="toc-item" href="#purpose"><span class="toc-num">00</span><span class="toc-name">Mục đích và Quy tắc cơ bản</span></a>
 <a class="toc-item" href="#brand"><span class="toc-num">01</span><span class="toc-name">Tên thương hiệu và hệ sinh thái</span></a>
 <a class="toc-item" href="#product"><span class="toc-num">02</span><span class="toc-name">Tên sản phẩm và nền tảng</span></a>
-<a class="toc-item" href="#economic"><span class="toc-num">03</span><span class="toc-name">Các công cụ kinh tế và tên Token</span></a>
+<a class="toc-item" href="#economic"><span class="toc-num">03</span><span class="toc-name">Các công cụ kinh tế và ten token</span></a>
 <a class="toc-item" href="#governance"><span class="toc-num">04</span><span class="toc-name">Quản trị, Cơ chế và Thuật ngữ kỹ thuật</span></a>
 <a class="toc-item" href="#community"><span class="toc-num">05</span><span class="toc-name">Vai trò trong cộng đồng và tên chương trình</span></a>
 <a class="toc-item" href="#platform"><span class="toc-num">06</span><span class="toc-name">Nền tảng, Nội dung và Điều khoản Kinh doanh</span></a>
@@ -196,7 +201,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <ul class="fancy-list">
 <li>Tên thương hiệu và hệ sinh thái</li>
 <li>Tên sản phẩm và nền tảng</li>
-<li>Các công cụ kinh tế và tên Token</li>
+<li>Các công cụ kinh tế và ten token</li>
 <li>Quản trị, Cơ chế và Thuật ngữ kỹ thuật</li>
 <li>Vai trò trong cộng đồng và tên chương trình</li>
 <li>Nền tảng, Nội dung và Điều khoản Kinh doanh</li>
@@ -211,7 +216,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <tr><td>Mission Chain Network</td><td>Thương hiệu Hệ sinh thái (chính thức)</td><td>Tên đầy đủ chính thức của giao thức và hệ sinh thái. Sử dụng trong các tài liệu pháp lý, thông số kỹ thuật, thông tin liên lạc chính thức với nhà đầu tư và lần đầu tiên được đề cập trong các ấn phẩm chính thức. Sau lần đề cập đầu tiên, chỉ cần sử dụng "Mission Chain" là đủ.</td></tr>
 <tr><td>Mission DAO</td><td>Thực thể quản trị</td><td>Tổ chức tự trị phi tập trung (DAO) quản lý hệ sinh thái Mission Chain. "Mission DAO" là một danh từ riêng duy nhất. Từ "DAO" không bao giờ được tách rời khỏi "Mission" trong ngữ cảnh này. Có thể giải thích lần đầu tiên bằng ngôn ngữ địa phương kèm theo một chú thích ngắn — sau đó sử dụng "Mission DAO" từ lần sau.</td></tr>
 <tr><td>Creator Mission Economy</td><td>Khung khái niệm</td><td>Tên gọi của mô hình kinh tế mới mà Mission Chain giới thiệu — nơi đóng góp của con người được xác minh, chứ không phải đầu cơ tài chính, là động lực tạo ra giá trị. Đây là khái niệm thương hiệu chính thức. Giải thích khái niệm này bằng ngôn ngữ mục tiêu nếu cần thiết; giữ "Creator Mission Economy" làm nhãn tiếng Anh cho chính khái niệm này.</td></tr>
-<tr><td>Mission Network</td><td>Layer 2 Thương hiệu</td><td>Tên thương hiệu của cơ sở hạ tầng blockchain Layer 2 trong tương lai của Mission Chain — mạng lưới được thiết kế chuyên dụng mà toàn bộ hệ sinh thái sẽ vận hành trên đó, với MIC là đồng tiền gốc. Luôn viết hoa hai từ. Không bao giờ sử dụng "Mission Network Layer 2 chain" — hãy sử dụng "Mission Network Layer 2" hoặc "Mission Network" riêng lẻ sau lần đề cập đầu tiên.</td></tr>
+<tr><td>Mission Network</td><td>Thuong hieu Layer 2</td><td>Tên thương hiệu của cơ sở hạ tầng blockchain Layer 2 trong tương lai của Mission Chain — mạng lưới được thiết kế chuyên dụng mà toàn bộ hệ sinh thái sẽ vận hành trên đó, với MIC là đồng tiền gốc. Luôn viết hoa hai từ. Không bao giờ sử dụng "Mission Network Layer 2 chain" — hãy sử dụng "Mission Network Layer 2" hoặc "Mission Network" riêng lẻ sau lần đề cập đầu tiên.</td></tr>
 <tr><td>Mission Network Layer 2</td><td>Chức danh kỹ thuật</td><td>Tên đầy đủ của blockchain Mission Chain Layer 2. "Layer 2" là thuật ngữ kiến trúc blockchain được hiểu rộng rãi trên toàn cầu. Tên gọi này thể hiện cả loại công nghệ và vị trí của nó trong tầm nhìn dài hạn của Mission Chain. Sau lần đề cập đầu tiên: "Mission Network L2" là cách viết tắt được chấp nhận trong các bối cảnh không chính thức hoặc kỹ thuật.</td></tr></tbody></table></div>
 </section>
 <section class="section anim a1" id="product">
@@ -227,7 +232,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </section>
 <section class="section anim a1" id="economic">
 <div class="section-num">Mục 3</div>
-<h2 class="section-title">Các công cụ kinh tế và tên Token</h2>
+<h2 class="section-title">Các công cụ kinh tế và ten token</h2>
 <p>Đây là các công cụ tài chính và kinh tế của hệ sinh thái Mission Chain. Các công cụ này phải được sử dụng một cách chính xác để đảm bảo bản chất của công cụ không bao giờ bị hiểu sai đối với các bên tham gia, đối tác hoặc cơ quan quản lý.</p>
 <div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Thuật ngữ</th><th>Thể loại</th><th>Ý nghĩa &amp; Bối cảnh</th></tr></thead><tbody><tr><td>MIC</td><td>Token Mã chứng khoán</td><td>Tên mã chính thức và tên viết tắt của Mission Chain Token — token điều phối chung và đồng tiền gốc tương lai của Mission Network Layer 2. Luôn viết hoa. Trong lần đề cập đầu tiên trong bất kỳ tài liệu nào: "MIC (Mission Chain Token)" — sau đó chỉ sử dụng "MIC" mà thôi. Không viết "MIC token" sau khi tên đầy đủ đã được giới thiệu, vì "MIC" đã là tên đầy đủ. Không bao giờ dịch hoặc chuyển đổi thành từ tiếng địa phương.</td></tr>
 <tr><td>Mission Chain Token</td><td>Token Tên đầy đủ</td><td>Tên chính thức đầy đủ của MIC. Sử dụng trong các thông báo pháp lý, tài liệu cho nhà đầu tư, hồ sơ đăng ký với cơ quan quản lý và lần đầu tiên đề cập trong các ấn phẩm chính thức. Sau lần đề cập đầu tiên, chỉ sử dụng "MIC" một cách độc quyền.</td></tr>
@@ -303,35 +308,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <tr><td>BSC</td><td>Từ viết tắt kỹ thuật</td><td>BNB Smart Chain — chuỗi khối mà Mission Chain hiện đang được triển khai (Giai đoạn I – III). Một chuỗi khối tốc độ cao, chi phí thấp tương thích với EVM, có mặt rộng rãi tại Đông Nam Á và Châu Phi — các thị trường mục tiêu chính của Mission Chain. Luôn sử dụng "BSC" làm từ viết tắt sau lần đề cập đầu tiên. Trong lần đề cập đầu tiên: "BNB Smart Chain (BSC)."</td></tr></tbody></table></div>
 </section>
 <section class="section anim a1" id="math">
-<div class="section-num">Điều 7</div>
-<h2 class="section-title">Biến trong công thức toán học</h2>
-<p>Tất cả các công thức toán học, tên biến, ký hiệu hàm và hằng số số học trong các tài liệu Mission Chain phải được giữ nguyên chính xác như trong tiếng Anh, không được dịch sang ngôn ngữ địa phương đối với các ký hiệu, dấu phân cách hoặc ký hiệu.</p>
-<p>Mission Chain sử dụng dấu chấm (.) theo tiêu chuẩn quốc tế làm dấu phân cách thập phân trong tất cả các công thức, ví dụ: 0.65, 0.95 và 2.037.671. Không được thay thế dấu phẩy hoặc các quy ước thập phân địa phương trong ký hiệu công thức.</p>
-<div class="wp-table-wrap"><table class="wp-table formula-table"><thead><tr><th>Công thức / Biến</th><th>Định nghĩa / Ý nghĩa của từng biến</th></tr></thead><tbody><tr><td><span class="formula-math">E(t) = E<sub>cơ sở</sub> × B × D(t) × L(t)</span></td><td>Công thức phát thải hàng ngày MIC. t là số ngày trôi qua kể từ khi hệ sinh thái được tạo ra. Tất cả bốn thành phần được nhân với nhau để tạo ra E(t) — tổng lượng MIC được phát thải vào mạng lưới vào ngày t.</td></tr>
-<tr><td><span class="formula-math">E<sub>cơ sở</sub> = 2.037.671 MIC/ngày</span></td><td>Tỷ lệ phát thải hàng ngày được tính toán dựa trên cơ sở toán học. Đây là mức phát thải trung lập, khi được duy trì trong toàn bộ lịch trình phát thải với cơ chế suy giảm, sẽ phân phối chính xác 5.950.000.000 MIC (tương đương 85% tổng nguồn cung) cho nhóm khai thác.</td></tr>
-<tr><td><span class="formula-math">B = 6,5</span></td><td>Hệ số nhân Bootstrapping — chỉ hoạt động trong Giai đoạn I (kích hoạt mạng lưới ban đầu). Tăng tốc việc áp dụng ban đầu của MICE và gieo vốn thanh khoản cho hệ sinh thái mà không làm tăng tổng nguồn cung MIC.</td></tr>
-<tr><td><span class="formula-math">D(t) = 0,95<sup>t/90</sup></span></td><td>Chức năng suy giảm theo thời gian. Lượng phát hành giảm 5% mỗi 90 ngày (khoảng một quý). Điều này thúc đẩy kỷ luật tài chính dài hạn và tăng cường tính khan hiếm theo thời gian. Khi t tăng, D(t) tiến gần đến zero — lượng phát hành giảm theo hàm số vô hạn.</td></tr>
-<tr><td><span class="formula-math">L(t) = Kẹp [(TWAP<sub>7d</sub> / L<sub>tham chiếu</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>tối đa</sub>]</span></td><td>Hindex Liquidity yếu tố. Kết nối lượng phát hành hàng ngày với độ sâu thanh khoản thực tế trên chuỗi DEX. TWAP₇d = giá trung bình gia quyền theo thời gian 7 ngày của MIC/USDT. L_ref = mục tiêu thanh khoản tham chiếu. α = hệ số nhạy cảm (được quản lý bởi chủ sở hữu MFP-NFT trong giới hạn được phê duyệt bởi DAO). L_min, L_max = giới hạn sàn và trần ngăn chặn biến động phát hành cực đoan.</td></tr>
-<tr><td><span class="formula-math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0,65 × E(t)</span></td><td>Phần thưởng hàng ngày MIC cho nhà điều hành nút MICE i vào ngày t. M_i = số lượng giấy phép MICE đang hoạt động do nhà điều hành i nắm giữ. N_t = tổng số giấy phép MICE hoạt động trên tất cả các nhà điều hành vào ngày t. 0.65 = 65% lượng phát thải hàng ngày được phân bổ cho nhóm nút MICE. Khi N_t tăng (số lượng người tham gia nhiều hơn), phần chia cho từng nhà điều hành giảm — tổng lượng phát thải là cố định, không thể mở rộng.</td></tr>
-<tr><td><span class="formula-math">Trọng số phiếu bầu<sub>MFP,i</sub> = S<sub>i</sub> / Σ S<sub>MFP, đang hoạt động</sub></span></td><td>Trọng số biểu quyết của chủ sở hữu MFP-NFT i trong tầng quản trị hiến pháp. S_i = MIC được chủ sở hữu i đặt cọc. Σ S_MFP_active = tổng số MIC được tất cả các chủ sở hữu MFP-NFT hiện đang hoạt động (không bị đình chỉ) đặt cọc. Người nắm giữ không đặt cọc MIC sẽ có trọng số biểu quyết bằng không, bất kể họ nắm giữ bao nhiêu MFP-NFT.</td></tr>
-<tr><td><span class="formula-math">Chia sẻ bể bơi<sub>MFP,i</sub>(t) = (S)<sub>i</sub> / Σ S<sub>MFP</sub>) × 0,10 × E(t)</span></td><td>Phân bổ hàng ngày cho bể MIC dành cho chủ sở hữu MFP-NFT i. 0.10 = 10% lượng phát hành hàng ngày được phân bổ cho bể MFP-NFT. Phân phối được tính theo tỷ lệ tương ứng với số lượng MIC mà mỗi chủ sở hữu nắm giữ so với tổng số lượng MFP-NFT đang hoạt động.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Builder,i</sub> = S<sub>i</sub> / Σ S<sub>Builder, đang hoạt động</sub></span></td><td>Trọng số biểu quyết của chủ sở hữu Builder NFT trong các cuộc biểu quyết quản trị cấp Cộng đồng. Cấp cơ sở: Hệ số nhân trọng số 1×. Tỷ lệ thuận với số lượng MIC được staking giữa tất cả các chủ sở hữu Builder đang hoạt động.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Maker,i</sub> = (S<sub>i</sub> × 2) / Σ số tiền cược được tính theo tỷ lệ</span></td><td>Trọng số biểu quyết của chủ sở hữu Maker NFT i trong các cuộc bỏ phiếu cấp độ Cộng đồng. Hệ số nhân cấp độ 2× — mỗi MIC được staking bởi một Maker được tính là 2 đơn vị trọng số biểu quyết so với 1 đơn vị cho mỗi MIC được staking bởi một Builder. Σ trọng số cổ phần = tổng của tất cả các trọng số cổ phần theo cấp bậc trên các chủ sở hữu Builder (×1), Maker (×2) và Luminary (×4).</td></tr>
-<tr><td><span class="formula-math">VW<sub>Luminary,i</sub> = (S<sub>i</sub> × 4) / Σ số tiền cược được tính theo tỷ lệ</span></td><td>Trọng số biểu quyết của chủ sở hữu Luminary NFT trong các cuộc bỏ phiếu chung cấp độ Cộng đồng. Hệ số nhân cấp độ 4× — trọng số cao nhất trong cấp độ quản trị Cộng đồng. Tổng các cổ phần được tính trọng số được tính toán tương tự như đối với Maker ở trên.</td></tr>
-<tr><td><span class="formula-math">PS<sub>i</sub>(t) = (S)<sub>i</sub> / Σ S<sub>Cộng đồng, hoạt động</sub>) × tier_weight × 0,10 × E(t)</span></td><td>Phần chia sẻ hàng ngày của Community NFT cho người nắm giữ i. S_i = MIC được đặt cọc bởi người nắm giữ i. Σ S_Community_active = tổng số MIC được đặt cọc bởi tất cả người nắm giữ Community NFT hoạt động trên tất cả các cấp độ. tier_weight = hệ số trọng số được gán cho từng cấp độ (Builder = 1×, Maker = 2×, Luminary = 4×, các giá trị cụ thể do cơ quan quản trị thiết lập). 0.10 = 10% lượng phát hành hàng ngày được phân bổ cho bể Community NFT.</td></tr></tbody></table></div>
+<div class="section-num">Muc 7</div>
+<h2 class="section-title">Bien trong Cong thuc Toan hoc</h2>
+<p>Tat ca cong thuc toan hoc, ten bien, ky hieu ham va hang so trong tai lieu Mission Chain phai duoc giu nguyen dung nhu ban tieng Anh, khong duoc dia phuong hoa ky hieu, dau phan cach hay notations.</p>
+<p>Mission Chain su dung dau cham (.) lam dau thap phan theo chuan quoc te trong tat ca cong thuc, vi du 0.65, 0.95 va 2,037,671. Khong thay bang dau phay hoac quy uoc so dia phuong ben trong cu phap cong thuc.</p>
+<div class="wp-table-wrap"><table class="wp-table formula-table"><thead><tr><th>Cong thuc / Bien</th><th>Dinh nghia / Y nghia cua tung bien</th></tr></thead><tbody>
+<tr><td><span class="formula-math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span></td><td>Cong thuc phat thai MIC hang ngay. t la so ngay da troi qua ke tu genesis cua he sinh thai. Bon thanh phan duoc nhan voi nhau de tao ra E(t), tong MIC duoc phat hanh vao mang o ngay t.</td></tr>
+<tr><td><span class="formula-math">E<sub>base</sub> = 2,037,671 MIC/day</span></td><td>Muc phat thai co so duoc suy ra bang toan hoc. Neu duy tri trong toan bo chuong trinh cung voi decay da ap dung, muc nay se phan bo chinh xac 5,950,000,000 MIC (85% tong cung) vao mining reserve.</td></tr>
+<tr><td><span class="formula-math">B = 6.5</span></td><td>Bootstrap multiplier chi hoat dong trong Phase I. He so nay tang toc do chap nhan MICE ban dau va bo sung liquidity cho he sinh thai ma khong mo rong tong cung MIC.</td></tr>
+<tr><td><span class="formula-math">D(t) = 0.95<sup>t/90</sup></span></td><td>Ham time decay. Emission giam 5% sau moi 90 ngay, tao ky luat tien te dai han va muc do khan hiem tang dan theo thoi gian.</td></tr>
+<tr><td><span class="formula-math">L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span></td><td>Liquidity factor cua Hindex. Bien nay lien ket emission hang ngay voi do sau liquidity thuc te tren DEX. TWAP<sub>7d</sub> la gia MIC/USDT trung binh co trong so theo thoi gian trong 7 ngay. L<sub>ref</sub> la muc liquidity tham chieu.</td></tr>
+<tr><td><span class="formula-math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span></td><td>Phan thuong MIC hang ngay cua MICE operator i tai ngay t. M<sub>i</sub> la so license MICE dang hoat dong cua operator i. N<sub>t</sub> la tong so license MICE dang hoat dong tren toan mang. 0.65 la 65% daily emission duoc phan bo cho pool MICE.</td></tr>
+<tr><td><span class="formula-math">VotingWeight<sub>MFP,i</sub> = S<sub>i</sub> / Σ S<sub>MFP,active</sub></span></td><td>Trong so bo phieu cua holder MFP-NFT i. S<sub>i</sub> la luong MIC duoc staking boi holder i. Σ S<sub>MFP,active</sub> la tong MIC staking cua tat ca holder MFP dang active.</td></tr>
+<tr><td><span class="formula-math">PoolShare<sub>MFP,i</sub>(t) = (S<sub>i</sub> / Σ S<sub>MFP,active</sub>) × 0.10 × E(t)</span></td><td>Phan bo MIC hang ngay tu constitutional pool cho holder MFP-NFT i. 0.10 bieu thi 10% daily emission duoc danh cho pool MFP-NFT.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Builder,i</sub> = S<sub>i</sub> / Σ S<sub>Builder,active</sub></span></td><td>Trong so bo phieu cua Builder NFT holder i trong governance cap cong dong. Day la cap co so voi he so 1×.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Maker,i</sub> = (S<sub>i</sub> × 2) / Σ weighted stakes</span></td><td>Trong so bo phieu cua Maker NFT holder i trong bo phieu cong dong tong hop. MIC staking cua Maker duoc tinh voi he so 2× trong tong weighted stakes.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Luminary,i</sub> = (S<sub>i</sub> × 4) / Σ weighted stakes</span></td><td>Trong so bo phieu cua Luminary NFT holder i. Day la trong so cao nhat trong tier governance cong dong, voi he so 4×.</td></tr>
+<tr><td><span class="formula-math">PS<sub>i</sub>(t) = (S<sub>i</sub> / Σ S<sub>Community,active</sub>) × tier_weight × 0.10 × E(t)</span></td><td>Phan chia pool Community NFT hang ngay cho holder i. tier_weight la he so theo cap (Builder 1×, Maker 2×, Luminary 4×, tru khi governance phe duyet dieu chinh).</td></tr>
+</tbody></table></div>
 <div class="callout gold">
-<h3 class="sub-title">Tại sao công thức không được dịch</h3>
-<p>Công thức toán học là các quy định kỹ thuật chính xác — không phải văn bản thông thường. Việc thay đổi tên biến, định dạng ký hiệu hoặc địa phương hóa số trong cú pháp công thức sẽ làm thay đổi ý nghĩa của công thức và có thể gây ra lỗi trong quá trình triển khai, kiểm toán hoặc hiểu biết của cộng đồng. Công thức phải được sao chép chính xác — ngay cả trong các tài liệu được viết hoàn toàn bằng ngôn ngữ không sử dụng chữ Latin.</p>
+<h3 class="sub-title">Vi sao cong thuc khong duoc dich</h3>
+<p>Cong thuc toan hoc la cac dac ta ky thuat chinh xac, khong phai van xuoi. Neu doi ten bien, ky hieu hoac cach viet so, y nghia cua cong thuc se thay doi va co the gay loi trong implementation, audit va truyen thong.</p>
 </div>
 <div class="callout">
-<h3 class="sub-title">Tham khảo nhanh</h3>
-<p>Danh sách kiểm tra sau đây tóm tắt các thuật ngữ cần giữ nguyên tiếng Anh trong tất cả các bản dịch và bản địa hóa của Mission Chain.</p>
+<h3 class="sub-title">Tham khao nhanh</h3>
+<p>Cac nhom sau phai duoc giu nguyen bang tieng Anh trong moi ban dich va localize cua Mission Chain.</p>
 <div class="quick-grid">
-<div class="quick-card"><h3>Hệ sinh thái &amp; Tên sản phẩm</h3><p>Mission Chain · Mission Chain Network · Mission DAO · Creator Mission Economy · Mission Network · Mission Network Layer 2 · Mission Learn · Mission Work · Mission Social · Mission Arts · Mission Hub · Mission Social Festival</p></div><div class="quick-card"><h3>Công cụ kinh tế</h3><p>MIC · Mission Chain Token · MICE · Mission Algorithm Node License · MFP-NFT · Mission Founding Partner NFT · Community NFT · Builder NFT · Maker NFT · Luminary NFT · USDT</p></div><div class="quick-card"><h3>Các thuật ngữ kỹ thuật và quản trị</h3><p>DAO · NFT · Token · Staking / Stake / Staked · Smart Contract · Escrow · Hindex Algorithm · TWAP · DEX · Vesting · Cliff · TGE · Timelock · Quorum · Buy &amp; Burn · Liquidity · Layer 2 · Multi-sig · On-chain · Off-chain · Mainnet · Testnet · BSC</p></div><div class="quick-card"><h3>Vai trò và Chương trình Cộng đồng</h3><p>Hub Leader · Founding Member · Constitutional Steward · Active Steward · Honorary Steward · Legacy Credential · Founding Steward · Economic Oracle · Builder · Maker · Luminary · Global South · Creator Economy</p></div><div class="quick-card"><h3>Điều khoản nền tảng và kinh doanh</h3><p>Portfolio · Dashboard · KPI · Roadmap · Flywheel · White Paper · MVP · ARR · Whitelist · Airdrop</p></div><div class="quick-card"><h3>Tất cả các biến công thức (giữ nguyên chính xác như đã viết)</h3><p>Builder. Maker. Luminary.</p></div>
-</div>
-<div class="quick-note">
-<p>"Các con là ánh sáng của thế gian." - Ma-thi-ơ 5:14</p>
-<p style="margin-top:8px;">missionchain.info</p>
+<div class="quick-card"><h3>Ten he sinh thai va san pham</h3><p>Mission Chain · Mission Chain Network · Mission DAO · Creator Mission Economy · Mission Network · Mission Network Layer 2 · Mission Learn · Mission Work · Mission Social · Mission Arts · Mission Hub · Mission Social Festival</p></div>
+<div class="quick-card"><h3>Cong cu kinh te</h3><p>MIC · Mission Chain Token · MICE · Mission Algorithm Node License · MFP-NFT · Mission Founding Partner NFT · Community NFT · Builder NFT · Maker NFT · Luminary NFT · USDT</p></div>
+<div class="quick-card"><h3>Thuat ngu ky thuat va governance</h3><p>DAO · NFT · Token · Staking / Stake / Staked · Smart Contract · Escrow · Hindex Algorithm · TWAP · DEX · Vesting · Cliff · TGE · Timelock · Quorum · Buy & Burn · Liquidity · Layer 2 · Multi-sig · On-chain · Off-chain · Mainnet · Testnet · BSC</p></div>
+<div class="quick-card"><h3>Vai tro va chuong trinh cong dong</h3><p>Hub Leader · Founding Member · Constitutional Steward · Active Steward · Honorary Steward · Legacy Credential · Founding Steward · Economic Oracle · Builder · Maker · Luminary · Global South · Creator Economy</p></div>
+<div class="quick-card"><h3>Thuat ngu nen tang va kinh doanh</h3><p>Portfolio · Dashboard · KPI · Roadmap · Flywheel · White Paper · MVP · ARR · Whitelist · Airdrop</p></div>
+<div class="quick-card"><h3>Tat ca bien cong thuc</h3><p>E(t) · E<sub>base</sub> · D(t) · L(t) · TWAP<sub>7d</sub> · L<sub>ref</sub> · L<sub>min</sub> · L<sub>max</sub> · R<sub>MICE,i</sub>(t) · VotingWeight<sub>MFP,i</sub> · PoolShare<sub>MFP,i</sub>(t) · VW<sub>Builder,i</sub> · VW<sub>Maker,i</sub> · VW<sub>Luminary,i</sub> · PS<sub>i</sub>(t)</p></div>
 </div>
 </div>
 </section>
@@ -340,7 +348,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="foot-logo">
 <img alt="Mission Chain" src="../../mission-chain-logo-clear.png"/>
 <div class="foot-logo-name">Mission Chain</div>
-<div class="foot-tagline">Glossary of Brand Terms</div>
+<div class="foot-tagline">Bang Thuat ngu Thuong hieu</div>
 </div>
 <div>
 <p>© 2026 Mission Chain Network. Từ điển thuật ngữ này là tài liệu tham khảo để đảm bảo chất lượng dịch thuật, tính nhất quán trong giao tiếp và tính toàn vẹn của thương hiệu trên toàn hệ sinh thái.</p>
@@ -350,7 +358,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </footer>
 </main>
 <script>
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
 const THEME_KEY = 'missionchain-theme';
+function syncGlossaryLanguageButtons() {
+  const current = detectLocale();
+  document.querySelectorAll('[id^="lb-"]').forEach(btn => btn.classList.remove('active'));
+  const active = document.getElementById('lb-' + current);
+  if (active) active.classList.add('active');
+  document.documentElement.lang = current;
+}
+function setLang(lang) {
+  window.location.href = getLocalizedHref(lang, 'Glossary_Brand_Terms.html');
+}
 function setTheme(theme) {
   const isLight = theme === 'night';
   document.body.classList.toggle('theme-light', isLight);
@@ -358,6 +397,7 @@ function setTheme(theme) {
   document.getElementById('theme-night').classList.toggle('active', isLight);
   localStorage.setItem(THEME_KEY, theme);
 }
+syncGlossaryLanguageButtons();
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 function goTo(id) {
   const el = document.getElementById(id);

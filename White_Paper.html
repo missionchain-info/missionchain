@@ -5046,19 +5046,39 @@ const LANG = {
   }
 };
 
-let curLang = 'en';
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
+let curLang = detectLocale();
 const THEME_KEY = 'missionchain-theme';
+function syncWhitePaperLanguageButtons() {
+  document.querySelectorAll('[id^="lb-"]').forEach(btn => btn.classList.remove('active'));
+  const active = document.getElementById('lb-' + curLang);
+  if (active) active.classList.add('active');
+  document.documentElement.lang = curLang;
+}
 function setLang(lang) {
   curLang = lang;
-  const d = LANG[lang] || LANG.en;
-  document.querySelectorAll('[data-t]').forEach(el => {
-    const key = el.getAttribute('data-t');
-    if (d[key]) el.innerHTML = d[key];
-    else if (LANG.en[key]) el.innerHTML = LANG.en[key];
-  });
-  document.querySelectorAll('.lbtn').forEach(b => b.classList.remove('active'));
-  document.getElementById('lb-' + lang).classList.add('active');
-  document.documentElement.lang = lang;
+  syncWhitePaperLanguageButtons();
+  window.location.href = getLocalizedHref(lang, 'White_Paper.html');
 }
 
 function setTheme(theme) {
@@ -5069,6 +5089,7 @@ function setTheme(theme) {
   localStorage.setItem(THEME_KEY, theme);
 }
 
+syncWhitePaperLanguageButtons();
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 
 const INTERNAL_GATES = { appG: 'MIC022026@@', appH: 'MIC022026@@', appI: 'MIC022026@@' };

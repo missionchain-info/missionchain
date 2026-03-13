@@ -1649,7 +1649,7 @@ html
 <h4 style="font-family: 'Cinzel', serif; color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 0.1em;">ADAPTIVE EMISSION ENGINE</h4>
 <p style="font-size: 0.8rem; color: var(--text-dim); line-height: 1.7; margin-bottom: 12px;">O Hindex Algorithm ajusta dinamicamente a emissão com base no decaimento do tempo e nas condições reais de liquidez na cadeia.</p>
 <div style="background: rgba(0,0,0,0.3); padding: 12px; font-size: 0.82rem; color: var(--gold); font-family: monospace; letter-spacing: 0.02em;">E(t) = E<sub>base</sub> × B × D(t) × L(t)</div>
-<p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 12px;">E<sub>base</sub> = 2.037.671 MIC/dia - B = 6,5 na Fase I - D(t) = 0,95<sup>t/90</sup> - L(t) = Grampo[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>máximo</sub>]</p>
+<p style="font-size: 0.75rem; color: var(--text-dim); margin-top: 12px;">E<sub>base</sub> = 2,037,671 MIC/day - B = 6.5 na Fase I - D(t) = 0.95<sup>t/90</sup> - L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</p>
 </div>
 </div>
 </div>
@@ -3577,19 +3577,46 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     document.documentElement.classList.remove('lang-vi','lang-es','lang-pt','lang-ko');
   }
 
+  
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
+  function syncLandingLanguageMenu() {
+    var currentLocale = detectLocale();
+    var selected = document.getElementById('langSelected');
+    if (selected) selected.textContent = LOCALE_LABELS[currentLocale] || LOCALE_LABELS.en;
+    document.querySelectorAll('.lang-option').forEach(function(option) {
+      option.classList.toggle('active', option.textContent.trim() === (LOCALE_LABELS[currentLocale] || LOCALE_LABELS.en));
+    });
+  }
+
   function setLang(lang, label, el) {
-    document.getElementById('langSelected').textContent = label;
+    document.getElementById('langSelected').textContent = label || LOCALE_LABELS[lang] || LOCALE_LABELS.en;
     document.querySelectorAll('.lang-option').forEach(function(o) { o.classList.remove('active'); });
     if (el) el.classList.add('active');
     document.getElementById('langSwitcher').classList.remove('open');
-    if (lang === currentLang) return;
-    restoreEN();
-    currentLang = lang;
-    if (lang === 'vi') applyVI();
-    else if (lang === 'es') applyES();
-    else if (lang === 'pt') applyPT();
-    else if (lang === 'ko') applyKO();
+    window.location.href = getLocalizedHref(lang, 'index.html');
   }
+
+  syncLandingLanguageMenu();
 
   function setTheme(theme) {
     var isLight = theme === 'night';

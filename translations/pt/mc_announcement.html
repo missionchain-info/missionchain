@@ -551,7 +551,28 @@ function setTheme(theme){
   localStorage.setItem(THEME_KEY, theme);
 }
 
-var lang = 'en';
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
+var lang = detectLocale();
 var T = {"en": {"badge": "Official Notice", "t1": "Smart Contract", "t2": "Migration &amp; Upgrade", "sub": "Mission Chain &nbsp;&middot;&nbsp; March 2026", "greeting": "Dear Valued Partners &amp; Community Members,", "p1": "Mission Chain is pleased to announce a significant and transformative milestone: following an intensive period of collaboration with our strategic partners, legal counsel, financial advisors, and technology architects, we have completed a comprehensive overhaul and upgrade of our core Smart Contract infrastructure.", "p2": "To recognise and honour the commitment of our partners, Mission Chain will grant an additional <strong>10% in MIC tokens</strong> (on the new Smart Contract) to all eligible holders. Furthermore, every <strong>MICP&nbsp;$360 package</strong> previously purchased will be converted at no cost into one equivalent <strong>MICE-NFT</strong> mining node licence. Please submit your registration below <em>(deadline: 31&nbsp;March&nbsp;2026)</em>:", "form_lbl": "Registration", "req": "required", "f_country": "Country", "ph_country": "e.g. Vietnam, Korea, Brazil…", "f_mic_wallet": "MIC Wallet Address (BEP20)", "f_mic_qty": "MIC Amount", "f_unity": "Mission Unity Wallet", "f_unity_note": "for MICP package holders", "btn": "Submit Registration", "ok_ttl": "Registration Received", "ok_body": "Our team will verify your holdings on-chain and send detailed migration instructions.", "confirm": "Mission Chain will cross-check all submissions against Blockchain Logs to confirm holdings, then distribute new MIC tokens, MICE-NFT mining licences, and step-by-step migration instructions.", "warn_ttl": "Important Notice", "warn_body": "Mission Chain bears no responsibility for losses arising from incorrect wallet addresses or failure to register by <strong>31&nbsp;March&nbsp;2026, 23:59 New York Time (EST)</strong>. Please verify every address carefully before submitting.", "cl1": "With Gratitude &amp; Purpose,", "cl2": "The Mission Chain Founding Team", "footer": "&copy; 2026 Mission Chain &nbsp;&middot;&nbsp; All Rights Reserved &nbsp;&middot;&nbsp; Smart Contract Migration Notice"}, "vi": {"badge": "Thông Báo Chính Thức", "t1": "CHUYỂN ĐỔI", "t2": "SMART CONTRACT", "sub": "Mission Chain &nbsp;&middot;&nbsp; Tháng 3 năm 2026", "greeting": "Kính gửi: Quý đối tác &amp; Thành viên cộng đồng,", "p1": "Mission Chain trân trọng thông báo: sau một thời gian làm việc nghiêm túc và khẩn trương cùng các đối tác chiến lược, tổ chức tư vấn pháp lý, tài chính &amp; công nghệ, chúng tôi vui mừng thông báo về sự lột xác mạnh mẽ — nâng cấp toàn diện cơ sở hạ tầng Smart Contract cốt lõi của Mission Chain.", "p2": "Để ghi nhận và trân trọng sự đồng hành của các đối tác trong thời gian qua, Mission Chain quyết định tặng thêm <strong>10% giá trị bằng đồng MIC</strong> (trên Smart Contract mới) và đảm bảo mỗi gói <strong>MICP&nbsp;360$</strong> sẽ được chuyển sang <strong>01&nbsp;MICE-NFT</strong> (giấy phép node đào mới) tương đương, hoàn toàn miễn phí. Đề nghị quý vị đăng ký danh sách <em>(chậm nhất 31-3-2026)</em>:", "form_lbl": "Đăng Ký Chuyển Đổi", "req": "bắt buộc", "f_country": "Quốc Gia", "ph_country": "Vd: Việt Nam, Hàn Quốc, Brazil…", "f_mic_wallet": "Ví Mua MIC (BEP20)", "f_mic_qty": "Số Lượng MIC", "f_unity": "Ví Đăng Ký Mission Unity", "f_unity_note": "dành cho người mua gói MICP", "btn": "Gửi Đăng Ký", "ok_ttl": "Đăng Ký Thành Công", "ok_body": "Đội ngũ Mission Chain sẽ xác minh trên Blockchain và liên hệ hướng dẫn cụ thể.", "confirm": "Hệ thống Mission Chain sẽ kiểm tra trên Blockchain Logs để xác nhận và chuyển MIC mới, MICE-NFT và hướng dẫn cụ thể.", "warn_ttl": "Lưu Ý Quan Trọng", "warn_body": "Mission Chain sẽ không chịu trách nhiệm về sự mất mát nếu quý vị điền sai địa chỉ ví hoặc không đăng ký chậm nhất vào ngày <strong>31-03-2026, 23:59 theo giờ New York, US (EST)</strong>. Vui lòng kiểm tra kỹ địa chỉ ví trước khi gửi.", "cl1": "Trân trọng cảm ơn!", "cl2": "Ban Sáng Lập Mission Chain", "footer": "&copy; 2026 Mission Chain &nbsp;&middot;&nbsp; Bảo Lưu Mọi Quyền &nbsp;&middot;&nbsp; Thông Báo Chuyển Đổi Smart Contract"}, "es": {"badge": "Aviso Oficial", "t1": "Migración de", "t2": "Smart Contract", "sub": "Mission Chain &nbsp;&middot;&nbsp; Marzo 2026", "greeting": "Estimados Socios y Miembros de la Comunidad,", "p1": "Mission Chain se complace en anunciar un hito significativo: tras un período intensivo de colaboración con socios estratégicos, asesores legales, financieros y arquitectos tecnológicos, hemos completado una actualización integral de nuestra infraestructura principal de Smart Contract.", "p2": "En reconocimiento al compromiso de nuestros socios, Mission Chain otorgará un <strong>10% adicional en tokens MIC</strong> (en el nuevo Smart Contract). Cada <strong>paquete MICP&nbsp;$360</strong> será convertido sin costo en un equivalente <strong>MICE-NFT</strong> — licencia de nodo de minería. Complete el registro <em>(fecha límite: 31&nbsp;de&nbsp;Marzo&nbsp;2026)</em>:", "form_lbl": "Formulario de Registro", "req": "requerido", "f_country": "País", "ph_country": "Ej: Vietnam, Corea, Brasil…", "f_mic_wallet": "Dirección Billetera MIC (BEP20)", "f_mic_qty": "Cantidad MIC", "f_unity": "Billetera Mission Unity", "f_unity_note": "para titulares de paquete MICP", "btn": "Enviar Registro", "ok_ttl": "Registro Enviado", "ok_body": "Nuestro equipo verificará on-chain y le contactará con instrucciones detalladas.", "confirm": "El sistema Mission Chain verificará los envíos en Blockchain Logs, luego distribuirá nuevos tokens MIC, licencias MICE-NFT e instrucciones de migración.", "warn_ttl": "Aviso Importante", "warn_body": "Mission Chain no asume responsabilidad por pérdidas por direcciones incorrectas o por no registrarse antes del <strong>31&nbsp;de&nbsp;Marzo&nbsp;2026, 23:59 Hora de Nueva York (EST)</strong>.", "cl1": "Con Gratitud y Propósito,", "cl2": "El Equipo Fundador de Mission Chain", "footer": "&copy; 2026 Mission Chain &nbsp;&middot;&nbsp; Todos los Derechos Reservados &nbsp;&middot;&nbsp; Aviso de Migración de Smart Contract"}, "pt": {"badge": "Aviso Oficial", "t1": "Migração de", "t2": "Smart Contract", "sub": "Mission Chain &nbsp;&middot;&nbsp; Março 2026", "greeting": "Prezados Parceiros e Membros da Comunidade,", "p1": "A Mission Chain tem o prazer de anunciar um marco significativo: após um período intensivo de colaboração com parceiros estratégicos, consultores jurídicos, financeiros e arquitetos de tecnologia, concluímos uma atualização abrangente da nossa infraestrutura principal de Smart Contract.", "p2": "Em reconhecimento ao compromisso dos nossos parceiros, a Mission Chain concederá um <strong>bônus adicional de 10% em tokens MIC</strong> (no novo Smart Contract). Cada <strong>pacote MICP&nbsp;$360</strong> será convertido sem custo em um equivalente <strong>MICE-NFT</strong> — licença de nó de mineração. Complete o registro <em>(prazo: 31&nbsp;de&nbsp;Março&nbsp;2026)</em>:", "form_lbl": "Formulário de Registro", "req": "obrigatório", "f_country": "País", "ph_country": "Ex: Vietnã, Coreia, Brasil…", "f_mic_wallet": "Endereço Carteira MIC (BEP20)", "f_mic_qty": "Quantidade MIC", "f_unity": "Carteira Mission Unity", "f_unity_note": "para detentores de pacote MICP", "btn": "Enviar Registro", "ok_ttl": "Registro Enviado", "ok_body": "Nossa equipe verificará on-chain e entrará em contato com instruções.", "confirm": "O sistema Mission Chain verificará os envios nos Blockchain Logs, depois distribuirá novos tokens MIC, licenças MICE-NFT e instruções de migração.", "warn_ttl": "Aviso Importante", "warn_body": "A Mission Chain não se responsabiliza por perdas por endereços incorretos ou por não registrar até <strong>31&nbsp;de&nbsp;Março&nbsp;2026, 23:59 Horário de Nova York (EST)</strong>.", "cl1": "Com Gratidão e Propósito,", "cl2": "A Equipe Fundadora da Mission Chain", "footer": "&copy; 2026 Mission Chain &nbsp;&middot;&nbsp; Todos os Direitos Reservados &nbsp;&middot;&nbsp; Aviso de Migração de Smart Contract"}, "ko": {"badge": "공식 공지", "t1": "스마트 컨트랙트", "t2": "마이그레이션 &amp; 업그레이드", "sub": "Mission Chain &nbsp;&middot;&nbsp; 2026년 3월", "greeting": "소중한 파트너 및 커뮤니티 회원 여러분께,", "p1": "Mission Chain은 중요한 이정표를 발표하게 되어 기쁜습니다. 전략적 파트너, 법률 고문, 재무 자문가 및 기술 아키텍트와의 집중적인 협업 끝에 핵심 스마트 컨트랙트 인프라의 포괄적인 개편 및 업그레이드를 완료했습니다.", "p2": "조기 파트너의 헌신에 감사드리며 Mission Chain은 모든 적격 보유자에게 새 컨트랙트에서 <strong>MIC 토큰 10% 추가 보너스</strong>를 제공합니다. 또한 모든 <strong>MICP&nbsp;$360 팩키지</strong>는 추가 비용 없이 <strong>MICE-NFT</strong> 마이닝 노드 라이센스로 전환됩니다. 아래 등록 양식을 작성해 주시기 바랍니다 <em>(2026년 3월 31일 마감)</em>:", "form_lbl": "등록 양식", "req": "필수", "f_country": "국가", "ph_country": "예: 베트남, 한국, 브라질…", "f_mic_wallet": "MIC 지갑 주소 (BEP20)", "f_mic_qty": "MIC 수량", "f_unity": "Mission Unity 지갑", "f_unity_note": "MICP 팩키지 보유자", "btn": "등록 제출", "ok_ttl": "등록 접수 완료", "ok_body": "팀이 온체인엔서 확인 후 새로운 안내를 보내드릴 것입니다.", "confirm": "Mission Chain 시스템이 블록체인 로그를 통해 보유량을 확인한 후 새 MIC 토큰, MICE-NFT 라이센스를 배포하고 단계별 안내를 제공합니다.", "warn_ttl": "중요 공지", "warn_body": "잘못된 지갑 주소 제출 또는 <strong>2026년 3월 31일 23:59 뉴욕 시간(EST)</strong>까지 등록하지 않아 발생하는 손실에 대해 Mission Chain은 책임을 지지 않습니다.", "cl1": "감사와 사명으로,", "cl2": "Mission Chain 창립팀", "footer": "&copy; 2026 Mission Chain &nbsp;&middot;&nbsp; 모든 권리 보유 &nbsp;&middot;&nbsp; 스마트 컨트랙트 마이그레이션 공지"}};
 
 function tgl() { document.getElementById('LS').classList.toggle('open'); }
@@ -559,14 +580,20 @@ document.addEventListener('click', function(e) {
   var s = document.getElementById('LS');
   if (s && !s.contains(e.target)) s.classList.remove('open');
 });
+function syncFormLanguageMenu() {
+  var current = detectLocale();
+  document.getElementById('LSL').textContent = LOCALE_LABELS[current] || LOCALE_LABELS.en;
+  document.querySelectorAll('.lopt').forEach(function(o) {
+    o.classList.toggle('on', o.textContent.trim() === (LOCALE_LABELS[current] || LOCALE_LABELS.en));
+  });
+  document.documentElement.className = (current === 'en') ? '' : 'lang-' + current;
+}
 function sl(l, label, el) {
-  document.getElementById('LSL').textContent = label;
+  document.getElementById('LSL').textContent = label || LOCALE_LABELS[l] || LOCALE_LABELS.en;
   document.querySelectorAll('.lopt').forEach(function(o) { o.classList.remove('on'); });
   if (el) el.classList.add('on');
   document.getElementById('LS').classList.remove('open');
-  lang = l;
-  document.documentElement.className = (l === 'en') ? '' : 'lang-' + l;
-  render();
+  window.location.href = getLocalizedHref(l, 'mc_announcement.html');
 }
 function render() {
   var t = T[lang] || T.en;
@@ -606,7 +633,8 @@ async function sub(e){
   var f=document.getElementById('F');
   f.style.opacity='.3';f.style.pointerEvents='none';
   var ok=document.getElementById('OK');
-  ok.style.display='block';render();
+  ok.style.display='block';syncFormLanguageMenu();
+render();
   ok.scrollIntoView({behavior:'smooth',block:'center'});
 }
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');

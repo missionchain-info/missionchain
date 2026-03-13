@@ -114,19 +114,24 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </head>
 <body>
 <div id="lang-bar">
-<div aria-label="테마 전환기" class="theme-toggle-group">
-<button aria-label="일광 테마" class="theme-btn active" id="theme-daylight" onclick="setTheme('daylight')">☀</button>
-<button aria-label="야간 테마" class="theme-btn" id="theme-night" onclick="setTheme('night')">☾</button>
-</div>
-<a class="top-btn" href="index.html">웹사이트</a>
-<a class="top-btn" href="White_Paper.html">White Paper</a>
-<a class="top-btn active" href="Glossary_Brand_Terms.html">용어집</a>
+  <div class="theme-toggle-group" aria-label="Theme switcher">
+    <button class="theme-btn active" onclick="setTheme('daylight')" id="theme-daylight" aria-label="Daylight theme">☀</button>
+    <button class="theme-btn" onclick="setTheme('night')" id="theme-night" aria-label="Night theme">☾</button>
+  </div>
+  <a class="top-btn" href="index.html">Mission Chain 웹사이트</a>
+  <a class="top-btn" href="White_Paper.html">White Paper</a>
+  <a class="top-btn active" href="Glossary_Brand_Terms.html">용어집</a>
+  <button class="top-btn" onclick="setLang('en')" id="lb-en" type="button">EN</button>
+  <button class="top-btn" onclick="setLang('es')" id="lb-es" type="button">ES</button>
+  <button class="top-btn" onclick="setLang('pt')" id="lb-pt" type="button">PT</button>
+  <button class="top-btn active" onclick="setLang('ko')" id="lb-ko" type="button">한국어</button>
+  <button class="top-btn" onclick="setLang('vi')" id="lb-vi" type="button">VI</button>
 </div>
 <button id="toggle-sb" onclick="toggleSidebar()">☰</button>
 <nav id="sidebar">
 <div class="sidebar-logo">
 <img alt="Mission Chain" src="../../mission-chain-logo-clear.png"/>
-<div class="sidebar-logo-text">Mission Chain<span>Glossary of Brand Terms</span></div>
+<div class="sidebar-logo-text">Mission Chain<span>브랜드 용어집</span></div>
 </div>
 <div class="nav-group">
 <div class="nav-group-label">용어집</div>
@@ -152,7 +157,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="hero-grid">
 <div class="anim a1">
 <div class="hero-eyebrow">Mission Chain 문서</div>
-<h1 class="hero-title">용어집 <span>브랜드 약관</span></h1>
+<h1 class="hero-title">용어집 <span>브랜드 용어</span></h1>
 <p class="hero-tagline">번역 팀, 커뮤니케이터 및 에코시스템 파트너를 위한 번역 불가능한 언어</p>
 <div class="hero-quote">"당신은 세상의 빛입니다. 언덕 위의 도시는 숨길 수 없습니다."<cite>마태복음 5:14</cite></div>
 <div class="hero-meta">
@@ -170,17 +175,17 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </section>
 <section class="section anim a1" id="toc">
 <div class="section-num">콘텐츠</div>
-<h2 class="section-title">용어집 지도</h2>
+<h2 class="section-title">용어집 개요</h2>
 <p>이 영문판은 완전히 영문으로 유지됩니다. 브랜드 이름, 경제 수단, 거버넌스 역할 및 공식 표기는 번역된 자료에서 변경되지 않아야 합니다.</p>
 <div class="toc-grid">
 <a class="toc-item" href="#purpose"><span class="toc-num">00</span><span class="toc-name">목적 및 핵심 규칙</span></a>
 <a class="toc-item" href="#brand"><span class="toc-num">01</span><span class="toc-name">브랜드 및 에코시스템 이름</span></a>
 <a class="toc-item" href="#product"><span class="toc-num">02</span><span class="toc-name">제품 및 플랫폼 이름</span></a>
-<a class="toc-item" href="#economic"><span class="toc-num">03</span><span class="toc-name">경제 상품 및 Token 이름</span></a>
+<a class="toc-item" href="#economic"><span class="toc-num">03</span><span class="toc-name">경제 상품 및 토큰 명칭</span></a>
 <a class="toc-item" href="#governance"><span class="toc-num">04</span><span class="toc-name">거버넌스, 메커니즘 및 기술 용어</span></a>
 <a class="toc-item" href="#community"><span class="toc-num">05</span><span class="toc-name">커뮤니티 역할 및 프로그램 이름</span></a>
 <a class="toc-item" href="#platform"><span class="toc-num">06</span><span class="toc-name">플랫폼, 콘텐츠 및 비즈니스 약관</span></a>
-<a class="toc-item" href="#math"><span class="toc-num">07</span><span class="toc-name">수학 공식 변수</span></a>
+<a class="toc-item" href="#math"><span class="toc-num">07</span><span class="toc-name">Formula Variables</span></a>
 </div>
 </section>
 <section class="section anim a1" id="purpose">
@@ -196,20 +201,20 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <ul class="fancy-list">
 <li>브랜드 및 에코시스템 이름</li>
 <li>제품 및 플랫폼 이름</li>
-<li>경제 상품 및 Token 이름</li>
+<li>경제 상품 및 토큰 명칭</li>
 <li>거버넌스, 메커니즘 및 기술 용어</li>
 <li>커뮤니티 역할 및 프로그램 이름</li>
 <li>플랫폼, 콘텐츠 및 비즈니스 약관</li>
-<li>수학 공식 변수</li>
+<li>Formula Variables</li>
 </ul>
 </section>
 <section class="section anim a1" id="brand">
 <div class="section-num">섹션 1</div>
 <h2 class="section-title">브랜드 및 에코시스템 이름</h2>
 <p>이는 Mission Chain 생태계의 기본 브랜드 아이덴티티입니다. 고유명사이며 항상 대문자로 표기하고 표시된 대로 정확하게 영문으로 표기해야 합니다.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>기간</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Mission Chain</td><td>에코시스템 브랜드</td><td>전체 에코시스템의 이름 - 항상 대문자로 된 두 단어. "미션"은 목적 중심의 소명이라는 영어적 의미와 선교적 목적이라는 유대-기독교적 의미를 모두 담고 있습니다. "체인"은 블록체인 기술과 공동의 사명으로 연결된 사람들의 끊어지지 않는 사슬을 의미합니다. 하이픈으로 연결되지 않았습니다. 번역되지 않았습니다.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>용어</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Mission Chain</td><td>에코시스템 브랜드</td><td>전체 에코시스템의 이름 - 항상 대문자로 된 두 단어. "Mission"은 목적 중심의 소명이라는 영어적 의미와 선교적 목적이라는 유대-기독교적 의미를 모두 담고 있습니다. "Chain"은 블록체인 기술과 공동의 사명으로 연결된 사람들의 끊어지지 않는 사슬을 의미합니다. 하이픈으로 연결되지 않았습니다. 번역되지 않았습니다.</td></tr>
 <tr><td>Mission Chain Network</td><td>에코시스템 브랜드(공식)</td><td>프로토콜 및 에코시스템의 전체 공식 명칭. 법률 문서, 기술 사양, 공식 투자자 커뮤니케이션, 공식 간행물에서 처음 언급될 때 사용합니다. 첫 언급 이후에는 "Mission Chain"만으로도 충분합니다.</td></tr>
-<tr><td>Mission DAO</td><td>거버넌스 엔티티</td><td>Mission Chain 생태계를 관리하는 탈중앙화된 자율 조직입니다. "Mission DAO"은 하나의 고유명사입니다. 이 문맥에서 "DAO"라는 단어는 "미션"과 분리되지 않습니다. 현지 언어로 처음 사용할 때는 간단한 괄호를 사용하여 설명할 수 있으며, 그 이후에는 "Mission DAO"로 설명할 수 있습니다.</td></tr>
+<tr><td>Mission DAO</td><td>거버넌스 엔티티</td><td>Mission Chain 생태계를 관리하는 탈중앙화된 자율 조직입니다. "Mission DAO"은 하나의 고유명사입니다. 이 문맥에서 "DAO"라는 단어는 "Mission"과 분리되지 않습니다. 현지 언어로 처음 사용할 때는 간단한 괄호를 사용하여 설명할 수 있으며, 그 이후에는 "Mission DAO"로 설명할 수 있습니다.</td></tr>
 <tr><td>Creator Mission Economy</td><td>개념적 프레임워크</td><td>금융 투기가 아닌 검증된 인간의 기여가 가치 창출을 주도하는 새로운 경제 모델을 소개하는 Mission Chain의 이름입니다. 이것이 공식적인 브랜드 콘셉트입니다. 필요한 경우 대상 언어로 개념을 설명하되, 개념 자체의 영문 레이블은 "Creator Mission Economy"으로 유지하세요.</td></tr>
 <tr><td>Mission Network</td><td>Layer 2 브랜드</td><td>Mission Chain의 향후 Layer 2 블록체인 인프라의 브랜드 이름 - 전체 생태계가 궁극적으로 운영될 특수 목적의 네트워크이며, 기본 코인으로 MIC를 사용합니다. 항상 대문자로 된 두 단어. "Mission Network Layer 2 체인"은 절대 사용하지 마시고, 첫 번째 언급 뒤에 "Mission Network Layer 2" 또는 "Mission Network"을 단독으로 사용하세요.</td></tr>
 <tr><td>Mission Network Layer 2</td><td>기술 지정</td><td>Mission Chain Layer 2 블록체인의 전체 명칭입니다. "Layer 2"는 전 세계적으로 이해되는 블록체인 아키텍처 용어입니다. 이 명칭은 기술 유형과 Mission Chain의 장기 비전에서 차지하는 위치를 모두 나타냅니다. 처음 언급된 후: "Mission Network L2"는 비공식적 또는 기술적 맥락에서 허용되는 약어입니다.</td></tr></tbody></table></div>
@@ -218,7 +223,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">섹션 2</div>
 <h2 class="section-title">제품 및 플랫폼 이름</h2>
 <p>각 제품 이름은 '미션'이라는 단어와 해당 기능 설명자로 구성된 단일 복합 고유명사입니다. 모든 제품명은 대문자로 표기되며 영문으로 유지됩니다. 이는 설명 문구가 아닌 브랜드 아이덴티티입니다.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>기간</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Mission Learn</td><td>제품 - 기둥 1</td><td>블록체인 인증 크리에이티브 아카데미 - 생태계의 세 가지 기둥 중 첫 번째 기둥입니다. "Learn"은 독립된 단어가 아닌 브랜드 접미사입니다. 이 문맥에서 "Learn"의 현지어 번역(예: "미션 어프렌더"(스페인어) 또는 이와 동등한 표현)은 절대 쓰지 마세요. 개념은 현지에서 설명할 수 있지만 이름은 그대로 유지합니다.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>용어</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Mission Learn</td><td>제품 - 기둥 1</td><td>블록체인 인증 크리에이티브 아카데미 - 생태계의 세 가지 기둥 중 첫 번째 기둥입니다. "Learn"은 독립된 단어가 아닌 브랜드 접미사입니다. 이 문맥에서 "Learn"의 현지어 번역(예: "미션 어프렌더"(스페인어) 또는 이와 동등한 표현)은 절대 쓰지 마세요. 개념은 현지에서 설명할 수 있지만 이름은 그대로 유지합니다.</td></tr>
 <tr><td>Mission Work</td><td>제품 - 기둥 2</td><td>검증된 창조 경제 마켓플레이스 - 두 번째 기둥. 자격을 갖춘 크리에이터와 글로벌 고객을 연결하며, 모든 결제는 MIC로 정산됩니다. 이 이름에 '작업'을 번역하지 마세요. "Mission Work"이라는 문구는 마켓플레이스의 정체성이며, "미션을 위해 일한다"는 일반적인 설명이 아닙니다</td></tr>
 <tr><td>Mission Social</td><td>제품 - 기둥 3</td><td>커뮤니티, 쇼케이스, 거버넌스 활성화 플랫폼 - 세 번째 기둥입니다. 이벤트, 크리에이터 쇼케이스, 거버넌스 참여 및 Mission Hub 네트워크 활동을 주최합니다. "소셜"이라고 번역하지 마세요 일반적인 소셜 미디어와 혼동하지 마세요. Mission Social은 특정 제품 이름입니다.</td></tr>
 <tr><td>Mission Arts</td><td>하위 플랫폼</td><td>Mission Work에 내장된 디지털 자산 및 라이선싱 레이어입니다. 크리에이터를 위한 로열티 메커니즘을 통해 음악, 시각 예술 및 동영상 자산의 판매 및 라이선싱을 처리합니다. "Mission Arts"은 하위 제품 브랜드 이름입니다. 항상 두 단어로 대문자로 표기합니다.</td></tr>
@@ -227,9 +232,9 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </section>
 <section class="section anim a1" id="economic">
 <div class="section-num">섹션 3</div>
-<h2 class="section-title">경제 상품 및 Token 이름</h2>
+<h2 class="section-title">경제 상품 및 토큰 명칭</h2>
 <p>이는 Mission Chain 생태계의 금융 및 경제적 수단입니다. 참여자, 파트너 또는 규제 기관에 상품의 성격이 잘못 전달되지 않도록 정확하게 사용해야 합니다.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>기간</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>MIC</td><td>Token 티커</td><td>Mission Chain Token의 공식 티커이자 약칭 - 범용 조정 토큰이자 향후 Mission Network Layer 2의 네이티브 코인입니다. 항상 대문자로 표기합니다. 모든 문서에서 처음 언급될 때: "MIC(Mission Chain Token)" - 이후에는 "MIC"만 표기합니다. 전체 이름이 소개된 후에는 "MIC"가 이미 완전한 이름이므로 "MIC 토큰"이라고 쓰지 마세요. 현지 언어 단어로 번역하거나 렌더링하지 마세요.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>용어</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>MIC</td><td>Token 티커</td><td>Mission Chain Token의 공식 티커이자 약칭 - 범용 조정 토큰이자 향후 Mission Network Layer 2의 네이티브 코인입니다. 항상 대문자로 표기합니다. 모든 문서에서 처음 언급될 때: "MIC(Mission Chain Token)" - 이후에는 "MIC"만 표기합니다. 전체 이름이 소개된 후에는 "MIC"가 이미 완전한 이름이므로 "MIC 토큰"이라고 쓰지 마세요. 현지 언어 단어로 번역하거나 렌더링하지 마세요.</td></tr>
 <tr><td>Mission Chain Token</td><td>Token 전체 이름</td><td>MIC의 긴 형식의 공식 명칭입니다. 법적 공시, 투자자 문서, 규제 관련 서류 및 공식 간행물에서 처음 언급될 때 사용합니다. 첫 언급 이후에는 "MIC"을 단독으로 사용합니다.</td></tr>
 <tr><td>MICE</td><td>라이선스 티커</td><td>MIC 일일 배출 보상에 비례하여 액세스 권한을 부여하는 360일 알고리즘 마이닝 노드 라이선스의 공식 명칭입니다. 항상 대문자로 표기합니다. 처음 언급할 때: "MICE(Mission Algorithm Node License)" - 이후에는 "MICE" MICE은 이 기기의 약어이자 전체 브랜드 아이덴티티입니다. 번역하지 마세요.</td></tr>
 <tr><td>Mission Algorithm Node License</td><td>라이선스 전체 이름</td><td>MICE의 긴 형식의 공식 명칭입니다. MICE 라이선스는 토큰이나 증권, 투자 상품이 아닌 Hindex 배출 시스템 내에서 알고리즘 채굴 노드를 운영할 수 있는 시간 제한적 기능적 권리입니다. 법적 및 공식적인 문맥에서는 전체 이름을 사용하고, 모든 지속적인 참조에서는 "MICE"을 사용하세요.</td></tr>
@@ -249,7 +254,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">섹션 4</div>
 <h2 class="section-title">거버넌스, 메커니즘 및 기술 용어</h2>
 <p>이러한 용어는 Mission Chain의 프로토콜, 거버넌스 및 경제 시스템이 작동하는 메커니즘을 설명합니다. 대부분은 표준 글로벌 Web3 또는 금융 용어이므로 정확성과 상호 운용성을 유지하기 위해 영어를 유지해야 합니다.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>기간</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>DAO</td><td>거버넌스 구조</td><td>탈중앙화된 자율 조직 - 토큰 및 자격 증명 보유자가 온체인 투표를 통해 의사 결정을 내리고, 중앙화된 관리가 아닌 스마트 컨트랙트에 의해 규칙이 적용되는 거버넌스 모델입니다. 항상 대문자로 표기합니다. 블록체인 컨텍스트에서 전 세계적으로 이해됩니다. 현지화된 출판물에서 처음 사용할 때는 현지 언어로 된 간단한 괄호 안의 설명이 도움이 되며, 그 이후에는 "DAO"을 단독으로 사용합니다.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>용어</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>DAO</td><td>거버넌스 구조</td><td>탈중앙화된 자율 조직 - 토큰 및 자격 증명 보유자가 온체인 투표를 통해 의사 결정을 내리고, 중앙화된 관리가 아닌 스마트 컨트랙트에 의해 규칙이 적용되는 거버넌스 모델입니다. 항상 대문자로 표기합니다. 블록체인 컨텍스트에서 전 세계적으로 이해됩니다. 현지화된 출판물에서 처음 사용할 때는 현지 언어로 된 간단한 괄호 안의 설명이 도움이 되며, 그 이후에는 "DAO"을 단독으로 사용합니다.</td></tr>
 <tr><td>Staking / Stake / Staked / Unstake</td><td>거버넌스 및 보상 메커니즘</td><td>거버넌스 참여권(투표 가중치)을 활성화하고 풀 지분을 보상하기 위해 스마트 컨트랙트에 지정된 양의 MIC을 잠그는 행위입니다. Staking은 Mission Chain의 거버넌스의 엔진으로, MIC 지분이 없다는 것은 NFT 자격 증명 보유 여부와 관계없이 투표 가중치와 풀 지분이 없다는 것을 의미합니다. 모든 형태의 단어('지분', '스테이킹', '스테이크', '언스테이크')는 영문으로 유지됩니다.</td></tr>
 <tr><td>NFT</td><td>기술 표준</td><td>대체 불가능한 Token - 블록체인에 기록된 고유하고 검증 가능한 디지털 자산. Mission Chain의 맥락에서 NFT는 신원 자격증명(Community NFT, MFP-NFT) 및 기능 라이선스(MICE) 역할을 합니다. 항상 대문자. 전 세계적으로 이해되는 용어 - 암호화에 익숙하지 않은 사용자를 대상으로 작성할 때는 처음 사용할 때 간략하게 설명하세요.</td></tr>
 <tr><td>Token</td><td>경제적 도구</td><td>생태계 내에서 가치 또는 효용의 단위를 나타내는 블록체인에서 발행된 디지털 자산. "Token"은 돈, 동전 또는 화폐를 뜻하는 현지 단어와 상호 교환할 수 없는 MIC에 특별히 사용됩니다. 현지 언어에 상응하는 단어를 사용하면 상품의 성격에 대해 오해를 불러일으킬 수 있는 부정확성이 발생할 수 있습니다.</td></tr>
@@ -273,7 +278,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">섹션 5</div>
 <h2 class="section-title">커뮤니티 역할 및 프로그램 이름</h2>
 <p>다음은 Mission Chain 에코시스템 내 역할의 공식 직책 및 명칭입니다. 역할을 지칭할 때는 대문자로 표기하며, 모든 현지화된 출판물에서 영문으로 유지됩니다.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>기간</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Hub Leader</td><td>커뮤니티 역할</td><td>Mission Hub을 운영하는 인증된 커뮤니티 앰배서더. Hub Leader는 최소 Maker Community NFT 보유자로, 지역 교회 또는 크리에이티브 커뮤니티에서 검증된 Mission Work 이력과 인정받은 활동적인 기여자입니다. 이들은 지역 텔레그램 커뮤니티를 관리하고, 대면 이벤트를 주최하며, 지역 일자리를 알선하고, 지역 컨퍼런스에서 Mission Chain을 대표합니다. 역할 직책은 항상 대문자로 표기합니다: "Hub Leader." 현지 언어로 번역하지 마세요 - 직함은 영어로 유지합니다.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>용어</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Hub Leader</td><td>커뮤니티 역할</td><td>Mission Hub을 운영하는 인증된 커뮤니티 앰배서더. Hub Leader는 최소 Maker Community NFT 보유자로, 지역 교회 또는 크리에이티브 커뮤니티에서 검증된 Mission Work 이력과 인정받은 활동적인 기여자입니다. 이들은 지역 텔레그램 커뮤니티를 관리하고, 대면 이벤트를 주최하며, 지역 일자리를 알선하고, 지역 컨퍼런스에서 Mission Chain을 대표합니다. 역할 직책은 항상 대문자로 표기합니다: "Hub Leader." 현지 언어로 번역하지 마세요 - 직함은 영어로 유지합니다.</td></tr>
 <tr><td>Founding Member</td><td>역할 지정</td><td>Mission Chain 생태계를 구축하는 데 상당한 노력, 브랜드, 지적 재산 또는 조직 작업에 기여하고 경로 2(창립 공헌)를 통해 MFP-NFT를 받은 창립 팀원입니다. "Founding Member"은 대문자로 표기된 역할 직함입니다. 개념은 현지에서 설명할 수 있으며 직함은 영문으로 유지합니다.</td></tr>
 <tr><td>Constitutional Steward</td><td>거버넌스 역할</td><td>최소 MIC 스테이킹 요건을 충족하고 이번 분기에 최소 한 번 이상 거버넌스 투표를 진행한 활성 MFP-NFT 보유자의 공식 거버넌스 역할 직함입니다. Constitutional Steward은 프로토콜의 기본 매개변수인 불변의 핵심 규칙과 조정 가능한 프레임워크 매개변수를 관리합니다. 역할 타이틀은 항상 대문자로 표기합니다.</td></tr>
 <tr><td>Active Steward</td><td>MFP-NFT 수명 주기 단계</td><td>MFP-NFT 라이프사이클의 첫 번째이자 가장 중요한 단계로, 최소 지분 요건을 유지하고 분기당 최소 한 번 이상 투표하는 MFP-NFT 보유자입니다. Active Steward은 전체 헌법 풀 지분과 전체 거버넌스 가중치를 받습니다. 항상 자본화됩니다.</td></tr>
@@ -289,7 +294,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">섹션 6</div>
 <h2 class="section-title">플랫폼, 콘텐츠 및 비즈니스 약관</h2>
 <p>이러한 용어는 Mission Chain 커뮤니케이션 및 문서에 정기적으로 등장합니다. 이는 시장 전반에서 일관성을 유지하기 위해 영어로 유지되어야 하는 표준 디지털, 운영 및 비즈니스 용어입니다.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>기간</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Portfolio</td><td>플랫폼 기간</td><td>잠재 고객에게 기술, 스타일, 전문적 실적을 보여주기 위해 Mission Work 및 Mission Social에 표시되는 크리에이터의 최고의 작품으로 구성된 온체인 컬렉션입니다. 보편적인 크리에이티브 전문 용어. "포트폴리오"는 시장 전반에 걸쳐 이해되며 전문적인 크리에이티브 작업 증거라는 특정한 의미를 담고 있습니다.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>용어</th><th>카테고리</th><th>의미 및 맥락</th></tr></thead><tbody><tr><td>Portfolio</td><td>플랫폼 기간</td><td>잠재 고객에게 기술, 스타일, 전문적 실적을 보여주기 위해 Mission Work 및 Mission Social에 표시되는 크리에이터의 최고의 작품으로 구성된 온체인 컬렉션입니다. 보편적인 크리에이티브 전문 용어. "포트폴리오"는 시장 전반에 걸쳐 이해되며 전문적인 크리에이티브 작업 증거라는 특정한 의미를 담고 있습니다.</td></tr>
 <tr><td>Dashboard</td><td>플랫폼 기간</td><td>온체인 개인 데이터 인터페이스는 참여자의 자격 증명, 다음 KPI 티어로의 진행 상황, 현재 스테이킹 금액, 풀 지분, 투표 기록, Mission Work 작업 등급, MIC 수익 등을 보여줍니다. "Dashboard"은 보편적으로 이해되는 디지털 제품 용어입니다.</td></tr>
 <tr><td>KPI</td><td>비즈니스 기간</td><td>핵심 성과 지표 - 참여자가 각 Community NFT 티어(Builder, Maker, Luminary)를 얻기 위해 달성해야 하는 측정 가능하고 검증 가능한 온체인 메트릭입니다. 예: 완료한 Mission Work 작업 수, 평균 작업 평점, 획득한 MIC, 거버넌스 투표, 조직한 커뮤니티 이벤트. 비업무용 문서에서 처음 사용하는 경우: "KPI(핵심 성과 지표)" - 이후에는 "KPI"</td></tr>
 <tr><td>Roadmap</td><td>전략적 용어</td><td>Mission Chain의 공식 단계별 개발 및 성장 계획은 기초부터 글로벌 리더십까지 4단계로 구성되어 있습니다. mCPLH00000 문서에서 "Roadmap"은 항상 이 구체적인 공식 계획을 의미합니다. 이 단어는 개념을 설명할 때 현지 언어로 된 산문에서 사용될 수 있으며, 공식적인 참조에서는 "Mission Chain Roadmap" 또는 "Mission Chain의 로드맵"으로 사용됩니다.</td></tr>
@@ -303,35 +308,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <tr><td>BSC</td><td>기술 약어</td><td>BNB 스마트 체인 - 현재 Mission Chain이 배포된 블록체인(1단계-III). Mission Chain의 주요 목표 시장인 동남아시아와 아프리카에서 강력한 입지를 가진 고속, 저비용의 EVM 호환 체인입니다. 첫 언급 후에는 항상 "BSC"을 약어로 사용합니다. 첫 언급 시 "BNB 스마트 체인(BSC)."</td></tr></tbody></table></div>
 </section>
 <section class="section anim a1" id="math">
-<div class="section-num">섹션 7</div>
-<h2 class="section-title">수학 공식 변수</h2>
-<p>Mission Chain 문서의 모든 수학 공식, 변수 이름, 함수 표기법 및 숫자 상수는 기호, 구분 기호 또는 표기법을 현지화하지 않고 영어로 작성된 그대로 보존해야 합니다.</p>
-<p>Mission Chain은 모든 수식(예: 0.65, 0.95, 2,037,671)에서 국제 표준 점(.)을 소수점 구분 기호로 사용합니다. 수식 표기법 내에서 쉼표나 지역 소수점 규칙을 대체하지 마세요.</p>
-<div class="wp-table-wrap"><table class="wp-table formula-table"><thead><tr><th>공식/변수</th><th>변수의 정의/각 변수의 의미</th></tr></thead><tbody><tr><td><span class="formula-math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span></td><td>Hindex Algorithm 일일 MIC 배출 공식. t = 생태계 생성 이후 경과한 일 수입니다. 네 가지 구성 요소를 모두 곱하여 E(t), 즉 t일에 네트워크에 방출된 총 MIC을 산출합니다.</td></tr>
-<tr><td><span class="formula-math">E<sub>base</sub> = 2,037,671 MIC/일</span></td><td>수학적으로 도출된 일일 기본 배출량입니다. 이는 감쇠가 적용된 전체 배출 일정 동안 유지되는 중립 배출량으로, 정확히 5,950,000,000 MIC(총 공급량의 85%)을 채굴 풀에 분배합니다.</td></tr>
-<tr><td><span class="formula-math">B = 6.5</span></td><td>부트스트래핑 승수 - 1단계(초기 네트워크 활성화) 동안에만 활성화됩니다. 총 MIC 공급량을 늘리지 않고도 초기 MICE 채택과 생태계 유동성 시딩을 가속화합니다.</td></tr>
-<tr><td><span class="formula-math">D(t) = 0.95<sup>t/90</sup></span></td><td>시간 감쇠 기능. 90일(약 1/4)마다 배출량이 5%씩 감소합니다. 장기적인 통화 규율을 시행하고 시간이 지남에 따라 희소성이 증가합니다. T가 증가함에 따라 D(t)은 0에 가까워지며 배출량은 점근적으로 감소합니다.</td></tr>
-<tr><td><span class="formula-math">L(t) = 클램프[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>분</sub>, L<sub>최대</sub>]</span></td><td>Hindex Liquidity 계수. 일일 배출량을 실제 온체인 DEX 유동성 깊이와 연결합니다. TWAP₇d = 7일 시간 가중 평균 MIC/USDT 가격. L_ref = 기준 유동성 목표. α = 민감도 계수(DAO 승인된 범위 내에서 MFP-NFT 보유자에 의해 관리됨). L_min, L_max = 극단적인 배출량 변동을 방지하는 하한선과 상한선.</td></tr>
-<tr><td><span class="formula-math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span></td><td>MIC = t 일의 MICE 노드 운영자 i에 대한 일일 MICE 보상. M_i = 운영자 i가 보유한 활성 MICE 라이선스 수. N_t = t 일의 모든 운영자의 총 활성 MICE 라이선스 수. 0.65 = 일일 배출량의 65%가 MICE 노드 풀에 할당됩니다. N_t가 증가(참여자 수 증가)하면 운영자당 점유율은 감소하며, 총 배출량은 고정되어 있고 확장할 수 없습니다.</td></tr>
-<tr><td><span class="formula-math">투표 가중치<sub>MFP,i</sub> = S<sub>i</sub> / Σ S<sub>MFP,active</sub></span></td><td>헌정 거버넌스 계층 내에서 MFP-NFT 보유자 i의 투표 가중치. S_i = 보유자 i가 스테이킹한 MIC. Σ S_MFP_active = 현재 활성 상태인(일시 정지되지 않은) 모든 MFP-NFT 보유자가 스테이킹한 MIC의 합계. MIC을 0개 스테이킹한 홀더는 보유한 MFP-NFT 수에 관계없이 투표 가중치가 0입니다.</td></tr>
-<tr><td><span class="formula-math">풀셰어<sub>MFP,i</sub>(t) = (S<sub>i</sub> / Σ S<sub>MFP</sub>) × 0.10 × E(t)</span></td><td>MIC 보유자에 대한 일일 MFP-NFT 헌법 풀 할당량 i. 0.10 = 일일 배출량의 10%가 MFP-NFT 풀에 할당됩니다. 배분은 총 활성 MIC 지분에 대한 각 보유자의 MFP-NFT 지분에 비례합니다.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Builder,i</sub> = S<sub>i</sub> / Σ S<sub>Builder,active</sub></span></td><td>커뮤니티 계층 거버넌스 투표에서 Builder NFT 보유자 i의 투표 가중치입니다. 기본 계층: 1× 가중치 배율. 모든 활성 Builder 보유자 중 MIC가 보유한 지분에 비례합니다.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Maker,i</sub> = (S<sub>i</sub> × 2) / Σ 가중치 지분</span></td><td>공동 커뮤니티 계층 투표에서 Maker NFT 보유자 i의 투표 가중치. 2× 계층 승수 - Maker이 스테이킹한 각 MIC는 Builder가 스테이킹한 MIC당 1단위와 비교하여 2단위의 투표 가중치로 계산됩니다. Σ 가중 지분 = Builder(×1), Maker(×2), Luminary(×4) 보유자의 모든 계층 가중 지분의 합계입니다.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Luminary,i</sub> = (S<sub>i</sub> × 4) / Σ 가중치 지분</span></td><td>커뮤니티 공동 계층 투표에서 Luminary NFT 보유자 i의 투표 가중치. 4× 계층 승수 - 커뮤니티 거버넌스 계층 내에서 가장 높은 가중치. Σ 가중 지분은 위의 Maker과 동일하게 계산됩니다.</td></tr>
-<tr><td><span class="formula-math">PS<sub>i</sub>(t) = (S<sub>i</sub> / Σ S<sub>커뮤니티, 활성</sub>) × tier_weight × 0.10 × E(t)</span></td><td>보유자 i의 일일 Community NFT 풀 지분. S_i = 보유자 i가 스테이킹한 MIC. Σ S_Community_active = 모든 계층의 모든 활성 Community NFT 보유자가 스테이킹한 총 MIC. tier_weight = 각 계층에 할당된 가중치 계수(Builder = 1×, Maker = 2×, Luminary = 4×, 거버넌스에서 설정한 특정 값). 0.10 = Community NFT 풀에 할당된 일일 배출량의 10%.</td></tr></tbody></table></div>
+<div class="section-num">Section 7</div>
+<h2 class="section-title">Formula Variables</h2>
+<p>Mission Chain 문서의 모든 수식, 변수명, 함수 표기, 수치 상수는 영어 원문 그대로 유지해야 합니다. 기호, 구분자, 표기법을 현지화하면 안 됩니다.</p>
+<p>Mission Chain은 모든 수식에서 국제 표준인 점 (.) 을 소수점 구분자로 사용합니다. 예: 0.65, 0.95, 2,037,671. 수식 안에서는 쉼표나 현지 숫자 표기를 사용하지 마십시오.</p>
+<div class="wp-table-wrap"><table class="wp-table formula-table"><thead><tr><th>Formula / Variable</th><th>Definition / Meaning of each variable</th></tr></thead><tbody>
+<tr><td><span class="formula-math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span></td><td>MIC 일일 emission formula 입니다. t는 ecosystem genesis 이후 경과한 일수입니다. 네 구성요소를 곱해 day t의 총 MIC emission 인 E(t)를 계산합니다.</td></tr>
+<tr><td><span class="formula-math">E<sub>base</sub> = 2,037,671 MIC/day</span></td><td>수학적으로 도출된 base daily emission rate 입니다. decay가 적용된 전체 프로그램 동안 유지되면 mining reserve에 정확히 5,950,000,000 MIC (총 공급의 85%)를 배분합니다.</td></tr>
+<tr><td><span class="formula-math">B = 6.5</span></td><td>Phase I 에서만 활성화되는 bootstrap multiplier 입니다. 총 MIC supply를 늘리지 않으면서 초기 MICE adoption 과 liquidity seeding 을 가속합니다.</td></tr>
+<tr><td><span class="formula-math">D(t) = 0.95<sup>t/90</sup></span></td><td>Time decay function 입니다. emission 은 90일마다 5% 감소하며 장기 통화 규율과 희소성 강화를 만듭니다.</td></tr>
+<tr><td><span class="formula-math">L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span></td><td>Hindex liquidity factor 입니다. 일일 emission 을 실제 DEX liquidity depth 에 연결합니다. TWAP<sub>7d</sub> 는 7일 MIC/USDT time-weighted average price 이고, L<sub>ref</sub> 는 reference liquidity target 입니다.</td></tr>
+<tr><td><span class="formula-math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span></td><td>day t 에서 MICE operator i 의 일일 MIC reward 입니다. M<sub>i</sub> 는 operator i 가 보유한 active MICE license 수이고, N<sub>t</sub> 는 network 전체 active MICE license 총량입니다.</td></tr>
+<tr><td><span class="formula-math">VotingWeight<sub>MFP,i</sub> = S<sub>i</sub> / Σ S<sub>MFP,active</sub></span></td><td>MFP-NFT holder i 의 voting weight 입니다. S<sub>i</sub> 는 holder i 의 MIC staked amount 이고, Σ S<sub>MFP,active</sub> 는 모든 active MFP holder 의 총 staking 입니다.</td></tr>
+<tr><td><span class="formula-math">PoolShare<sub>MFP,i</sub>(t) = (S<sub>i</sub> / Σ S<sub>MFP,active</sub>) × 0.10 × E(t)</span></td><td>MFP-NFT holder i 가 받는 constitutional pool 의 일일 MIC allocation 입니다. 0.10 은 daily emission 중 10%가 MFP-NFT pool 에 배정됨을 뜻합니다.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Builder,i</sub> = S<sub>i</sub> / Σ S<sub>Builder,active</sub></span></td><td>Builder NFT holder i 의 community governance voting weight 입니다. 기본 레벨이며 1× multiplier 를 가집니다.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Maker,i</sub> = (S<sub>i</sub> × 2) / Σ weighted stakes</span></td><td>Maker NFT holder i 의 공동 community voting weight 입니다. Maker 의 staking MIC 는 total weighted stakes 안에서 2× 로 계산됩니다.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Luminary,i</sub> = (S<sub>i</sub> × 4) / Σ weighted stakes</span></td><td>Luminary NFT holder i 의 voting weight 입니다. community governance tier 에서 가장 높은 4× multiplier 를 가집니다.</td></tr>
+<tr><td><span class="formula-math">PS<sub>i</sub>(t) = (S<sub>i</sub> / Σ S<sub>Community,active</sub>) × tier_weight × 0.10 × E(t)</span></td><td>holder i 의 Community NFT daily pool share 입니다. tier_weight 는 Builder 1×, Maker 2×, Luminary 4× 의 tier coefficient 를 의미합니다.</td></tr>
+</tbody></table></div>
 <div class="callout gold">
-<h3 class="sub-title">수식을 번역해서는 안 되는 이유</h3>
-<p>수학 공식은 산문이 아닌 정확한 기술 사양입니다. 수식 구문 내에서 변수 이름을 바꾸거나 표기법을 바꾸거나 숫자를 현지화하면 수식의 의미가 바뀌고 구현, 감사 또는 커뮤니티 이해에 오류가 발생할 수 있습니다. 라틴 문자가 아닌 다른 언어로 작성된 문서에서도 수식을 정확하게 재현해야 합니다.</p>
+<h3 class="sub-title">Why formulas must not be translated</h3>
+<p>수식은 설명 문장이 아니라 정밀한 technical specification 입니다. 변수명, 표기법, 숫자 형식을 바꾸면 formula meaning 이 바뀌고 implementation, audit, communication 오류를 만들 수 있습니다.</p>
 </div>
 <div class="callout">
-<h3 class="sub-title">빠른 참조</h3>
-<p>다음 체크리스트에는 모든 Mission Chain 번역 및 로컬라이제이션에서 영어로 유지해야 하는 용어가 요약되어 있습니다.</p>
+<h3 class="sub-title">Quick Reference</h3>
+<p>아래 그룹은 모든 Mission Chain 번역본에서 영어 원문 그대로 유지해야 합니다.</p>
 <div class="quick-grid">
-<div class="quick-card"><h3>에코시스템 및 제품 이름</h3><p>Mission Chain - Mission Chain Network - Mission DAO - Creator Mission Economy - Mission Network - Mission Network Layer 2 - Mission Learn - Mission Work - Mission Social - Mission Arts - Mission Hub - Mission Social Festival</p></div><div class="quick-card"><h3>경제 상품</h3><p>MIC - Mission Chain Token - MICE - Mission Algorithm Node License - MFP-NFT - Mission Founding Partner NFT - Community NFT - Builder NFT - Maker NFT - Luminary NFT - USDT</p></div><div class="quick-card"><h3>기술 및 거버넌스 약관</h3><p>DAO - NFT - Token - Staking / Stake / Staked - Smart Contract - Escrow - Hindex Algorithm - TWAP - DEX - Smart Contract - Escrow - Vesting - Cliff - TGE - Timelock - Quorum - Buy &amp; Burn - Liquidity - Layer 2 - Multi-sig - On-chain - Off-chain - Mainnet - Testnet - BSC</p></div><div class="quick-card"><h3>커뮤니티 역할 및 프로그램</h3><p>Hub Leader - Founding Member - Constitutional Steward - Active Steward - Honorary Steward - Legacy Credential - Founding Steward - Economic Oracle - Builder - Maker - Luminary - Global South - Creator Economy</p></div><div class="quick-card"><h3>플랫폼 및 비즈니스 약관</h3><p>Portfolio - Dashboard - KPI - Roadmap - Flywheel - White Paper - MVP - ARR - Whitelist - Airdrop</p></div><div class="quick-card"><h3>모든 공식 변수(작성된 그대로 보존)</h3><p>Builder. Maker. Luminary.</p></div>
-</div>
-<div class="quick-note">
-<p>"너희는 세상의 빛이다." - 마태복음 5:14</p>
-<p style="margin-top:8px;">missionchain.info</p>
+<div class="quick-card"><h3>Ecosystem and product names</h3><p>Mission Chain · Mission Chain Network · Mission DAO · Creator Mission Economy · Mission Network · Mission Network Layer 2 · Mission Learn · Mission Work · Mission Social · Mission Arts · Mission Hub · Mission Social Festival</p></div>
+<div class="quick-card"><h3>Economic instruments</h3><p>MIC · Mission Chain Token · MICE · Mission Algorithm Node License · MFP-NFT · Mission Founding Partner NFT · Community NFT · Builder NFT · Maker NFT · Luminary NFT · USDT</p></div>
+<div class="quick-card"><h3>Technical and governance terms</h3><p>DAO · NFT · Token · Staking / Stake / Staked · Smart Contract · Escrow · Hindex Algorithm · TWAP · DEX · Vesting · Cliff · TGE · Timelock · Quorum · Buy & Burn · Liquidity · Layer 2 · Multi-sig · On-chain · Off-chain · Mainnet · Testnet · BSC</p></div>
+<div class="quick-card"><h3>Community roles and programs</h3><p>Hub Leader · Founding Member · Constitutional Steward · Active Steward · Honorary Steward · Legacy Credential · Founding Steward · Economic Oracle · Builder · Maker · Luminary · Global South · Creator Economy</p></div>
+<div class="quick-card"><h3>Platform and business terms</h3><p>Portfolio · Dashboard · KPI · Roadmap · Flywheel · White Paper · MVP · ARR · Whitelist · Airdrop</p></div>
+<div class="quick-card"><h3>All formula variables</h3><p>E(t) · E<sub>base</sub> · D(t) · L(t) · TWAP<sub>7d</sub> · L<sub>ref</sub> · L<sub>min</sub> · L<sub>max</sub> · R<sub>MICE,i</sub>(t) · VotingWeight<sub>MFP,i</sub> · PoolShare<sub>MFP,i</sub>(t) · VW<sub>Builder,i</sub> · VW<sub>Maker,i</sub> · VW<sub>Luminary,i</sub> · PS<sub>i</sub>(t)</p></div>
 </div>
 </div>
 </section>
@@ -340,7 +348,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="foot-logo">
 <img alt="Mission Chain" src="../../mission-chain-logo-clear.png"/>
 <div class="foot-logo-name">Mission Chain</div>
-<div class="foot-tagline">Glossary of Brand Terms</div>
+<div class="foot-tagline">브랜드 용어집</div>
 </div>
 <div>
 <p>© 2026 mcplh00000. 이 용어집은 번역 품질, 커뮤니케이션 일관성 및 에코시스템 전반의 브랜드 무결성을 위한 문서 참조 자료입니다.</p>
@@ -350,7 +358,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </footer>
 </main>
 <script>
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
 const THEME_KEY = 'missionchain-theme';
+function syncGlossaryLanguageButtons() {
+  const current = detectLocale();
+  document.querySelectorAll('[id^="lb-"]').forEach(btn => btn.classList.remove('active'));
+  const active = document.getElementById('lb-' + current);
+  if (active) active.classList.add('active');
+  document.documentElement.lang = current;
+}
+function setLang(lang) {
+  window.location.href = getLocalizedHref(lang, 'Glossary_Brand_Terms.html');
+}
 function setTheme(theme) {
   const isLight = theme === 'night';
   document.body.classList.toggle('theme-light', isLight);
@@ -358,6 +397,7 @@ function setTheme(theme) {
   document.getElementById('theme-night').classList.toggle('active', isLight);
   localStorage.setItem(THEME_KEY, theme);
 }
+syncGlossaryLanguageButtons();
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 function goTo(id) {
   const el = document.getElementById(id);

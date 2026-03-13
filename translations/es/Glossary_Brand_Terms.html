@@ -114,19 +114,24 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </head>
 <body>
 <div id="lang-bar">
-<div aria-label="Cambiador de temas" class="theme-toggle-group">
-<button aria-label="Tema del día" class="theme-btn active" id="theme-daylight" onclick="setTheme('daylight')">☀</button>
-<button aria-label="Tema de noche" class="theme-btn" id="theme-night" onclick="setTheme('night')">☾</button>
-</div>
-<a class="top-btn" href="index.html">Página web</a>
-<a class="top-btn" href="White_Paper.html">White Paper</a>
-<a class="top-btn active" href="Glossary_Brand_Terms.html">Glosario</a>
+  <div class="theme-toggle-group" aria-label="Theme switcher">
+    <button class="theme-btn active" onclick="setTheme('daylight')" id="theme-daylight" aria-label="Daylight theme">☀</button>
+    <button class="theme-btn" onclick="setTheme('night')" id="theme-night" aria-label="Night theme">☾</button>
+  </div>
+  <a class="top-btn" href="index.html">Sitio web de Mission Chain</a>
+  <a class="top-btn" href="White_Paper.html">White Paper</a>
+  <a class="top-btn active" href="Glossary_Brand_Terms.html">Glosario</a>
+  <button class="top-btn" onclick="setLang('en')" id="lb-en" type="button">EN</button>
+  <button class="top-btn active" onclick="setLang('es')" id="lb-es" type="button">ES</button>
+  <button class="top-btn" onclick="setLang('pt')" id="lb-pt" type="button">PT</button>
+  <button class="top-btn" onclick="setLang('ko')" id="lb-ko" type="button">한국어</button>
+  <button class="top-btn" onclick="setLang('vi')" id="lb-vi" type="button">VI</button>
 </div>
 <button id="toggle-sb" onclick="toggleSidebar()">☰</button>
 <nav id="sidebar">
 <div class="sidebar-logo">
 <img alt="Mission Chain" src="../../mission-chain-logo-clear.png"/>
-<div class="sidebar-logo-text">Mission Chain<span>Glossary of Brand Terms</span></div>
+<div class="sidebar-logo-text">Mission Chain<span>Glosario de Terminos de Marca</span></div>
 </div>
 <div class="nav-group">
 <div class="nav-group-label">Glosario</div>
@@ -143,7 +148,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </div>
 <div class="nav-group">
 <div class="nav-group-label">Documentos</div>
-<a class="nav-link" href="index.html">Sitio web de la Misión</a>
+<a class="nav-link" href="index.html">Sitio web de Mission Chain</a>
 <a class="nav-link" href="White_Paper.html">White Paper</a>
 </div>
 </nav>
@@ -151,8 +156,8 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <section class="hero" id="hero">
 <div class="hero-grid">
 <div class="anim a1">
-<div class="hero-eyebrow">Mission Chain Documentación</div>
-<h1 class="hero-title">Glosario de <span>Condiciones de la marca</span></h1>
+<div class="hero-eyebrow">Documentacion de Mission Chain</div>
+<h1 class="hero-title">Glosario de <span>Terminos de Marca</span></h1>
 <p class="hero-tagline">Lenguaje intraducible para equipos de traducción, comunicadores y socios del ecosistema</p>
 <div class="hero-quote">"Vosotros sois la luz del mundo. Una ciudad sobre una colina no puede ocultarse"<cite>Mateo 5:14</cite></div>
 <div class="hero-meta">
@@ -170,7 +175,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </section>
 <section class="section anim a1" id="toc">
 <div class="section-num">Contenido</div>
-<h2 class="section-title">Glosario Mapa</h2>
+<h2 class="section-title">Mapa del Glosario</h2>
 <p>Esta edición inglesa se mantiene íntegramente en inglés. Los nombres de las marcas, los instrumentos económicos, las funciones de gobierno y la notación de las fórmulas no deben variar en los materiales traducidos.</p>
 <div class="toc-grid">
 <a class="toc-item" href="#purpose"><span class="toc-num">00</span><span class="toc-name">Objetivo y norma fundamental</span></a>
@@ -180,7 +185,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <a class="toc-item" href="#governance"><span class="toc-num">04</span><span class="toc-name">Gobernanza, mecánica y términos técnicos</span></a>
 <a class="toc-item" href="#community"><span class="toc-num">05</span><span class="toc-name">Funciones comunitarias y nombres de los programas</span></a>
 <a class="toc-item" href="#platform"><span class="toc-num">06</span><span class="toc-name">Plataforma, contenidos y condiciones comerciales</span></a>
-<a class="toc-item" href="#math"><span class="toc-num">07</span><span class="toc-name">Fórmula matemática Variables</span></a>
+<a class="toc-item" href="#math"><span class="toc-num">07</span><span class="toc-name">Variables de Formulas Matematicas</span></a>
 </div>
 </section>
 <section class="section anim a1" id="purpose">
@@ -200,16 +205,16 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <li>Gobernanza, mecánica y términos técnicos</li>
 <li>Funciones comunitarias y nombres de los programas</li>
 <li>Plataforma, contenidos y condiciones comerciales</li>
-<li>Fórmula matemática Variables</li>
+<li>Variables de Formulas Matematicas</li>
 </ul>
 </section>
 <section class="section anim a1" id="brand">
 <div class="section-num">Sección 1</div>
 <h2 class="section-title">Nombres de marcas y ecosistemas</h2>
 <p>Estas son las identidades de marca fundacionales del ecosistema Mission Chain. Son nombres propios y deben escribirse siempre en mayúsculas y en inglés exactamente como se muestran.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Plazo</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Mission Chain</td><td>Marca Ecosistema</td><td>El nombre de todo el ecosistema: dos palabras, siempre en mayúsculas. "Misión" tiene tanto el significado en inglés de una vocación impulsada por un propósito como su connotación judeocristiana de propósito misionero. "Cadena" se refiere tanto a la tecnología blockchain como a la cadena ininterrumpida de personas vinculadas por una misión compartida. Sin guión. Nunca traducido.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Termino</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Mission Chain</td><td>Marca Ecosistema</td><td>El nombre de todo el ecosistema: dos palabras, siempre en mayúsculas. "Mission" tiene tanto el significado en inglés de una vocación impulsada por un propósito como su connotación judeocristiana de propósito misionero. "Chain" se refiere tanto a la tecnología blockchain como a la cadena ininterrumpida de personas vinculadas por una misión compartida. Sin guión. Nunca traducido.</td></tr>
 <tr><td>Mission Chain Network</td><td>Marca Ecosistema (formal)</td><td>El nombre formal completo del protocolo y el ecosistema. Utilícese en documentos legales, especificaciones técnicas, comunicaciones formales a inversores y en la primera mención en publicaciones oficiales. Tras la primera mención, basta con "Mission Chain".</td></tr>
-<tr><td>Mission DAO</td><td>Entidad de gobierno</td><td>La organización autónoma descentralizada que gobierna el ecosistema Mission Chain. "Mission DAO" es un nombre propio único. La palabra "DAO" nunca se separa de "Misión" en este contexto. Puede explicarse en el primer uso en el idioma local con un breve paréntesis - después "Mission DAO".</td></tr>
+<tr><td>Mission DAO</td><td>Entidad de gobierno</td><td>La organización autónoma descentralizada que gobierna el ecosistema Mission Chain. "Mission DAO" es un nombre propio único. La palabra "DAO" nunca se separa de "Mission" en este contexto. Puede explicarse en el primer uso en el idioma local con un breve paréntesis - después "Mission DAO".</td></tr>
 <tr><td>Creator Mission Economy</td><td>Marco conceptual</td><td>Mission Chain es el nombre del nuevo modelo económico que introduce, en el que la contribución humana verificada, y no la especulación financiera, impulsa la creación de valor. Se trata de un concepto de marca oficial. Explique el concepto en el idioma de destino si es necesario; mantenga "Creator Mission Economy" como etiqueta en inglés para el concepto en sí.</td></tr>
 <tr><td>Mission Network</td><td>Layer 2 Marca</td><td>El nombre de marca de la futura infraestructura de blockchain Mission Chain de Layer 2, la red creada a propósito sobre la que funcionará en última instancia todo el ecosistema, con MIC como moneda nativa. Siempre dos palabras en mayúsculas. Nunca "cadena Mission Network Layer 2" - utilice "Mission Network Layer 2" o "Mission Network" solo después de la primera mención.</td></tr>
 <tr><td>Mission Network Layer 2</td><td>Designación técnica</td><td>La designación completa de la cadena de bloques Mission Chain Layer 2. "Layer 2" es un término de arquitectura de blockchain entendido globalmente. Esta designación comunica tanto el tipo de tecnología como su lugar en la visión a largo plazo de Mission Chain. Tras la primera mención: "Mission Network L2" es una abreviatura aceptable en contextos informales o técnicos.</td></tr></tbody></table></div>
@@ -217,8 +222,8 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <section class="section anim a1" id="product">
 <div class="section-num">Sección 2</div>
 <h2 class="section-title">Nombres de productos y plataformas</h2>
-<p>Cada nombre de producto es un nombre propio compuesto formado por la palabra "Misión" seguida de su descriptor de función. Todos los nombres de productos se escriben en mayúsculas y en inglés. Son identidades de marca, no frases descriptivas.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Plazo</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Mission Learn</td><td>Producto - Pilar 1</td><td>La academia creativa acreditada por blockchain, el primero de los tres pilares del ecosistema. "Learn" es un sufijo de marca, no una palabra independiente. No escriba nunca una traducción de "Learn" a la lengua local en este contexto, por ejemplo, "Mission Aprender" (español) o cualquier equivalente. El concepto puede explicarse localmente; el nombre se queda.</td></tr>
+<p>Cada nombre de producto es un nombre propio compuesto formado por la palabra "Mission" seguida de su descriptor de función. Todos los nombres de productos se escriben en mayúsculas y en inglés. Son identidades de marca, no frases descriptivas.</p>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Termino</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Mission Learn</td><td>Producto - Pilar 1</td><td>La academia creativa acreditada por blockchain, el primero de los tres pilares del ecosistema. "Learn" es un sufijo de marca, no una palabra independiente. No escriba nunca una traducción de "Learn" a la lengua local en este contexto, por ejemplo, "Mission Aprender" (español) o cualquier equivalente. El concepto puede explicarse localmente; el nombre se queda.</td></tr>
 <tr><td>Mission Work</td><td>Producto - Pilar 2</td><td>El mercado verificado de la economía creativa: el segundo pilar. Conecta a creadores acreditados con clientes globales, todos los pagos se liquidan en MIC. Nunca traduzcas "Trabajo" en este nombre. La frase "Mission Work" es la identidad del mercado, no una descripción genérica de "trabajar para una misión"</td></tr>
 <tr><td>Mission Social</td><td>Producto - Pilar 3</td><td>La plataforma de activación de la comunidad, el escaparate y la gobernanza: el tercer pilar. Acoge eventos, escaparates de creadores, participación en la gobernanza y actividad de la red Mission Hub. No traducir "Social" No confundir con medios sociales genéricos: Mission Social es un nombre de producto específico.</td></tr>
 <tr><td>Mission Arts</td><td>Subplataforma</td><td>La capa de activos digitales y licencias integrada en Mission Work. Gestiona la venta y concesión de licencias de activos de música, artes visuales y vídeo, con mecanismos de derechos de autor para los creadores. "Mission Arts" es la marca del subproducto. Siempre en mayúsculas como dos palabras.</td></tr>
@@ -229,7 +234,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">Sección 3</div>
 <h2 class="section-title">Instrumentos económicos y denominaciones Token</h2>
 <p>Son los instrumentos financieros y económicos del ecosistema Mission Chain. Deben utilizarse con precisión para que nunca se tergiverse la naturaleza del instrumento ante los participantes, socios o reguladores.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Plazo</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>MIC</td><td>Token Ticker</td><td>El ticker oficial y nombre abreviado de Mission Chain Token - el token de coordinación universal y futura moneda nativa de Mission Network Layer 2. Siempre en mayúsculas. En la primera mención en cualquier documento: "MIC (Mission Chain Token)" - después "MIC" solo. No escriba "MIC token" después de haber introducido el nombre completo, ya que "MIC" ya es el nombre completo. Nunca traduzca o renderice como una palabra del idioma local.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Termino</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>MIC</td><td>Token Ticker</td><td>El ticker oficial y nombre abreviado de Mission Chain Token - el token de coordinación universal y futura moneda nativa de Mission Network Layer 2. Siempre en mayúsculas. En la primera mención en cualquier documento: "MIC (Mission Chain Token)" - después "MIC" solo. No escriba "MIC token" después de haber introducido el nombre completo, ya que "MIC" ya es el nombre completo. Nunca traduzca o renderice como una palabra del idioma local.</td></tr>
 <tr><td>Mission Chain Token</td><td>Token Nombre completo</td><td>Nombre oficial abreviado de MIC. Utilícelo en declaraciones legales, documentos para inversores, registros reglamentarios y en la primera mención en publicaciones formales. Después de la primera mención, utilice exclusivamente "MIC".</td></tr>
 <tr><td>MICE</td><td>Licencia Ticker</td><td>El nombre oficial de Mission Algorithm Node License - la licencia de nodo de minería algorítmica de 360 días que otorga acceso proporcional a las recompensas de emisión diarias de MIC. Siempre en mayúsculas. En la primera mención: "MICE (Mission Algorithm Node License)" - a partir de entonces "MICE" MICE es tanto el acrónimo como la identidad de marca completa de este instrumento. No lo traduzca nunca.</td></tr>
 <tr><td>Mission Algorithm Node License</td><td>Nombre completo de la licencia</td><td>El nombre oficial abreviado de MICE. Una licencia MICE es un derecho funcional limitado en el tiempo para operar un nodo de minería de algoritmos dentro del sistema de emisión Hindex - no un token, no un valor, no un instrumento de inversión. Utilice el nombre completo en contextos legales y formales; "MICE" en todas las referencias en curso.</td></tr>
@@ -249,7 +254,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">Sección 4</div>
 <h2 class="section-title">Gobernanza, mecánica y términos técnicos</h2>
 <p>Estos términos describen la mecánica de funcionamiento del protocolo, la gobernanza y el sistema económico de Mission Chain. La mayoría son términos estándar de la Web3 global o de las finanzas, por lo que debe conservarse el inglés para mantener la precisión y la interoperabilidad.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Plazo</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>DAO</td><td>Estructura de gobierno</td><td>Organización Autónoma Descentralizada - un modelo de gobierno en el que las decisiones son tomadas por los titulares de tokens y credenciales a través de votaciones en la cadena, con reglas impuestas por contratos inteligentes en lugar de una gestión centralizada. Siempre en mayúsculas. Entendido globalmente en contextos de blockchain. En el primer uso en cualquier publicación localizada, es útil una breve explicación entre paréntesis en el idioma local - después de lo cual "DAO" se utiliza solo.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Termino</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>DAO</td><td>Estructura de gobierno</td><td>Organización Autónoma Descentralizada - un modelo de gobierno en el que las decisiones son tomadas por los titulares de tokens y credenciales a través de votaciones en la cadena, con reglas impuestas por contratos inteligentes en lugar de una gestión centralizada. Siempre en mayúsculas. Entendido globalmente en contextos de blockchain. En el primer uso en cualquier publicación localizada, es útil una breve explicación entre paréntesis en el idioma local - después de lo cual "DAO" se utiliza solo.</td></tr>
 <tr><td>Staking / Stake / Staked / Unstake</td><td>Mecanismo de Gobernanza y Recompensa</td><td>El acto de bloquear una cantidad específica de MIC en un contrato inteligente para activar los derechos de participación en la gobernanza (peso de voto) y la participación en el fondo de recompensas. Staking es el motor de la gobernanza de Mission Chain: sin MIC en juego no hay peso de voto ni participación en el fondo, independientemente de la credencial NFT que se posea. Todas las formas de la palabra ("stake", "staked", "staking", "unstake") se mantienen en inglés.</td></tr>
 <tr><td>NFT</td><td>Estándar tecnológico</td><td>Token no fungible: un activo digital único y verificable registrado en una blockchain. En el contexto de Mission Chain, los NFT sirven como credenciales de identidad (Community NFTs, MFP-NFTs) y licencias funcionales (MICE). Siempre en mayúsculas. Se trata de un término de uso generalizado; explíquelo brevemente la primera vez que lo utilice cuando escriba para un público no especializado en criptografía.</td></tr>
 <tr><td>Token</td><td>Instrumento económico</td><td>Activo digital emitido en una cadena de bloques que representa una unidad de valor o utilidad dentro de un ecosistema. "Token" se utiliza específicamente para MIC - no es intercambiable con las palabras locales para dinero, moneda o divisa. El uso de un equivalente en el idioma local introduce imprecisiones que pueden inducir a error sobre la naturaleza del instrumento.</td></tr>
@@ -273,7 +278,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">Sección 5</div>
 <h2 class="section-title">Funciones comunitarias y nombres de los programas</h2>
 <p>Estos son los títulos y designaciones oficiales para los roles dentro del ecosistema Mission Chain. Se escriben en mayúsculas como títulos propios cuando se hace referencia al rol, y permanecen en inglés en todas las publicaciones localizadas.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Plazo</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Hub Leader</td><td>Papel de la Comunidad</td><td>Los embajadores certificados de la comunidad que operan Mission Hubs. Los Hub Leaders son titulares mínimos de Maker Community NFT - contribuyentes activos con historial Mission Work verificado y reconocido prestigio en su iglesia local o comunidad creativa. Gestionan las comunidades locales de Telegram, organizan eventos en persona, buscan oportunidades de trabajo locales y representan a Mission Chain en conferencias regionales. Siempre con mayúsculas como título de rol: "Hub Leader" No traducir a equivalentes en idiomas locales - el título permanece en inglés.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Termino</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Hub Leader</td><td>Papel de la Comunidad</td><td>Los embajadores certificados de la comunidad que operan Mission Hubs. Los Hub Leaders son titulares mínimos de Maker Community NFT - contribuyentes activos con historial Mission Work verificado y reconocido prestigio en su iglesia local o comunidad creativa. Gestionan las comunidades locales de Telegram, organizan eventos en persona, buscan oportunidades de trabajo locales y representan a Mission Chain en conferencias regionales. Siempre con mayúsculas como título de rol: "Hub Leader" No traducir a equivalentes en idiomas locales - el título permanece en inglés.</td></tr>
 <tr><td>Founding Member</td><td>Función Designación</td><td>Miembros del equipo fundador que contribuyeron con un esfuerzo significativo, marca, propiedad intelectual o trabajo organizativo para establecer el ecosistema Mission Chain - y recibieron MFP-NFTs a través de la Vía 2 (Contribución Fundadora). "Founding Member" es un título de rol en mayúsculas. El concepto puede explicarse localmente; el título se mantiene en inglés.</td></tr>
 <tr><td>Constitutional Steward</td><td>Función de gobierno</td><td>El título formal de la función de gobierno para un titular activo de MFP-NFT que cumpla el requisito mínimo de apuesta MIC y haya emitido al menos un voto de gobierno en el trimestre en curso. Los Constitutional Steward rigen los parámetros fundamentales del protocolo: reglas básicas inmutables y parámetros marco ajustables. Siempre se escribe con mayúscula inicial.</td></tr>
 <tr><td>Active Steward</td><td>MFP-NFT Etapa del ciclo de vida</td><td>La primera etapa del ciclo de vida de la MFP-NFT y la de mayor funcionamiento: un titular de MFP-NFT que mantiene el requisito de apuesta mínima y vota al menos una vez al trimestre. Los Active Steward reciben la cuota íntegra del Fondo Constitucional y todo el peso de gobernanza. Siempre capitalizados.</td></tr>
@@ -289,7 +294,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="section-num">Sección 6</div>
 <h2 class="section-title">Plataforma, contenidos y condiciones comerciales</h2>
 <p>Estos términos aparecen regularmente en las comunicaciones y documentación de Mission Chain. Se trata de términos digitales, operativos y comerciales estándar que deben permanecer en inglés para mantener la coherencia en todos los mercados.</p>
-<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Plazo</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Portfolio</td><td>Plataforma Plazo</td><td>La colección en cadena de las mejores obras de un creador, que se muestra en Mission Work y Mission Social para demostrar su habilidad, estilo y trayectoria profesional a los clientes potenciales. Un término profesional creativo universal. No hay que traducirlo a equivalentes locales: "portafolio" se entiende en todos los mercados y tiene la connotación específica de prueba de trabajo creativo profesional.</td></tr>
+<div class="wp-table-wrap"><table class="wp-table glossary-table"><thead><tr><th>Termino</th><th>Categoría</th><th>Significado y contexto</th></tr></thead><tbody><tr><td>Portfolio</td><td>Plataforma Plazo</td><td>La colección en cadena de las mejores obras de un creador, que se muestra en Mission Work y Mission Social para demostrar su habilidad, estilo y trayectoria profesional a los clientes potenciales. Un término profesional creativo universal. No hay que traducirlo a equivalentes locales: "portafolio" se entiende en todos los mercados y tiene la connotación específica de prueba de trabajo creativo profesional.</td></tr>
 <tr><td>Dashboard</td><td>Plataforma Plazo</td><td>La interfaz de datos personales en la cadena que muestra las credenciales de un participante, el progreso KPI hacia el siguiente nivel NFT, los importes de las apuestas actuales, la participación en el fondo común, el historial de votaciones, las clasificaciones de trabajos Mission Work y las ganancias MIC. "Dashboard" es un término de producto digital universalmente entendido.</td></tr>
 <tr><td>KPI</td><td>Término comercial</td><td>Indicador clave de rendimiento: las métricas medibles y verificables en la cadena que un participante debe alcanzar para ganar cada nivel Community NFT (Builder, Maker, Luminary). Ejemplos: número de trabajos Mission Work completados, valoración media de los trabajos, MIC obtenidos, votos de gobernanza emitidos, eventos comunitarios organizados. En el primer uso en documentos para audiencias no empresariales: "KPI (Indicador clave de rendimiento)" - a partir de entonces "KPI"</td></tr>
 <tr><td>Roadmap</td><td>Plazo estratégico</td><td>El plan oficial de desarrollo y crecimiento por fases para Mission Chain - organizado en cuatro fases desde la Fundación hasta el Liderazgo Global. "Roadmap" en los documentos de Mission Chain siempre se refiere a este plan oficial específico. La palabra puede utilizarse en prosa en el idioma local al explicar el concepto; "el Mission Chain Roadmap" u "hoja de ruta de Mission Chain" en referencias formales.</td></tr>
@@ -303,35 +308,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <tr><td>BSC</td><td>Acrónimo técnico</td><td>BNB Smart Chain - la cadena de bloques en la que Mission Chain está desplegada actualmente (Fase I-III). Una cadena de alta velocidad y bajo coste compatible con EVM con una fuerte presencia en el Sudeste Asiático y África - los principales mercados objetivo de Mission Chain. Siempre "BSC" como acrónimo tras la primera mención. En la primera mención: "Cadena inteligente BNB (BSC)"</td></tr></tbody></table></div>
 </section>
 <section class="section anim a1" id="math">
-<div class="section-num">Sección 7</div>
-<h2 class="section-title">Fórmula matemática Variables</h2>
-<p>Todas las fórmulas matemáticas, nombres de variables, notación de funciones y constantes numéricas de los documentos Mission Chain deben conservarse exactamente como están escritos en inglés, sin localización de símbolos, separadores o notación.</p>
-<p>Mission Chain utiliza el punto (.) estándar internacional como separador decimal en todas las fórmulas, por ejemplo 0,65, 0,95 y 2.037.671. No sustituya las comas ni las convenciones decimales locales dentro de la notación de las fórmulas.</p>
-<div class="wp-table-wrap"><table class="wp-table formula-table"><thead><tr><th>Fórmula / Variable</th><th>Qué es / Significado de cada variable</th></tr></thead><tbody><tr><td><span class="formula-math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span></td><td>La fórmula de emisión diaria de Hindex Algorithm MIC. t = número de días transcurridos desde la génesis del ecosistema. Los cuatro componentes se multiplican para producir E(t) - el total de MIC emitido a la red en el día t.</td></tr>
-<tr><td><span class="formula-math">E<sub>base</sub> = 2.037.671 MIC/día</span></td><td>La tasa de emisión diaria base derivada matemáticamente. Es el nivel de emisión neutro que, mantenido durante todo el programa de emisión con el decaimiento aplicado, distribuye exactamente 5.950.000.000 MIC (85% del suministro total) a la reserva minera.</td></tr>
-<tr><td><span class="formula-math">B = 6.5</span></td><td>Multiplicador de arranque - activo sólo durante la Fase I (activación temprana de la red). Acelera la adopción inicial de MICE y la siembra de liquidez en el ecosistema sin ampliar la oferta total de MIC.</td></tr>
-<tr><td><span class="formula-math">D(t) = 0,95<sup>t/90</sup></span></td><td>Función Time Decay. La emisión disminuye un 5% cada 90 días (aproximadamente un trimestre). Impone una disciplina monetaria a largo plazo y una escasez creciente a lo largo del tiempo. A medida que t crece, D(t) se aproxima a cero - la emisión disminuye asintóticamente.</td></tr>
-<tr><td><span class="formula-math">L(t) = Pinza[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span></td><td>Hindex Factor Liquidity. Vincula la emisión diaria a la profundidad de liquidez real en la cadena DEX. TWAP₇d = precio medio ponderado en el tiempo de 7 días MIC/USDT. L_ref = objetivo de liquidez de referencia. α = coeficiente de sensibilidad (regido por los titulares de MFP-NFT dentro de los límites aprobados por DAO). L_min, L_max = límites mínimo y máximo que impiden oscilaciones extremas de la emisión.</td></tr>
-<tr><td><span class="formula-math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0,65 × E(t)</span></td><td>Recompensa diaria MIC para el operador i del nodo MICE en el día t. M_i = número de licencias MICE activas que posee el operador i. N_t = total de licencias MICE activas de todos los operadores en el día t. 0,65 = 65% de la emisión diaria asignada al conjunto de nodos MICE. A medida que N_t aumenta (más participantes), la cuota por operador disminuye: la emisión total es fija, no ampliable.</td></tr>
-<tr><td><span class="formula-math">VotingWeight<sub>MFP,i</sub> = S<sub>i</sub> / Σ S<sub>MFP,activo</sub></span></td><td>Ponderación de voto del titular i de MFP-NFT dentro del nivel de gobernanza constitucional. S_i = MIC apostado por el titular i. Σ S_MFP_active = suma de MIC apostados por todos los titulares de MFP-NFT actualmente activos (no suspendidos). Un titular que apueste cero MIC tiene un peso de voto cero, independientemente del número de MFP-NFT que posea.</td></tr>
-<tr><td><span class="formula-math">PoolShare<sub>MFP,i</sub>(t) = (S<sub>i</sub> / Σ S<sub>MFP</sub>) × 0,10 × E(t)</span></td><td>Asignación diaria de MIC al fondo común constitucional para el titular de MFP-NFT i. 0,10 = 10% de la emisión diaria asignada al fondo común MFP-NFT. La distribución es proporcional a la participación MIC de cada titular en relación con la participación MFP-NFT activa total.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Builder,i</sub> = S<sub>i</sub> / Σ S<sub>Builder,activo</sub></span></td><td>Ponderación de voto del titular i de Builder NFT en las votaciones de gobernanza del nivel comunitario. Nivel básico: multiplicador de peso 1×. Proporcional a MIC apostado entre todos los titulares activos de Builder.</td></tr>
-<tr><td><span class="formula-math">VW<sub>Maker,i</sub> = (S<sub>i</sub> × 2) / Σ apuestas ponderadas</span></td><td>Peso de voto del titular de Maker NFT i en las votaciones conjuntas de nivel comunitario. multiplicador de nivel 2×: cada MIC apostado por un Maker cuenta como 2 unidades de peso de voto en relación con 1 unidad por MIC apostado por un Builder. Σ apuestas ponderadas = suma de todas las apuestas ponderadas por nivel de los titulares de Builder (×1), Maker (×2) y Luminary (×4).</td></tr>
-<tr><td><span class="formula-math">VW<sub>Luminary,i</sub> = (S<sub>i</sub> × 4) / Σ apuestas ponderadas</span></td><td>Ponderación de voto del titular i de Luminary NFT en las votaciones conjuntas del nivel comunitario. 4× multiplicador de nivel - la ponderación más alta dentro del nivel de gobierno comunitario. Σ participaciones ponderadas calculadas de la misma forma que para Maker.</td></tr>
-<tr><td><span class="formula-math">PS<sub>i</sub>(t) = (S<sub>i</sub> / Σ S<sub>Comunidad,activa</sub>) × tier_weight × 0,10 × E(t)</span></td><td>S_i = MIC apostado por el titular i. Σ S_Community_active = MIC total apostado por todos los titulares activos de Community NFT en todos los niveles. tier_weight = el coeficiente de ponderación asignado a cada nivel (Builder = 1×, Maker = 2×, Luminary = 4×, valores específicos fijados por la gobernanza). 0.10 = 10% de la emisión diaria asignada al pool Community NFT.</td></tr></tbody></table></div>
+<div class="section-num">Seccion 7</div>
+<h2 class="section-title">Variables de Formulas Matematicas</h2>
+<p>Todas las formulas matematicas, nombres de variables, notacion funcional y constantes numericas en los documentos de Mission Chain deben conservarse exactamente como estan escritas en ingles, sin localizar simbolos, separadores ni notacion.</p>
+<p>Mission Chain utiliza el punto (.) como separador decimal internacional en todas las formulas, por ejemplo 0.65, 0.95 y 2,037,671. No sustituya estos valores por comas ni por convenciones numericas locales dentro de la notacion de formula.</p>
+<div class="wp-table-wrap"><table class="wp-table formula-table"><thead><tr><th>Formula / Variable</th><th>Definicion / Significado de cada variable</th></tr></thead><tbody>
+<tr><td><span class="formula-math">E(t) = E<sub>base</sub> × B × D(t) × L(t)</span></td><td>Formula diaria de emision MIC. t es el numero de dias transcurridos desde la genesis del ecosistema. Los cuatro componentes se multiplican para producir E(t), la emision total de MIC liberada a la red en el dia t.</td></tr>
+<tr><td><span class="formula-math">E<sub>base</sub> = 2,037,671 MIC/day</span></td><td>Tasa base diaria de emision derivada matematicamente. Este es el nivel neutro de emision que, mantenido durante todo el programa con su curva de decay, distribuye exactamente 5,950,000,000 MIC (85% del suministro total) al pool de mineria.</td></tr>
+<tr><td><span class="formula-math">B = 6.5</span></td><td>Bootstrap multiplier activo solo en Phase I. Acelera la adopcion temprana de MICE y la siembra de liquidez sin ampliar el suministro total de MIC.</td></tr>
+<tr><td><span class="formula-math">D(t) = 0.95<sup>t/90</sup></span></td><td>Funcion de time decay. La emision disminuye 5% cada 90 dias. Impone disciplina monetaria de largo plazo y escasez creciente con el tiempo.</td></tr>
+<tr><td><span class="formula-math">L(t) = Clamp[(TWAP<sub>7d</sub> / L<sub>ref</sub>)<sup>α</sup>, L<sub>min</sub>, L<sub>max</sub>]</span></td><td>Liquidity factor de Hindex. Vincula la emision diaria a la profundidad real de liquidez en DEX. TWAP<sub>7d</sub> es el promedio ponderado en 7 dias de MIC/USDT. L<sub>ref</sub> es el objetivo de liquidez de referencia. α es el coeficiente de sensibilidad dentro de los limites aprobados por DAO.</td></tr>
+<tr><td><span class="formula-math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span></td><td>Recompensa diaria MIC del operador MICE i en el dia t. M<sub>i</sub> es el numero de licencias MICE activas del operador i. N<sub>t</sub> es el total de licencias MICE activas en la red. 0.65 representa el 65% de la emision diaria asignada al pool MICE.</td></tr>
+<tr><td><span class="formula-math">VotingWeight<sub>MFP,i</sub> = S<sub>i</sub> / Σ S<sub>MFP,active</sub></span></td><td>Peso de voto del holder i de MFP-NFT. S<sub>i</sub> es el MIC staked por el holder i. Σ S<sub>MFP,active</sub> es la suma del MIC staked por todos los holders MFP activos.</td></tr>
+<tr><td><span class="formula-math">PoolShare<sub>MFP,i</sub>(t) = (S<sub>i</sub> / Σ S<sub>MFP,active</sub>) × 0.10 × E(t)</span></td><td>Asignacion diaria de MIC del pool constitucional al holder i de MFP-NFT. 0.10 representa el 10% de la emision diaria asignada al pool MFP-NFT.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Builder,i</sub> = S<sub>i</sub> / Σ S<sub>Builder,active</sub></span></td><td>Peso de voto del holder i de Builder NFT en votaciones comunitarias. Nivel base con multiplicador 1×, proporcional al MIC staked entre todos los Builders activos.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Maker,i</sub> = (S<sub>i</sub> × 2) / Σ weighted stakes</span></td><td>Peso de voto del holder i de Maker NFT en votaciones comunitarias conjuntas. Cada MIC staked por un Maker cuenta con multiplicador 2× dentro del total de weighted stakes.</td></tr>
+<tr><td><span class="formula-math">VW<sub>Luminary,i</sub> = (S<sub>i</sub> × 4) / Σ weighted stakes</span></td><td>Peso de voto del holder i de Luminary NFT. Es el peso mas alto del nivel comunitario, con multiplicador 4×.</td></tr>
+<tr><td><span class="formula-math">PS<sub>i</sub>(t) = (S<sub>i</sub> / Σ S<sub>Community,active</sub>) × tier_weight × 0.10 × E(t)</span></td><td>Participacion diaria del pool Community NFT para el holder i. tier_weight es el coeficiente de ponderacion por nivel (Builder 1×, Maker 2×, Luminary 4×, salvo ajuste aprobado por governance).</td></tr>
+</tbody></table></div>
 <div class="callout gold">
-<h3 class="sub-title">Por qué no deben traducirse las fórmulas</h3>
-<p>Las fórmulas matemáticas son especificaciones técnicas precisas, no prosa. Cualquier sustitución de nombres de variables, reformateo de la notación o localización de números dentro de la sintaxis de la fórmula cambia el significado de la fórmula y podría causar errores de aplicación, auditoría o comprensión por parte de la comunidad. Las fórmulas deben reproducirse con exactitud, incluso en documentos escritos íntegramente en lenguas no latinas.</p>
+<h3 class="sub-title">Por que las formulas no se traducen</h3>
+<p>Las formulas matematicas son especificaciones tecnicas exactas, no prosa. Cambiar nombres de variables, notacion o formato numerico altera el significado de la formula y puede causar errores de implementacion, auditoria o comunicacion.</p>
 </div>
 <div class="callout">
-<h3 class="sub-title">Referencia rápida</h3>
-<p>La siguiente lista de comprobación resume los términos que deben permanecer en inglés en todas las traducciones y localizaciones de Mission Chain.</p>
+<h3 class="sub-title">Referencia rapida</h3>
+<p>Estos grupos deben permanecer en ingles en todas las traducciones y localizaciones de Mission Chain.</p>
 <div class="quick-grid">
-<div class="quick-card"><h3>Nombres de ecosistemas y productos</h3><p>Mission Chain - Mission Chain Network - Mission DAO - Creator Mission Economy - Mission Network - Mission Network Layer 2 - Mission Learn - Mission Work - Mission Social - Mission Arts - Mission Hub - Mission Social Festival</p></div><div class="quick-card"><h3>Instrumentos económicos</h3><p>MIC - Mission Chain Token - MICE - Mission Algorithm Node License - MFP-NFT - Mission Founding Partner NFT - Community NFT - Builder NFT - Maker NFT - Luminary NFT - USDT</p></div><div class="quick-card"><h3>Términos técnicos y de gobernanza</h3><p>DAO - NFT - Token - Staking / Stake / Staked - Smart Contract - Escrow - Hindex Algorithm - TWAP - DEX - Vesting - Cliff - TGE - Timelock - Quorum - Buy &amp; Burn - Liquidity - Layer 2 - Multi-sig - On-chain - Off-chain - Mainnet - Testnet - BSC</p></div><div class="quick-card"><h3>Funciones y programas comunitarios</h3><p>Hub Leader - Founding Member - Constitutional Steward - Active Steward - Honorary Steward - Legacy Credential - Founding Steward - Economic Oracle - Builder - Maker - Luminary - Global South - Creator Economy</p></div><div class="quick-card"><h3>Plataforma y condiciones comerciales</h3><p>Portfolio - Dashboard - KPI - Roadmap - Flywheel - White Paper - MVP - ARR - Whitelist - Airdrop</p></div><div class="quick-card"><h3>Todas las variables de fórmula (conservar exactamente como están escritas)</h3><p>Builder. Maker. Luminary.</p></div>
-</div>
-<div class="quick-note">
-<p>"Vosotros sois la luz del mundo" - Mateo 5:14</p>
-<p style="margin-top:8px;">missionchain.info</p>
+<div class="quick-card"><h3>Nombres de ecosistema y producto</h3><p>Mission Chain · Mission Chain Network · Mission DAO · Creator Mission Economy · Mission Network · Mission Network Layer 2 · Mission Learn · Mission Work · Mission Social · Mission Arts · Mission Hub · Mission Social Festival</p></div>
+<div class="quick-card"><h3>Instrumentos economicos</h3><p>MIC · Mission Chain Token · MICE · Mission Algorithm Node License · MFP-NFT · Mission Founding Partner NFT · Community NFT · Builder NFT · Maker NFT · Luminary NFT · USDT</p></div>
+<div class="quick-card"><h3>Terminos tecnicos y de governance</h3><p>DAO · NFT · Token · Staking / Stake / Staked · Smart Contract · Escrow · Hindex Algorithm · TWAP · DEX · Vesting · Cliff · TGE · Timelock · Quorum · Buy & Burn · Liquidity · Layer 2 · Multi-sig · On-chain · Off-chain · Mainnet · Testnet · BSC</p></div>
+<div class="quick-card"><h3>Roles y programas comunitarios</h3><p>Hub Leader · Founding Member · Constitutional Steward · Active Steward · Honorary Steward · Legacy Credential · Founding Steward · Economic Oracle · Builder · Maker · Luminary · Global South · Creator Economy</p></div>
+<div class="quick-card"><h3>Terminos de plataforma y negocio</h3><p>Portfolio · Dashboard · KPI · Roadmap · Flywheel · White Paper · MVP · ARR · Whitelist · Airdrop</p></div>
+<div class="quick-card"><h3>Todas las variables de formula</h3><p>E(t) · E<sub>base</sub> · D(t) · L(t) · TWAP<sub>7d</sub> · L<sub>ref</sub> · L<sub>min</sub> · L<sub>max</sub> · R<sub>MICE,i</sub>(t) · VotingWeight<sub>MFP,i</sub> · PoolShare<sub>MFP,i</sub>(t) · VW<sub>Builder,i</sub> · VW<sub>Maker,i</sub> · VW<sub>Luminary,i</sub> · PS<sub>i</sub>(t)</p></div>
 </div>
 </div>
 </section>
@@ -340,7 +348,7 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 <div class="foot-logo">
 <img alt="Mission Chain" src="../../mission-chain-logo-clear.png"/>
 <div class="foot-logo-name">Mission Chain</div>
-<div class="foot-tagline">Glossary of Brand Terms</div>
+<div class="foot-tagline">Glosario de Terminos de Marca</div>
 </div>
 <div>
 <p>© 2026 Mission Chain Network. Este glosario es una referencia documental para la calidad de la traducción, la coherencia de la comunicación y la integridad de la marca en todo el ecosistema.</p>
@@ -350,7 +358,38 @@ footer .disclaimer{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,6
 </footer>
 </main>
 <script>
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
 const THEME_KEY = 'missionchain-theme';
+function syncGlossaryLanguageButtons() {
+  const current = detectLocale();
+  document.querySelectorAll('[id^="lb-"]').forEach(btn => btn.classList.remove('active'));
+  const active = document.getElementById('lb-' + current);
+  if (active) active.classList.add('active');
+  document.documentElement.lang = current;
+}
+function setLang(lang) {
+  window.location.href = getLocalizedHref(lang, 'Glossary_Brand_Terms.html');
+}
 function setTheme(theme) {
   const isLight = theme === 'night';
   document.body.classList.toggle('theme-light', isLight);
@@ -358,6 +397,7 @@ function setTheme(theme) {
   document.getElementById('theme-night').classList.toggle('active', isLight);
   localStorage.setItem(THEME_KEY, theme);
 }
+syncGlossaryLanguageButtons();
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 function goTo(id) {
   const el = document.getElementById(id);

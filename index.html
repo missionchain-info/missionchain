@@ -3634,19 +3634,46 @@ document.querySelectorAll('.eco-card, .round-card, .team-card, .gov-card, .rm-co
     document.documentElement.classList.remove('lang-vi','lang-es','lang-pt','lang-ko');
   }
 
+  
+const SUPPORTED_LOCALES = ['en','es','pt','ko','vi'];
+const LOCALE_LABELS = { en: '🇬🇧 EN', es: '🇪🇸 ES', pt: '🇧🇷 PT', ko: '🇰🇷 KO', vi: '🇻🇳 VI' };
+function detectLocale() {
+  const match = window.location.pathname.match(/\/translations\/(es|pt|ko|vi)(?:\/|$)/);
+  return match ? match[1] : 'en';
+}
+function detectFileName(fallback) {
+  const path = window.location.pathname || '';
+  const cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
+  const name = cleanPath.split('/').pop();
+  return name || fallback;
+}
+function getLocalizedHref(lang, fallbackFile) {
+  const currentLocale = detectLocale();
+  const file = detectFileName(fallbackFile);
+  const suffix = window.location.search + window.location.hash;
+  if (currentLocale === 'en') {
+    return (lang === 'en' ? file : 'translations/' + lang + '/' + file) + suffix;
+  }
+  return (lang === 'en' ? '../../' + file : '../' + lang + '/' + file) + suffix;
+}
+  function syncLandingLanguageMenu() {
+    var currentLocale = detectLocale();
+    var selected = document.getElementById('langSelected');
+    if (selected) selected.textContent = LOCALE_LABELS[currentLocale] || LOCALE_LABELS.en;
+    document.querySelectorAll('.lang-option').forEach(function(option) {
+      option.classList.toggle('active', option.textContent.trim() === (LOCALE_LABELS[currentLocale] || LOCALE_LABELS.en));
+    });
+  }
+
   function setLang(lang, label, el) {
-    document.getElementById('langSelected').textContent = label;
+    document.getElementById('langSelected').textContent = label || LOCALE_LABELS[lang] || LOCALE_LABELS.en;
     document.querySelectorAll('.lang-option').forEach(function(o) { o.classList.remove('active'); });
     if (el) el.classList.add('active');
     document.getElementById('langSwitcher').classList.remove('open');
-    if (lang === currentLang) return;
-    restoreEN();
-    currentLang = lang;
-    if (lang === 'vi') applyVI();
-    else if (lang === 'es') applyES();
-    else if (lang === 'pt') applyPT();
-    else if (lang === 'ko') applyKO();
+    window.location.href = getLocalizedHref(lang, 'index.html');
   }
+
+  syncLandingLanguageMenu();
 
   function setTheme(theme) {
     var isLight = theme === 'night';
