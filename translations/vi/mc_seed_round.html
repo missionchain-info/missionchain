@@ -1,5 +1,5 @@
 html
-<html lang="vi">
+<html class="lang-vi" lang="vi">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -17,8 +17,28 @@ html
   --red:#B84040;--teal:#2A7A6A;--amber:#8A5A20;
 }
 html{scroll-behavior:smooth}
-body{font-family:"EB Garamond",Georgia,serif;background:var(--ink);color:var(--cream);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-
+body{
+  font-family:"Be Vietnam Pro","Montserrat",sans-serif;
+  background:var(--ink);
+  color:var(--cream);
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.lang-vi h1,.lang-vi h2,.lang-vi h3,.lang-vi h4,.lang-vi .badge,.lang-vi .eyebrow,.lang-vi .sub-copy,
+.lang-vi .sec-title,.lang-vi .pkg-name,.lang-vi .pkg-price,.lang-vi .pkg-mic,.lang-vi .roi-label,.lang-vi .roi-target,
+.lang-vi .rv,.lang-vi .wallet-lbl,.lang-vi .copy-btn,.lang-vi .formhead,.lang-vi .flabel,.lang-vi .risk-ttl,
+.lang-vi .cl1,.lang-vi .cl2,.lang-vi footer,.lang-vi .nbrand,.lang-vi .lsbtn,.lang-vi .lopt,.lang-vi .theme-btn,
+.lang-vi [style*="font-family: 'Cinzel'"],.lang-vi [style*="font-family:'Cinzel'"],
+.lang-vi [style*="font-family:\"Cinzel\""],.lang-vi [style*="font-family:Cinzel"]{
+  font-family:"Noto Serif Display","Noto Serif",serif !important;
+  letter-spacing:.02em !important;
+  text-transform:none !important;
+}
+.lang-vi p,.lang-vi span,.lang-vi div,.lang-vi label,.lang-vi input,.lang-vi select,.lang-vi button,
+.lang-vi textarea,.lang-vi .check-label,.lang-vi .flabel-note,.lang-vi .copy,.lang-vi .sec-sub{
+  font-family:"Be Vietnam Pro","Montserrat",sans-serif !important;
+}
 body.theme-light{
   --ink:#F7F2E8;
   --ink2:#F0E7D8;
@@ -263,6 +283,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:22
   .wallet-qr{width:140px;height:140px}
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <nav>

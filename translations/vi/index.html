@@ -1,5 +1,5 @@
 html
-<html lang="vi">
+<html class="lang-vi" lang="vi">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -28,7 +28,7 @@ html
   html { scroll-behavior: smooth; }
   
   body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Be Vietnam Pro', 'Montserrat', sans-serif;
     background: var(--body-bg);
     color: var(--cream);
     overflow-x: hidden;
@@ -86,6 +86,33 @@ html
     font-family: 'Montserrat', 'Raleway', sans-serif !important;
     letter-spacing: 0.01em !important;
   }
+
+  .lang-vi body,
+  .lang-vi p, .lang-vi li, .lang-vi a, .lang-vi span, .lang-vi div,
+  .lang-vi button, .lang-vi input, .lang-vi select, .lang-vi textarea,
+  .lang-vi .lang-selected, .lang-vi .lang-option, .lang-vi .nav-links a,
+  .lang-vi .team-bio, .lang-vi .footer-content, .lang-vi .hero-subtext {
+    font-family: 'Be Vietnam Pro', 'Montserrat', sans-serif !important;
+    letter-spacing: 0 !important;
+  }
+  .lang-vi h1, .lang-vi h2, .lang-vi h3, .lang-vi h4,
+  .lang-vi .nav-logo span, .lang-vi .section-title, .lang-vi .section-label,
+  .lang-vi .hero-title, .lang-vi .pillar h4, .lang-vi .eco-card h3,
+  .lang-vi .round-name, .lang-vi .round-price, .lang-vi .mice-title,
+  .lang-vi .mice-num, .lang-vi .rm-period, .lang-vi .rm-title-main,
+  .lang-vi .gov-card h4, .lang-vi .team-name, .lang-vi .market-num,
+  .lang-vi .market-total-num, .lang-vi .seed-pkg-name, .lang-vi .seed-pkg-invest,
+  .lang-vi .vest-val, .lang-vi .risk-title, .lang-vi .legal-item-title,
+  .lang-vi .doc-name, .lang-vi .footer-logo span, .lang-vi .mice-bar-pct,
+  .lang-vi .mice-legend-val, .lang-vi .finance-amount, .lang-vi .finance-total-label,
+  .lang-vi .finance-total-val, .lang-vi .runway-stat-val,
+  .lang-vi [style*="font-family: 'Cinzel'"], .lang-vi [style*='font-family:"Cinzel"'],
+  .lang-vi [style*='font-family:Cinzel'], .lang-vi [style*="font-family:'Cinzel'"] {
+    font-family: 'Noto Serif Display', 'Noto Serif', serif !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+
   /* Spanish language font override */
   .lang-es body,
   .lang-es h1, .lang-es h2, .lang-es h3, .lang-es h4,
@@ -1449,6 +1476,7 @@ html
   @media (max-width: 768px) {
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Noto+Serif+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <!-- NAVIGATION -->
@@ -2186,6 +2214,8 @@ function getLocalizedHref(lang, fallbackFile) {
 }
   function syncLandingLanguageMenu() {
     var currentLocale = detectLocale();
+    document.documentElement.classList.remove('lang-en','lang-es','lang-pt','lang-ko','lang-vi');
+    document.documentElement.classList.add('lang-' + currentLocale);
     var selected = document.getElementById('langSelected');
     if (selected) selected.textContent = LOCALE_LABELS[currentLocale] || LOCALE_LABELS.en;
     document.querySelectorAll('.lang-option').forEach(function(option) {
