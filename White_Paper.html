@@ -383,7 +383,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
     <button class="nav-link" onclick="goTo('appF')" data-t="nav-appF">F. Legal &amp; Privacy</button>
     <button class="nav-link" onclick="goTo('appG')" data-t="nav-appG">G. Financial Projections (Internal)</button>
     <button class="nav-link" onclick="goTo('appH')" data-t="nav-appH">H. DAO Operations (Internal)</button>
-    <button class="nav-link" onclick="goTo('appI')" data-t="nav-appI">I. NIRA-AI Operations</button>
+    <button class="nav-link" onclick="goTo('appI')" data-t="nav-appI">I. NIRA-AI Operations (Internal)</button>
   </div>
 </nav>
 
@@ -2874,14 +2874,271 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </div>
 
 <!-- APPENDIX I -->
-<div id="appI" class="section">
+<div id="appI" class="section internal-gated">
   <div class="app-header">
     <div class="app-header-num">APPENDIX I</div>
     <h2>NIRA-AI Operations &amp; Governance Support (Internal)</h2>
   </div>
-  <p>Reserved for the approved internal NIRA-AI Operations &amp; Governance Support appendix.</p>
-  <div class="callout warn">
-    <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
+  <div class="internal-gate-panel">
+    <div class="internal-gate-eyebrow">Internal Access</div>
+    <h3>Appendix I is restricted for internal AI governance review</h3>
+    <p>This appendix contains confidential NIRA-AI architecture, operational modules, data governance, audit controls, and deployment sequencing. Enter the internal password to unlock this section.</p>
+    <div class="internal-gate-actions">
+      <button class="internal-btn" type="button" onclick="openInternalAccess('appI')">Unlock Appendix I</button>
+    </div>
+  </div>
+  <div class="internal-protected">
+    <p>Economic Oracle · Creator Intelligence · Governance Support · Platform Analytics</p>
+    <div class="callout warn">
+      <p><strong>Internal Document - Confidential:</strong> NIRA-AI is Mission Chain's integrated artificial intelligence layer. This appendix defines NIRA's architecture, operational boundaries, output types, data governance, oversight mechanisms, and the phased deployment roadmap.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Core Principle:</strong> NIRA is advisory and analytical only. It has zero execution authority over smart contracts, treasury funds, credentials, or governance outcomes.</p>
+    </div>
+
+    <h3 class="sub-title">I.1 NIRA-AI - Identity, Purpose &amp; Scope</h3>
+    <p>NIRA-AI (Network Intelligence, Reporting &amp; Advisory) is the AI operational layer of Mission Chain Network. It makes the ecosystem self-aware by continuously monitoring economic health, supporting governance with bounded proposal packets, matching verified creators with relevant opportunities, and publishing analytics dashboards for transparent community review.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Why NIRA Exists</th><th>Operational Answer</th></tr></thead>
+        <tbody>
+          <tr><td>Economic parameters require 24/7 monitoring and drift detection</td><td>Module 1 Economic Oracle monitors Hindex, MICE activity, liquidity health, and treasury flows in real time.</td></tr>
+          <tr><td>DAO governance requires simulations and bounded options at scale</td><td>Module 2 Governance Intelligence generates A/B/C proposal packets, compliance briefs, and post-execution assessments.</td></tr>
+          <tr><td>Creator matching and credential progression need objective ranking</td><td>Module 3 Creator Intelligence ranks verified creators by credentials, portfolio fit, and reputation signals.</td></tr>
+          <tr><td>The ecosystem needs public dashboards and operating telemetry</td><td>Module 4 Platform Analytics publishes dashboards, reports, phase KPI tracking, and treasury visibility.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Name</th><th>Meaning</th><th>Operational Scope</th></tr></thead>
+        <tbody>
+          <tr><td>NIRA-AI</td><td>Network Intelligence, Reporting &amp; Advisory</td><td>Economic Oracle · Governance Intelligence · Creator Intelligence Engine · Platform Analytics</td></tr>
+          <tr><td>Symbolic Principle</td><td>Technology prepared to serve human flourishing</td><td>Advisory and analytical only, never sovereign over human governance</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">I.2 NIRA Architecture - Four Operational Modules</h3>
+    <p>NIRA is organized into four distinct modules. They share a common data layer but are isolated in purpose, data scope, and governance relationship. A failure or update in one module must not compromise the operation of the others.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Module</th><th>Primary Function</th><th>Primary Outputs</th><th>Primary Consumers</th></tr></thead>
+        <tbody>
+          <tr><td>Module 1 - Economic Oracle</td><td>24/7 monitoring of Hindex, MICE, liquidity, emission health, and treasury/economic drift</td><td>Bounded Proposal Packets, Weekly Economic Health Snapshots, Monthly reports, Incident alerts</td><td>Operations Committee, MFP-NFT holders, DAO</td></tr>
+          <tr><td>Module 2 - Governance Intelligence</td><td>Support the full governance lifecycle from proposal review through vote monitoring and impact tracking</td><td>Governance Compliance Briefs, Comment Summaries, Post-Execution Impact Reports</td><td>Operations Committee, DAO participants</td></tr>
+          <tr><td>Module 3 - Creator Intelligence Engine</td><td>Credential-first job matching, KPI tracking, and creator pathway guidance</td><td>Creator rankings, Eligibility reports, KPI dashboards, guidance prompts</td><td>Mission Work clients, creators, Hub Leaders</td></tr>
+          <tr><td>Module 4 - Platform Analytics</td><td>Publish ecosystem dashboards, reports, treasury visibility, and phase KPI progression</td><td>Public dashboards, State of Ecosystem Reports, Phase unlock reports</td><td>All stakeholders - public</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">I.2.1 Shared Data Architecture</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Layer</th><th>Content</th><th>Constraint</th></tr></thead>
+        <tbody>
+          <tr><td>On-chain Data Layer</td><td>MIC balances, stakes, NFT credentials, voting records, treasury transactions, MICE state</td><td>Read-only ingestion from BNB Chain or future Mission Network Layer 2</td></tr>
+          <tr><td>Platform Activity Layer</td><td>Mission Learn completions, Mission Work job history, ratings, participation events, product usage metrics</td><td>Only platform-scoped operational data required for matching, KPI verification, or analytics</td></tr>
+          <tr><td>NIRA Output Layer</td><td>Reports, proposal packets, rankings, dashboards, audit records</td><td>Read-only historical record once published; publicly inspectable where applicable</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">I.2.2 What NIRA Does Not Access</h4>
+    <ul class="dot-list">
+      <li>NIRA cannot read private wallet contents, seed phrases, or private key material.</li>
+      <li>NIRA cannot access KYC documents, biometric records, or personal identification files.</li>
+      <li>NIRA cannot read private user messages on any platform.</li>
+      <li>NIRA cannot deanonymize cohort analytics without explicit consent.</li>
+      <li>All data access is scoped, logged, and reviewed quarterly by the Operations Committee.</li>
+    </ul>
+
+    <h3 class="sub-title">I.3 Module 1 - Economic Oracle</h3>
+    <p>Module 1 continuously monitors on-chain conditions, detects economic drift or opportunity, and generates bounded proposal packets with simulation and risk assessment. It is the most time-sensitive monitoring function in the ecosystem.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Monitoring Scope</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td>Emission Health</td><td>Daily emission vs formula output, bootstrapping state, time-decay trajectory, Hindex response</td></tr>
+          <tr><td>MICE Activity</td><td>Active licenses, activation rate, recycling pipeline, price-band trajectory</td></tr>
+          <tr><td>Liquidity Depth</td><td>7-day TWAP, pool depth, price-impact bands, trend versus MICE thresholds</td></tr>
+          <tr><td>Platform Economics</td><td>Mission Learn fee burn, Mission Work escrow volume, Mission Arts MIC activity, treasury inflow/outflow</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Output Type</th><th>Trigger</th><th>Published Content</th></tr></thead>
+        <tbody>
+          <tr><td>Weekly Economic Health Snapshot</td><td>Every 7 days</td><td>Tracked metrics, trends, risk flags, recommended governance attention</td></tr>
+          <tr><td>Monthly Economic Report</td><td>Every 30 days</td><td>Parameter history, treasury flow summary, emission trajectory, cumulative burn</td></tr>
+          <tr><td>Incident Alert</td><td>Anomaly detected</td><td>Immediate flag, public notice, recommended response options</td></tr>
+          <tr><td>Bounded Proposal Packet</td><td>Material parameter drift</td><td>A/B/C options, simulations, risk scoring, confidence level, rationale</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">I.4 Module 2 - Governance Intelligence</h3>
+    <p>Module 2 supports the 7-stage governance process defined in Appendix H. It performs proposal checking, records governance events, summarizes public comments, tracks vote progress, and assesses the post-execution effect of adopted changes.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Governance Stage</th><th>NIRA M2 Function</th></tr></thead>
+        <tbody>
+          <tr><td>Proposal Intake</td><td>Constitutional bounds checks and conflict-of-parameter analysis</td></tr>
+          <tr><td>Committee Review</td><td>Generate Governance Compliance Brief in plain language for Operations Committee review</td></tr>
+          <tr><td>Public Comment</td><td>Summarize themes, objections, support patterns, and unresolved issues</td></tr>
+          <tr><td>Voting Window</td><td>Track turnout, quorum trajectory, participation by tier, and anomaly signals</td></tr>
+          <tr><td>Execution</td><td>Record final vote totals, execution hash, parameter changes, and timing</td></tr>
+          <tr><td>Post-Execution</td><td>Compare observed effect vs projected effect and publish impact assessment</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">
+      <p><strong>Compliance Constraint:</strong> Every proposal passes through NIRA's Governance Compliance Framework before reaching a DAO vote. The framework checks against Appendix H parameter classifications and cannot be bypassed.</p>
+    </div>
+
+    <h3 class="sub-title">I.5 Module 3 - Creator Intelligence Engine</h3>
+    <p>Module 3 powers the AI-driven creator experience across Mission Learn and Mission Work. Its ranking model is credential-first: verified on-chain credentials, portfolio alignment, completed work history, and reputation signals matter; wealth and follower count do not.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Use Case</th><th>Module 3 Function</th></tr></thead>
+        <tbody>
+          <tr><td>Mission Work job matching</td><td>Surface the most relevant verified creators for each brief using credential tier, portfolio similarity, ratings, and category expertise</td></tr>
+          <tr><td>Mission Learn pathway guidance</td><td>Recommend next tracks and related job opportunities based on verified progress and emerging credentials</td></tr>
+          <tr><td>KPI verification support</td><td>Aggregate objective work, learning, and rating data that supports Community NFT eligibility review</td></tr>
+          <tr><td>Hub Leader support</td><td>Provide local activity views, talent availability, and creator progression patterns</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>Neutrality Rule:</strong> Module 3 must remain credential-first and reputation-based. Wealth signals have zero ranking weight. Bias review is mandatory in the annual external AI audit.</p>
+    </div>
+
+    <h3 class="sub-title">I.6 Module 4 - Platform Analytics</h3>
+    <p>Module 4 publishes the dashboards and reports that make Mission Chain legible to its community. It serves the public layer of transparency for ecosystem health, treasury status, governance activity, and phase-gated progression.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Dashboard / Report</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td>Economic Dashboard</td><td>7-day emission summary, MICE activity trend, liquidity health, reward pool balance, burn ratio</td></tr>
+          <tr><td>Governance Dashboard</td><td>Proposal queue, turnout, quorum rates, outcomes, credential participation, execution records</td></tr>
+          <tr><td>Treasury Dashboard</td><td>DAO Treasury MIC balance, USDT balance, inflows by source, approved deployments, runway projection</td></tr>
+          <tr><td>Phase Progression Dashboard</td><td>KPI completion status and unlock-readiness reports for Phase I-IV progression</td></tr>
+          <tr><td>State of Ecosystem Report</td><td>Quarterly ecosystem health summary with product, treasury, creator economy, and governance metrics</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">I.7 Absolute Prohibitions - What NIRA Can Never Do</h3>
+    <p>These are hard architectural constraints, not configuration settings. No routine update, no Operations Committee action, and no standard DAO vote can silently grant these powers.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Prohibition Area</th><th>NIRA Cannot</th></tr></thead>
+        <tbody>
+          <tr><td>Protocol Control</td><td>Execute smart contract functions, sign transactions, move treasury funds, modify Hindex parameters, or issue credentials</td></tr>
+          <tr><td>Governance Sovereignty</td><td>Cast votes, override DAO outcomes, bypass the Operations Committee, or present a recommendation as binding</td></tr>
+          <tr><td>Data Overreach</td><td>Access seed phrases, KYC files, biometric data, private messages, or off-scope personal data</td></tr>
+          <tr><td>Authority Claims</td><td>Make legal commitments, provide legal advice, or present itself as having authority it does not possess</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout gold">
+      <p><strong>Fundamental Principle of NIRA:</strong> NIRA illuminates. The community decides.</p>
+    </div>
+
+    <h3 class="sub-title">I.8 Data Privacy &amp; Compliance</h3>
+    <p>NIRA operates under the same privacy framework as the Mission Chain platform and is designed privacy-by-default: minimum necessary data, proper anonymization for analytics, and strict retention boundaries for off-chain records.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Data Category</th><th>Treatment</th></tr></thead>
+        <tbody>
+          <tr><td>On-chain balances, stakes, votes, and credentials</td><td>Public blockchain data; read-only access, no privacy processing required</td></tr>
+          <tr><td>Mission Work ratings and work history</td><td>Ratings may be on-chain/public; detailed private job content remains excluded from analytics beyond category vectors</td></tr>
+          <tr><td>Mission Learn participation events</td><td>Used for KPI tracking only; no message or content surveillance</td></tr>
+          <tr><td>NIRA output records</td><td>Stored as an audit trail in the output layer; retained according to governance and legal requirements</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>User Right</th><th>Scope</th></tr></thead>
+        <tbody>
+          <tr><td>Right to Access</td><td>Users may request a report of all off-chain data NIRA holds about them</td></tr>
+          <tr><td>Right to Correction</td><td>Incorrect off-chain data may be corrected through the Operations Committee</td></tr>
+          <tr><td>Right to Deletion (Off-chain)</td><td>Deletion requests honored subject to governance audit trail and legal retention requirements</td></tr>
+          <tr><td>Right to Opt Out of Analytics</td><td>Users may opt out of M4 cohort analytics, but not from KPI tracking or job matching that require activity data to function</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">I.9 NIRA Oversight &amp; Governance</h3>
+    <p>NIRA requires accountable human oversight. This section defines who operates it, who approves updates, how major changes are authorized, and how the community retains final authority over AI capabilities.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Oversight Body</th><th>Responsibilities</th></tr></thead>
+        <tbody>
+          <tr><td>CTO / Technical Team</td><td>Day-to-day operation, maintenance, security monitoring, incident response, and implementation of approved model updates</td></tr>
+          <tr><td>Operations Committee</td><td>Primary human oversight of outputs, quarterly data-access review, approval of sub-threshold architectural changes, and annual AI audit coordination</td></tr>
+          <tr><td>Mission DAO (MFP-NFT holders)</td><td>Constitutional authority over capability expansion, major architecture changes, and any widened data access scope</td></tr>
+          <tr><td>Community</td><td>Right to inspect outputs, challenge reports through the Operations Committee, and submit proposals regarding NIRA operational parameters</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">I.9.1 NIRA Update Authorization Framework</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Change Type</th><th>Authorization Required</th><th>Process</th></tr></thead>
+        <tbody>
+          <tr><td>Routine model updates within same scope</td><td>CTO authorization + Operations Committee notification</td><td>Implement, log, and notify Committee within 7 days</td></tr>
+          <tr><td>Monitoring threshold adjustments</td><td>Operations Committee approval</td><td>Proposed by CTO, approved by simple majority, implemented within 30 days</td></tr>
+          <tr><td>New output type within existing module scope</td><td>Operations Committee approval + 14-day community notice</td><td>Published notice, then approval and implementation</td></tr>
+          <tr><td>New data source within existing scope</td><td>Operations Committee approval + MFP-NFT notification</td><td>Privacy impact assessment required before activation</td></tr>
+          <tr><td>New module or major architecture change</td><td>MFP-NFT Framework governance vote</td><td>Full DAO governance process, 66% supermajority, public documentation</td></tr>
+          <tr><td>Expansion of data access scope</td><td>MFP-NFT Framework governance vote</td><td>Full governance process plus published privacy impact assessment</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">I.9.2 External AI Audit</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Audit Element</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Frequency</td><td>Annual minimum; more frequent after major architecture changes</td></tr>
+          <tr><td>Scope</td><td>All four modules, data access audit, output accuracy, prohibition compliance, privacy compliance, and Module 3 bias review</td></tr>
+          <tr><td>Independence</td><td>Qualified third party with no financial relationship to Mission Chain; auditor selection approved by Operations Committee</td></tr>
+          <tr><td>Publication</td><td>Full report published within 30 days of completion with no redaction of findings</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">I.10 NIRA Phase Deployment Roadmap</h3>
+    <p>NIRA is deployed in phases aligned with Mission Chain's ecosystem roadmap. Capabilities only activate when the ecosystem and governance layer are ready to supervise them.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase</th><th>Period</th><th>Capabilities Active</th><th>New in This Phase</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I</td><td>Q1-Q2 2026</td><td>M1 full monitoring, M2 core governance compliance, M3 KPI tracking/basic intake classification, M4 core dashboards</td><td>Foundational deployment focused on economic integrity and governance support</td></tr>
+          <tr><td>Phase II</td><td>Q3-Q4 2026</td><td>M1 bounded proposal packets live, M2 full 7-stage support, M3 full job matching, M4 creator economy and cohort analytics</td><td>Full operational capability across all four modules</td></tr>
+          <tr><td>Phase III</td><td>Q1-Q2 2027</td><td>Layer 2 readiness monitoring, constitutional proposal packet support, advanced creator matching, phase unlock analytics</td><td>Support for the largest constitutional governance events and cross-chain readiness</td></tr>
+          <tr><td>Phase IV</td><td>Year 2+</td><td>Full Layer 2-native monitoring, MIC gas analytics, RWA monitoring, cross-chain credential recognition, global marketplace matching</td><td>NIRA migrates with the ecosystem to Mission Network Layer 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">I.11 NIRA-AI Quick Reference Summary</h3>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Module</th><th>Primary Function</th><th>Primary Output</th><th>Phase I Active</th></tr></thead>
+        <tbody>
+          <tr><td>Module 1 - Economic Oracle</td><td>24/7 Hindex, MICE, liquidity, and treasury monitoring</td><td>Proposal packets, weekly/monthly reports, incident alerts</td><td>Yes - full</td></tr>
+          <tr><td>Module 2 - Governance Intelligence</td><td>Governance lifecycle support and compliance checking</td><td>Compliance briefs, comment summaries, impact reports</td><td>Yes - core</td></tr>
+          <tr><td>Module 3 - Creator Intelligence</td><td>Job matching, KPI tracking, and creator guidance</td><td>Rankings, eligibility reports, KPI dashboards</td><td>Yes - KPI/basic</td></tr>
+          <tr><td>Module 4 - Platform Analytics</td><td>Dashboards, reports, treasury and phase visibility</td><td>Public dashboards, ecosystem reports, unlock reports</td><td>Yes - core</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout green">
+      <p><strong>Appendix I Summary:</strong> NIRA is the intelligence infrastructure of Mission Chain, spanning Economic Oracle monitoring, governance support, creator matching, and public analytics. It is useful precisely because it is bounded: no execution authority, no hidden data access, annual independent audit, and constitutional oversight for any material expansion.</p>
+    </div>
   </div>
 </div>
 
@@ -2947,7 +3204,7 @@ const LANG = {
     "nav-appF": 'F. Legal & Privacy',
     "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations (Internal)',
-    "nav-appI": 'I. NIRA-AI Operations',
+    "nav-appI": 'I. NIRA-AI Operations (Internal)',
     "hero-eyebrow": 'Official White Paper · v3.5',
     "hero-sub": 'NETWORK',
     "hero-tagline": 'Inspired by Faith. Built for People.',
@@ -3320,7 +3577,7 @@ const LANG = {
     "nav-appF": 'F. Legal & Privacidad',
     "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations (Internal)',
-    "nav-appI": 'I. NIRA-AI Operations',
+    "nav-appI": 'I. NIRA-AI Operations (Internal)',
     "hero-eyebrow": 'Libro Blanco Oficial · v3.5',
     "hero-sub": 'RED',
     "hero-tagline": 'Inspirado en la Fe. Construido para las Personas.',
@@ -3693,7 +3950,7 @@ const LANG = {
     "nav-appF": 'F. Legal & Privacidade',
     "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations (Internal)',
-    "nav-appI": 'I. NIRA-AI Operations',
+    "nav-appI": 'I. NIRA-AI Operations (Internal)',
     "hero-eyebrow": 'Whitepaper Oficial · v3.5',
     "hero-sub": 'REDE',
     "hero-tagline": 'Inspirado pela Fé. Construído para as Pessoas.',
@@ -4066,7 +4323,7 @@ const LANG = {
     "nav-appF": 'F. 법적 & 개인정보',
     "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations (Internal)',
-    "nav-appI": 'I. NIRA-AI Operations',
+    "nav-appI": 'I. NIRA-AI Operations (Internal)',
     "hero-eyebrow": '공식 백서 · v3.5',
     "hero-sub": '네트워크',
     "hero-tagline": '믿음에서 영감을 받아. 사람들을 위해 구축되었습니다.',
@@ -4439,7 +4696,7 @@ const LANG = {
     "nav-appF": 'F. Pháp lý & Quyền riêng tư',
     "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations (Internal)',
-    "nav-appI": 'I. NIRA-AI Operations',
+    "nav-appI": 'I. NIRA-AI Operations (Internal)',
     "hero-eyebrow": 'Sách Trắng Chính Thức · v3.5',
     "hero-sub": 'MẠNG LƯỚI',
     "hero-tagline": 'Lấy cảm hứng từ Đức tin. Xây dựng cho Con người.',
@@ -4814,7 +5071,7 @@ function setTheme(theme) {
 
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 
-const INTERNAL_GATES = { appG: 'MIC022026@@', appH: 'MIC022026@@' };
+const INTERNAL_GATES = { appG: 'MIC022026@@', appH: 'MIC022026@@', appI: 'MIC022026@@' };
 const INTERNAL_SESSION_PREFIX = 'missionchain-internal-';
 let pendingInternalTarget = null;
 
