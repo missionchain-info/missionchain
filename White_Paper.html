@@ -260,7 +260,42 @@ body.theme-light .callout{background:linear-gradient(135deg,rgba(123,45,139,.07)
 body.theme-light .app-header{background:linear-gradient(135deg,rgba(123,45,139,.08),rgba(201,168,76,.06));border-color:rgba(123,45,139,.14)}
 body.theme-light .wp-table tr:hover td{background:rgba(123,45,139,.05)}
 body.theme-light .formula{border-color:rgba(123,45,139,.16)}
+.internal-gated .internal-protected{display:none}
+.internal-gated.unlocked .internal-protected{display:block}
+.internal-gated.unlocked .internal-gate-panel{display:none}
+.internal-gate-panel{margin-top:18px;padding:24px;border:1px solid rgba(212,175,55,.35);border-radius:18px;background:linear-gradient(180deg,rgba(18,7,38,.95),rgba(32,12,56,.9));box-shadow:0 24px 60px rgba(0,0,0,.24)}
+.internal-gate-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(212,175,55,.28);color:var(--gold);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.internal-gate-panel h3{margin:16px 0 10px;font-size:28px;font-family:var(--font-d);color:var(--white)}
+.internal-gate-panel p{color:var(--gray);max-width:760px}
+.internal-gate-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.internal-btn{padding:12px 18px;border-radius:12px;border:1px solid rgba(212,175,55,.35);background:rgba(212,175,55,.08);color:var(--white);font-weight:700;cursor:pointer}
+.internal-btn:hover{border-color:var(--gold);background:rgba(212,175,55,.14)}
+.internal-btn-secondary{background:transparent;color:var(--gray)}
+.internal-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,5,12,.68);backdrop-filter:blur(12px);z-index:1200}
+.internal-modal.open{display:flex}
+.internal-modal-card{width:min(520px,100%);padding:28px;border-radius:22px;border:1px solid rgba(212,175,55,.3);background:linear-gradient(180deg,rgba(16,7,34,.98),rgba(32,12,56,.94));box-shadow:0 24px 80px rgba(0,0,0,.34)}
+.internal-modal-card h3{margin:14px 0 8px;font-size:30px;font-family:var(--font-d);color:var(--white)}
+.internal-modal-card p{color:var(--gray)}
+.internal-modal-label{display:block;margin:16px 0 8px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.internal-modal-input{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--white);font-size:15px}
+.internal-modal-input:focus{outline:none;border-color:rgba(212,175,55,.52);box-shadow:0 0 0 3px rgba(212,175,55,.12)}
+.internal-modal-error{min-height:20px;margin-top:10px;font-size:13px;color:#ff8787}
+.internal-modal-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:16px}
+body.theme-light .internal-gate-panel,
+body.theme-light .internal-modal-card{background:linear-gradient(180deg,#fffdfa,#f6f0e8);border-color:rgba(123,45,139,.16);box-shadow:0 24px 60px rgba(123,45,139,.08)}
+body.theme-light .internal-gate-panel h3,
+body.theme-light .internal-modal-card h3,
+body.theme-light .internal-modal-input,
+body.theme-light .internal-btn{color:var(--ink)}
+body.theme-light .internal-modal-input{background:#fff;border-color:rgba(30,41,59,.12)}
+body.theme-light .internal-gate-panel p,
+body.theme-light .internal-modal-card p,
+body.theme-light .internal-btn-secondary{color:#5b6274}
 @media(max-width:640px){.toc-grid{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .internal-gate-panel h3,.internal-modal-card h3{font-size:24px}
+  .internal-modal-card{padding:22px}
+}
 
 /* ── ANIMATIONS ── */
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
@@ -346,7 +381,7 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
     <button class="nav-link" onclick="goTo('appD')" data-t="nav-appD">D. Economic Formal Spec</button>
     <button class="nav-link" onclick="goTo('appE')" data-t="nav-appE">E. Market Entry Strategy</button>
     <button class="nav-link" onclick="goTo('appF')" data-t="nav-appF">F. Legal &amp; Privacy</button>
-    <button class="nav-link" onclick="goTo('appG')" data-t="nav-appG">G. Financial Projections</button>
+    <button class="nav-link" onclick="goTo('appG')" data-t="nav-appG">G. Financial Projections (Internal)</button>
     <button class="nav-link" onclick="goTo('appH')" data-t="nav-appH">H. DAO Operations</button>
     <button class="nav-link" onclick="goTo('appI')" data-t="nav-appI">I. NIRA-AI Operations</button>
   </div>
@@ -2086,14 +2121,292 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
 </div>
 
 <!-- APPENDIX G -->
-<div id="appG" class="section">
+<div id="appG" class="section internal-gated">
   <div class="app-header">
     <div class="app-header-num">APPENDIX G</div>
     <h2>Financial Projections &amp; Capital Allocation (Internal)</h2>
   </div>
-  <p>Reserved for the approved internal Financial Projections &amp; Capital Allocation appendix.</p>
-  <div class="callout warn">
-    <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
+  <div class="internal-gate-panel">
+    <div class="internal-gate-eyebrow">Internal Access</div>
+    <h3>Appendix G is restricted for internal review</h3>
+    <p>This appendix contains confidential financial projections for strategic planning and investor review. Enter the internal password to unlock this section.</p>
+    <div class="internal-gate-actions">
+      <button class="internal-btn" type="button" onclick="openInternalAccess('appG')">Unlock Appendix G</button>
+    </div>
+  </div>
+  <div class="internal-protected">
+    <p>Capital Formation · Burn Rate · Revenue Model · Multi-Phase Runway</p>
+    <div class="callout warn">
+      <p><strong>Internal Use Notice:</strong> This appendix contains forward-looking financial projections for strategic planning and investor review. All figures are conservative estimates based solely on realized USD/USDT cash inflows. Projections explicitly exclude unrealized or speculative MIC token valuations. Actual results may differ materially from the estimates presented here.</p>
+    </div>
+
+    <h3 class="sub-title">G.1 Capital Formation Overview</h3>
+    <p>Mission Chain's financial architecture is designed so that operational sustainability never depends on MIC token price appreciation. Every figure in this appendix is derived from realized USD/USDT cash flows. Capital enters the ecosystem through SEED, PRE-SALE, and ongoing MICE license sales before scaling into platform revenue from Mission Learn and Mission Work.</p>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Source</th><th>Phase</th><th>Gross Target</th><th>Net to Protocol</th><th>Nature</th></tr></thead>
+        <tbody>
+          <tr><td>SEED Round</td><td>Phase I - Q1 2026</td><td>$500,000</td><td>~$425,000</td><td>One-time strategic raise</td></tr>
+          <tr><td>PRE-SALE</td><td>Phase I - Q2 2026</td><td>$1,500,000</td><td>~$1,005,000</td><td>One-time community raise</td></tr>
+          <tr><td>MICE Sales (Year 1)</td><td>Phase I-II</td><td>$5,000,000 gross / $2,500,000 USDT</td><td>~$300,000 operational</td><td>Recurring protocol revenue</td></tr>
+          <tr><td>Mission Learn (Year 1)</td><td>Phase II</td><td>~$120,000</td><td>~$24,000</td><td>Platform course fee revenue</td></tr>
+          <tr><td>Mission Work (Year 1)</td><td>Phase II</td><td>~$240,000 volume</td><td>~$24,000</td><td>Platform service fee (10%)</td></tr>
+          <tr><td>Total Net Cash - Phase I &amp; II</td><td>-</td><td>-</td><td>~$1,778,000</td><td>Combined foundation + early revenue</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="dot-list">
+      <li>No reliance on MIC price appreciation. All projections use USD/USDT cash only.</li>
+      <li>All incentive and marketing costs are explicitly budgeted, capped on-chain, and disclosed before sale events.</li>
+      <li>Conservative assumptions throughout. Projections are intended to be met, not used as aspirational targets.</li>
+      <li>No inflationary token issuance for runway. MIC emission is governed by the Hindex Algorithm, not treasury needs.</li>
+      <li>DAO-governed capital allocation. Treasury deployments above threshold require MFP-NFT voting from Phase II onward.</li>
+      <li>Three-stream revenue model. MICE, Mission Learn, and Mission Work create diversified recurring income.</li>
+    </ul>
+
+    <h3 class="sub-title">G.2 SEED Round - Capital Analysis</h3>
+    <h4 class="mini-title">G.2.1 Sales &amp; Fundraising Costs</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Cost Item</th><th>% of Raise</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Travel &amp; Investor Meetings</td><td>6%</td><td>$30,000</td></tr>
+          <tr><td>Pitching, Demo &amp; Events</td><td>4%</td><td>$20,000</td></tr>
+          <tr><td>Legal, Onboarding &amp; Documentation</td><td>2%</td><td>$10,000</td></tr>
+          <tr><td>Strategic Advisory &amp; Relationship Development</td><td>3%</td><td>$15,000</td></tr>
+          <tr><td>Total SEED Sales Costs</td><td>15%</td><td>$75,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.2.2 Net SEED Capital Available</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Category</th><th>% of Raise</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Gross SEED Raise</td><td>100%</td><td>$500,000</td></tr>
+          <tr><td>Total Sales Costs</td><td>-15%</td><td>-$75,000</td></tr>
+          <tr><td>Net SEED Cash Available</td><td>85%</td><td>$425,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.2.3 Allocation of Net SEED Capital</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Allocation Category</th><th>% of Net</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Core Protocol Engineering</td><td>35%</td><td>$148,750</td></tr>
+          <tr><td>Security Audits &amp; Legal</td><td>10%</td><td>$42,500</td></tr>
+          <tr><td>Initial Liquidity Provision (DEX)</td><td>30%</td><td>$127,500</td></tr>
+          <tr><td>Operations &amp; Infrastructure</td><td>10%</td><td>$42,500</td></tr>
+          <tr><td>Reserve (within SEED)</td><td>15%</td><td>$63,750</td></tr>
+          <tr><td>Total</td><td>100%</td><td>$425,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">G.3 PRE-SALE - Capital Analysis</h3>
+    <h4 class="mini-title">G.3.1 Cost Breakdown</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Cost Item</th><th>% of Raise</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Affiliate Incentives - Level 1 (10%) + Level 2 (5%)</td><td>15%</td><td>$225,000</td></tr>
+          <tr><td>Group Performance Bonus - hard cap</td><td>8%</td><td>$120,000</td></tr>
+          <tr><td>Marketing &amp; Social Media</td><td>10%</td><td>$150,000</td></tr>
+          <tr><td>Total PRE-SALE Costs</td><td>33%</td><td>$495,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.3.2 Net PRE-SALE Capital Available</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Category</th><th>% of Raise</th><th>USD</th></tr></thead>
+        <tbody>
+          <tr><td>Gross PRE-SALE Raise</td><td>100%</td><td>$1,500,000</td></tr>
+          <tr><td>Total PRE-SALE Costs</td><td>-33%</td><td>-$495,000</td></tr>
+          <tr><td>Net PRE-SALE Cash Available</td><td>67%</td><td>$1,005,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>PRE-SALE Cost Structure - Rationale:</strong> Instead of routing distribution costs to third-party paid acquisition, Mission Chain routes part of PRE-SALE proceeds directly to Hub Leaders and community distributors. Smart contracts enforce hard caps: 15% referral cap plus 8% GPB cap.</p>
+    </div>
+
+    <h3 class="sub-title">G.4 Operating Expenses &amp; Burn Rate</h3>
+    <h4 class="mini-title">G.4.1 Phase I Monthly Burn Rate Baseline</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Expense Category</th><th>Monthly (USD)</th></tr></thead>
+        <tbody>
+          <tr><td>Salaries &amp; Contractors - core team</td><td>$35,000</td></tr>
+          <tr><td>Infrastructure, Security &amp; Audits</td><td>$15,000</td></tr>
+          <tr><td>Operations &amp; Miscellaneous</td><td>$5,000</td></tr>
+          <tr><td>Total Monthly Burn Rate</td><td>$55,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.4.2 Burn Rate Scaling by Phase</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase</th><th>Period</th><th>Monthly Burn</th><th>Key Cost Driver</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I</td><td>Q1-Q2 2026</td><td>$55,000</td><td>Core engineering, security audits, initial operations</td></tr>
+          <tr><td>Phase II</td><td>Q3-Q4 2026</td><td>$65,000</td><td>Team expansion, Mission Learn content, Mission Work ops, CEX prep</td></tr>
+          <tr><td>Phase III</td><td>Q1-Q2 2027</td><td>$80,000</td><td>Global team, Hub Leader program, localization, Layer 2 prep</td></tr>
+          <tr><td>Phase IV</td><td>Year 2+</td><td>$100,000+</td><td>Full operations with platform revenue covering at least 60% of burn from Phase III</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">G.5 MICE Revenue - Protocol-Native Cash Flow</h3>
+    <p>MICE license sales are the protocol's primary recurring revenue stream. Unlike SEED and PRE-SALE capital, MICE revenue is non-dilutive. The MIC component of each purchase is automatically bought from the DEX and burned, creating deflationary pressure on supply.</p>
+    <h4 class="mini-title">G.5.1 Year 1 Conservative Scenario</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>MICE Licenses Activated (Year 1)</td><td>20,000 licenses</td></tr>
+          <tr><td>Average MICE Price</td><td>$250 weighted average across $100-$300 bands</td></tr>
+          <tr><td>Gross MICE Sales Volume</td><td>$5,000,000</td></tr>
+          <tr><td>Payment Structure</td><td>50% USDT + 50% MIC with MIC auto-bought from the DEX and burned</td></tr>
+          <tr><td>USDT Proceeds Available for Allocation</td><td>$2,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.5.2 Allocation of MICE USDT Proceeds - Year 1</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Allocation</th><th>% of USDT</th><th>Year 1 (USD)</th></tr></thead>
+        <tbody>
+          <tr><td>MIC Liquidity Provision</td><td>22%</td><td>$550,000</td></tr>
+          <tr><td>MIC Buy &amp; Burn</td><td>15%</td><td>$375,000 permanently burned</td></tr>
+          <tr><td>Referral Incentives</td><td>15%</td><td>$375,000</td></tr>
+          <tr><td>Group Performance Bonus</td><td>&le; 8%</td><td>&le; $200,000</td></tr>
+          <tr><td>Community NFT Reward Pool</td><td>10%</td><td>$250,000</td></tr>
+          <tr><td>MFP-NFT Reward Pool</td><td>10%</td><td>$250,000</td></tr>
+          <tr><td>DAO Treasury &amp; Operations</td><td>20%</td><td>$500,000</td></tr>
+          <tr><td>Total</td><td>100%</td><td>$2,500,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout gold">
+      <p><strong>Net Operational USDT from MICE (Year 1):</strong> Conservative operational estimate is <strong>~$300,000</strong> after governance-reserved amounts. Buy &amp; burn and liquidity-provision allocations are not available for operating expenses.</p>
+    </div>
+
+    <h3 class="sub-title">G.6 Platform Revenue - Mission Learn &amp; Mission Work</h3>
+    <p>From Phase II onward, Mission Learn and Mission Work generate independent recurring platform revenue. These streams scale with adoption and reduce dependence on capital events.</p>
+    <h4 class="mini-title">G.6.1 Mission Learn - Revenue Model &amp; Projections</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase / Period</th><th>Active Students</th><th>Avg Revenue / Student / Month</th><th>Gross / Month</th><th>DAO Treasury (20%)</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I - Q1/Q2 2026</td><td>500</td><td>$8</td><td>$4,000</td><td>$800</td></tr>
+          <tr><td>Phase II - Q3/Q4 2026</td><td>2,000</td><td>$10</td><td>$20,000</td><td>$4,000</td></tr>
+          <tr><td>Phase III - Q1/Q2 2027</td><td>25,000</td><td>$10</td><td>$250,000</td><td>$50,000</td></tr>
+          <tr><td>Year 1 Annualized</td><td>-</td><td>-</td><td>~$120,000</td><td>~$24,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.6.2 Mission Work - Revenue Model &amp; Projections</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase / Period</th><th>Jobs / Month</th><th>Avg Job Value</th><th>Monthly Volume</th><th>Platform Fee (10%)</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I - Q1/Q2 2026</td><td>200</td><td>$80</td><td>$16,000</td><td>$1,600</td></tr>
+          <tr><td>Phase II - Q3/Q4 2026</td><td>500</td><td>$100</td><td>$50,000</td><td>$5,000</td></tr>
+          <tr><td>Phase III - Q1/Q2 2027</td><td>2,000</td><td>$100</td><td>$200,000</td><td>$20,000</td></tr>
+          <tr><td>Year 1 Annualized</td><td>-</td><td>-</td><td>~$240,000 volume</td><td>~$24,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p><strong>Platform Revenue - Strategic Significance:</strong> Mission Learn and Mission Work revenue are modest in Year 1, but the trajectory is exponential. By Phase III, projected combined platform revenue approaches or exceeds the Phase II monthly burn rate on its own.</p>
+    </div>
+
+    <h3 class="sub-title">G.7 Consolidated Net Cash &amp; Runway</h3>
+    <h4 class="mini-title">G.7.1 Total Net Cash - Phase I &amp; II Capital Formation</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Source</th><th>Net Cash (USD)</th></tr></thead>
+        <tbody>
+          <tr><td>SEED Round</td><td>$425,000</td></tr>
+          <tr><td>PRE-SALE</td><td>$1,005,000</td></tr>
+          <tr><td>MICE Operational USDT - Year 1</td><td>~$300,000</td></tr>
+          <tr><td>Mission Learn - DAO Treasury share</td><td>~$24,000</td></tr>
+          <tr><td>Mission Work - Platform fee revenue</td><td>~$24,000</td></tr>
+          <tr><td>Total Net Cash - Phase I + II</td><td>~$1,778,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h4 class="mini-title">G.7.2 Runway Analysis</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I Monthly Burn Rate</td><td>$55,000 / month</td></tr>
+          <tr><td>Total Net Cash (Phase I &amp; II formation)</td><td>~$1,778,000</td></tr>
+          <tr><td>Protocol Runway - burn-only baseline</td><td>~32 months from SEED close</td></tr>
+          <tr><td>Revenue-adjusted runway</td><td>Platform revenue offsets ~15-20% of monthly burn by end of Phase II, extending runway beyond 32 months</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout green">
+      <p><strong>Target:</strong> Revenue self-sufficiency by Phase III, where platform revenue covers at least 60% of monthly operating expenses.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Runway Interpretation - Floor vs Reality:</strong> The ~32-month figure is a burn-only floor assuming no new MICE sales after Year 1, no platform-revenue growth, and no additional capital events. With conservative revenue scaling, the effective runway extends to roughly <strong>48 months+</strong>.</p>
+    </div>
+
+    <h3 class="sub-title">G.8 Multi-Phase Financial Outlook</h3>
+    <p>The following projections extend the model across all four protocol phases. These are conservative planning targets, not guarantees.</p>
+    <h4 class="mini-title">G.8.1 Revenue vs Burn - Phase Summary</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase</th><th>Period</th><th>Monthly Burn</th><th>MICE USDT / Mo</th><th>Platform Rev / Mo</th><th>Net Monthly Position</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I</td><td>Q1-Q2 2026</td><td>$55,000</td><td>~$25,000</td><td>~$2,400</td><td>-$27,600</td></tr>
+          <tr><td>Phase II</td><td>Q3-Q4 2026</td><td>$65,000</td><td>~$50,000</td><td>~$9,000</td><td>~-$6,000</td></tr>
+          <tr><td>Phase III</td><td>Q1-Q2 2027</td><td>$80,000</td><td>~$100,000</td><td>~$70,000</td><td>+$90,000</td></tr>
+          <tr><td>Phase IV</td><td>Year 2+</td><td>$100,000+</td><td>$200,000+</td><td>$200,000+</td><td>+$300,000+</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="dot-list">
+      <li><strong>Phase I:</strong> Execution phase drawing on SEED and PRE-SALE capital while MICE ramps.</li>
+      <li><strong>Phase II:</strong> Convergence phase approaching breakeven as MICE and platform fees scale.</li>
+      <li><strong>Phase III:</strong> Inflection point where MICE plus platform revenue exceed monthly burn and the protocol becomes cash-flow positive.</li>
+    </ul>
+    <h4 class="mini-title">G.8.2 Cumulative MIC Buy &amp; Burn</h4>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Phase End</th><th>MICE Active (Cumulative)</th><th>USDT Proceeds (Cumulative)</th><th>MIC Buy &amp; Burn at 15%</th></tr></thead>
+        <tbody>
+          <tr><td>Phase I end</td><td>10,000</td><td>$1,250,000</td><td>~$187,500 worth of MIC permanently burned</td></tr>
+          <tr><td>Phase II end</td><td>30,000</td><td>$3,750,000</td><td>~$562,500 cumulative MIC burned</td></tr>
+          <tr><td>Phase III end</td><td>60,000</td><td>$7,500,000</td><td>~$1,125,000 cumulative MIC burned</td></tr>
+          <tr><td>Hard Cap (100,000)</td><td>100,000</td><td>~$12,500,000</td><td>~$1,875,000 total MIC burned from MICE</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">G.9 Financial Discipline &amp; Safeguards</h3>
+    <div class="wp-table-wrap">
+      <table class="wp-table">
+        <thead><tr><th>Principle</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td>No guaranteed returns or yield</td><td>All figures are conservative planning estimates only. Nothing in this appendix is a promise of return.</td></tr>
+          <tr><td>All incentive costs explicitly budgeted</td><td>Referral, GPB, and marketing costs are itemized, hard-capped, and disclosed before sale events.</td></tr>
+          <tr><td>Conservative revenue assumptions</td><td>Projections use the lowest reasonable estimates for activations, adoption, and ARPU. Upside scenarios are excluded.</td></tr>
+          <tr><td>DAO-governed treasury deployment</td><td>From Phase II onward, treasury deployments above threshold require MFP-NFT holder voting.</td></tr>
+          <tr><td>No inflationary runway financing</td><td>MIC emission follows the Hindex Algorithm and cannot be accelerated to cover operational shortfalls.</td></tr>
+          <tr><td>Three-stream revenue diversification</td><td>MICE, Mission Learn, and Mission Work create diversified revenue so no single stream dominates after Phase II.</td></tr>
+          <tr><td>Full on-chain audit trail</td><td>Treasury actions, reward distributions, referral payments, and liquidity events remain publicly auditable on BNB Chain.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout green">
+      <p><strong>Appendix G Summary:</strong> Mission Chain's financial architecture prioritizes real deployable capital, transparent cost accounting, and renewable protocol-native revenue. By combining disciplined SEED funding, controlled PRE-SALE incentives, and the Hindex-governed MICE system, the protocol secures a strong execution runway without compromising economic integrity.</p>
+    </div>
   </div>
 </div>
 
@@ -2118,6 +2431,21 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
   <p>Reserved for the approved internal NIRA-AI Operations &amp; Governance Support appendix.</p>
   <div class="callout warn">
     <p><strong>Status:</strong> This appendix slot is marked internal and awaiting the final approved source document.</p>
+  </div>
+</div>
+
+<div id="internal-access-modal" class="internal-modal" aria-hidden="true">
+  <div class="internal-modal-card">
+    <div class="internal-gate-eyebrow">Internal Access</div>
+    <h3 id="internal-access-title">Restricted Appendix</h3>
+    <p>This section is for internal review. Enter the password to continue.</p>
+    <label class="internal-modal-label" for="internal-access-password">Password</label>
+    <input id="internal-access-password" class="internal-modal-input" type="password" autocomplete="off" />
+    <div id="internal-access-error" class="internal-modal-error"></div>
+    <div class="internal-modal-actions">
+      <button class="internal-btn internal-btn-secondary" type="button" onclick="closeInternalAccess()">Cancel</button>
+      <button class="internal-btn" type="button" onclick="submitInternalAccess()">Unlock</button>
+    </div>
   </div>
 </div>
 
@@ -2166,7 +2494,7 @@ const LANG = {
     "nav-appD": 'D. Economic Formal Spec',
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacy',
-    "nav-appG": 'G. Financial Projections',
+    "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Official White Paper · v3.5',
@@ -2539,7 +2867,7 @@ const LANG = {
     "nav-appD": 'D. Especificación Económica',
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacidad',
-    "nav-appG": 'G. Financial Projections',
+    "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Libro Blanco Oficial · v3.5',
@@ -2912,7 +3240,7 @@ const LANG = {
     "nav-appD": 'D. Especificação Econômica',
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Legal & Privacidade',
-    "nav-appG": 'G. Financial Projections',
+    "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Whitepaper Oficial · v3.5',
@@ -3285,7 +3613,7 @@ const LANG = {
     "nav-appD": 'D. 경제 명세',
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. 법적 & 개인정보',
-    "nav-appG": 'G. Financial Projections',
+    "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": '공식 백서 · v3.5',
@@ -3658,7 +3986,7 @@ const LANG = {
     "nav-appD": 'D. Đặc tả Kinh tế',
     "nav-appE": 'E. Market Entry Strategy',
     "nav-appF": 'F. Pháp lý & Quyền riêng tư',
-    "nav-appG": 'G. Financial Projections',
+    "nav-appG": 'G. Financial Projections (Internal)',
     "nav-appH": 'H. DAO Operations',
     "nav-appI": 'I. NIRA-AI Operations',
     "hero-eyebrow": 'Sách Trắng Chính Thức · v3.5',
@@ -4035,8 +4363,71 @@ function setTheme(theme) {
 
 setTheme(localStorage.getItem(THEME_KEY) || 'daylight');
 
+const INTERNAL_GATES = { appG: 'MIC022026@@' };
+const INTERNAL_SESSION_PREFIX = 'missionchain-internal-';
+let pendingInternalTarget = null;
+
+function isInternalUnlocked(id) {
+  return sessionStorage.getItem(INTERNAL_SESSION_PREFIX + id) === '1';
+}
+
+function markInternalUnlocked(id) {
+  sessionStorage.setItem(INTERNAL_SESSION_PREFIX + id, '1');
+}
+
+function syncInternalSections() {
+  document.querySelectorAll('.internal-gated').forEach(section => {
+    section.classList.toggle('unlocked', isInternalUnlocked(section.id));
+  });
+}
+
+function openInternalAccess(id) {
+  pendingInternalTarget = id;
+  const modal = document.getElementById('internal-access-modal');
+  const input = document.getElementById('internal-access-password');
+  const error = document.getElementById('internal-access-error');
+  const title = document.getElementById('internal-access-title');
+  const heading = document.querySelector(`#${id} .app-header h2`);
+  title.textContent = heading ? heading.textContent : 'Restricted Appendix';
+  error.textContent = '';
+  input.value = '';
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  setTimeout(() => input.focus(), 30);
+}
+
+function closeInternalAccess() {
+  const modal = document.getElementById('internal-access-modal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  pendingInternalTarget = null;
+}
+
+function submitInternalAccess() {
+  if (!pendingInternalTarget) return;
+  const input = document.getElementById('internal-access-password');
+  const error = document.getElementById('internal-access-error');
+  if (input.value === INTERNAL_GATES[pendingInternalTarget]) {
+    markInternalUnlocked(pendingInternalTarget);
+    syncInternalSections();
+    const targetId = pendingInternalTarget;
+    closeInternalAccess();
+    const el = document.getElementById(targetId);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    if (window.innerWidth <= 900) {
+      document.getElementById('sidebar').classList.remove('open');
+    }
+    return;
+  }
+  error.textContent = 'Incorrect password.';
+}
+
 // ── SIDEBAR SCROLL ──
 function goTo(id) {
+  if (INTERNAL_GATES[id] && !isInternalUnlocked(id)) {
+    openInternalAccess(id);
+    return;
+  }
   const el = document.getElementById(id);
   if (el) { el.scrollIntoView({behavior:'smooth', block:'start'}); }
   if (window.innerWidth <= 900) {
@@ -4049,7 +4440,7 @@ function toggleSidebar() {
 }
 
 // ── ACTIVE NAV ON SCROLL ──
-const sections = ['hero','toc','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s12','appA','appB','appC','appD','appE','appF','appG'];
+const sections = ['hero','toc','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s12','appA','appB','appC','appD','appE','appF','appG','appH','appI'];
 const navBtns = document.querySelectorAll('.nav-link');
 window.addEventListener('scroll', () => {
   let current = '';
@@ -4072,6 +4463,20 @@ document.querySelectorAll('.anim').forEach(el => {
   el.style.animationPlayState = 'paused';
   obs.observe(el);
 });
+
+document.getElementById('internal-access-modal').addEventListener('click', (event) => {
+  if (event.target.id === 'internal-access-modal') closeInternalAccess();
+});
+
+document.getElementById('internal-access-password').addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') submitInternalAccess();
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeInternalAccess();
+});
+
+syncInternalSections();
 </script>
 </body>
 </html>
