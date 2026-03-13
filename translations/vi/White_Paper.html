@@ -27,7 +27,7 @@ html
   --border:     rgba(200,168,200,.1);
   --font-d:     "Montserrat",sans-serif;
   --font-b:     "Montserrat",sans-serif;
-  --font-m:     "JetBrains Mono",monospace;
+  --font-m:     "Montserrat",sans-serif;
   --glow-p:     rgba(123,45,139,.3);
   --glow-b:     rgba(107,20,40,.2);
   --langbar-bg: rgba(6,12,24,.9);
@@ -38,6 +38,14 @@ html
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--bg);color:var(--white);font-family:var(--font-b);line-height:1.7;overflow-x:hidden}
+.lang-vi,
+.lang-vi body,
+.lang-vi body *,
+.lang-vi button,
+.lang-vi input,
+.lang-vi select,
+.lang-vi textarea,
+.lang-vi svg text{font-family:"Montserrat",sans-serif !important}
 body.theme-light{
   --bg:         #F7F2E8;
   --bg2:        #F0E7D8;
