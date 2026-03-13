@@ -1284,36 +1284,182 @@ body.theme-light .formula{border-color:rgba(123,45,139,.16)}
 <div id="appC" class="section">
   <div class="app-header">
     <div class="app-header-num">APPENDIX C</div>
-    <h2 data-t="appC-title">MICE Sale Structure</h2>
+    <h2>MICE Sale Structure</h2>
   </div>
-  <p data-t="appC-p1">MICE (Mission Algorithm Node License) is a time-bound mining access license, not a token and not an investment instrument. MICE grants holders the right to participate in MIC mining distribution during a fixed activation period.</p>
-  <h3 class="sub-title" data-t="appC-s2">C.2 Supply &amp; Lifecycle</h3>
+  <p>Mission Algorithm Node License — Mining Access &amp; Incentive Framework</p>
+  <div class="callout warn">
+    <p><strong>Compliance Note:</strong> MICE (Mission Algorithm Node License) is a time-bound mining access license, not a token and not an investment instrument. Incentives associated with MICE distribution are classified as market activation and onboarding costs. They do not represent protocol yield, investment return, or recurring rewards.</p>
+  </div>
+
+  <h3 class="sub-title">C.1 Purpose &amp; Role of MICE</h3>
+  <p>MICE grants holders the right to participate in MIC mining distribution during a fixed activation period. It is the access key to the Mission Chain mining ecosystem, not a financial instrument or investment product.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Aspect</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Instrument Type</td><td>Mining access license</td></tr>
+        <tr><td>Core Function</td><td>Access to MIC mining reward distribution</td></tr>
+        <tr><td>Minting Rights</td><td>Does not mint MIC — only accesses existing emission schedule</td></tr>
+        <tr><td>Investment Nature</td><td>Not an investment product</td></tr>
+        <tr><td>Yield Guarantee</td><td>None</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">C.2 Supply &amp; Lifecycle</h3>
   <div class="grid3">
-    <div class="stat-box"><div class="stat-val g-purple">100,000</div><div class="stat-lbl" data-t="appC-cap">Total MICE Cap</div></div>
-    <div class="stat-box"><div class="stat-val g-gold">360</div><div class="stat-lbl" data-t="appC-days">Days Activation</div></div>
-    <div class="stat-box"><div class="stat-val" style="color:var(--green)">Auto</div><div class="stat-lbl" data-t="appC-recycle">Recycle on Expiry</div></div>
+    <div class="stat-box"><div class="stat-val g-purple">100,000</div><div class="stat-lbl">Total MICE Cap</div></div>
+    <div class="stat-box"><div class="stat-val g-gold">360</div><div class="stat-lbl">Days Activation</div></div>
+    <div class="stat-box"><div class="stat-val" style="color:var(--green)">DAO</div><div class="stat-lbl">Recycle on Expiry</div></div>
   </div>
-  <h3 class="sub-title" data-t="appC-s3">C.3 Dynamic Pricing Mechanism</h3>
-  <p data-t="appC-price">Mission Chain employs Dynamic Price Bands to align MICE pricing with prevailing on-chain liquidity conditions. Using a 7-day TWAP liquidity reference, effective emission is adjusted within fixed bounds to prevent over-issuance during low-liquidity periods. Price bands are DAO-governed and cannot be skipped.</p>
-  <h3 class="sub-title" data-t="appC-s6">C.6 Miner Reward Formula</h3>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Maximum Supply</td><td>100,000 MICE — hard cap, immutable</td></tr>
+        <tr><td>Activation Period</td><td>360 days per license from activation date</td></tr>
+        <tr><td>Expiry</td><td>Automatic after 360-day activation period — no manual action needed</td></tr>
+        <tr><td>Recycling</td><td>Expired MICE reclaimed by protocol and reissued by DAO vote</td></tr>
+        <tr><td>Effect on Total Emission</td><td>None — only active MICE count affects per-participant distribution</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p><strong>Key Principle — Emission Isolation:</strong> Issued MICE supply does not affect total MIC emission. The full 85% mining allocation (5,950,000,000 MIC) is emitted on schedule regardless of how many MICE licenses are active. Only the number of active MICE on a given day affects how the daily emission pool is divided among participants, not the total amount emitted.</p>
+  </div>
+
+  <h3 class="sub-title">C.3 Dynamic Pricing Mechanism</h3>
+  <p>Mission Chain employs Dynamic Price Bands aligned to the 7-day TWAP (Time-Weighted Average Price) of on-chain MIC/USDT liquidity. This prevents over-issuance during low-liquidity periods and supports sustainable network growth. Price bands are DAO-governed and cannot be skipped.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>MIC/USDT DEX Liquidity Band (7-day TWAP)</th><th>MICE Price (USD)</th><th>Band Description</th></tr></thead>
+      <tbody>
+        <tr><td>&lt; $200,000</td><td>$100</td><td>Early Stage</td></tr>
+        <tr><td>$200,000 — &lt; $1,000,000</td><td>$200</td><td>Growth</td></tr>
+        <tr><td>$1,000,000 — &lt; $5,000,000</td><td>$300</td><td>Expansion</td></tr>
+        <tr><td>$5,000,000 — &lt; $15,000,000</td><td>$400</td><td>Scale</td></tr>
+        <tr><td>≥ $15,000,000</td><td>$500</td><td>Maturity</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout gold">
+    <p><strong>Payment Structure:</strong> Each MICE purchase is settled as <strong>50% USDT + 50% MIC</strong>. The MIC component is auto-calculated at activation time using the 7-day TWAP. This dual-payment mechanism creates natural buy pressure on MIC while ensuring the protocol receives stable liquidity via USDT.</p>
+  </div>
+
+  <h3 class="sub-title">C.4 Mining Participation Rules</h3>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Rule</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Eligibility</td><td>Active MICE only — expired licenses earn no mining rewards</td></tr>
+        <tr><td>Reward Period</td><td>Limited to 360-day activation window — no extension possible</td></tr>
+        <tr><td>Emission Impact</td><td>No change to total MIC emission per active license count</td></tr>
+        <tr><td>Auditability</td><td>On-chain, fully transparent — all mining records verifiable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">C.5 MIC Mining Distribution (85% of Total Supply)</h3>
+  <p>The full 85% mining allocation (5,950,000,000 MIC) is distributed daily via the Hindex Algorithm across four pools. The split below governs how each day's total emission <span class="math">E(t)</span> is allocated.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Allocation Target</th><th>Share of Daily Emission E(t)</th></tr></thead>
+      <tbody>
+        <tr><td>Active MICE Miners</td><td class="hl">65%</td></tr>
+        <tr><td>DAO Treasury</td><td class="hl">15%</td></tr>
+        <tr><td>MFP-NFT Reward Pool</td><td class="hl">10%</td></tr>
+        <tr><td>Community NFT Reward Pool</td><td class="hl">10%</td></tr>
+        <tr><td>Total</td><td class="hl">100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">C.6 Miner Reward Formula</h3>
   <div class="formula">
     <span class="math">R<sub>MICE,i</sub>(t) = (M<sub>i</sub> / N<sub>t</sub>) × 0.65 × E(t)</span><br/>
     <span class="comment">Total mining rewards remain fixed · Per-license yield decreases as participation increases · No inflation amplification</span>
   </div>
-  <h3 class="sub-title" data-t="appC-s7">C.7 Affiliate &amp; Performance Incentives (MICE Sale Only)</h3>
-  <p data-t="appC-aff">Affiliate and performance incentives apply only to MICE sales and follow strict caps. Group Performance Bonus follows the same differential override logic as PreSale — rewards only the performance gap, not duplicated volume. Hard cap: 8% of total MICE sale proceeds.</p>
-  <h3 class="sub-title" data-t="appC-s8">C.8 Revenue Allocation from MICE Sales</h3>
   <div class="wp-table-wrap">
     <table class="wp-table">
-      <thead><tr><th data-t="appC-th1">Category</th><th data-t="appC-th2">Allocation</th></tr></thead>
+      <thead><tr><th>Variable</th><th>Meaning</th></tr></thead>
       <tbody>
-        <tr><td data-t="appC-r1">Infrastructure &amp; Development</td><td class="hl">~30%</td></tr>
-        <tr><td data-t="appC-r2">Liquidity Pool &amp; Market Support</td><td class="hl">~25%</td></tr>
-        <tr><td data-t="appC-r3">Operations &amp; Community</td><td class="hl">~20%</td></tr>
-        <tr><td data-t="appC-r4">Affiliate &amp; Performance Incentives (cap)</td><td class="hl">≤8%</td></tr>
-        <tr><td data-t="appC-r5">Treasury / DAO Reserve</td><td class="hl">Remainder</td></tr>
+        <tr><td>E(t)</td><td>Total MIC emitted on day t — governed by Hindex Algorithm</td></tr>
+        <tr><td>N<sub>t</sub></td><td>Total active MICE licenses on day t across all participants</td></tr>
+        <tr><td>M<sub>i</sub></td><td>Active MICE licenses held by participant i on day t</td></tr>
+        <tr><td>R<sub>MICE,i</sub>(t)</td><td>Daily MIC reward for participant i on day t</td></tr>
+        <tr><td>0.65</td><td>MICE miners' share of daily emission — fixed at 65%</td></tr>
       </tbody>
     </table>
+  </div>
+  <div class="callout">
+    <p><strong>Formula Interpretation:</strong> Each participant's daily reward is proportional to their share of total active MICE licenses on that day. A participant holding 10 MICE when 1,000 are active earns 1% of the 65% MICE miner pool. Because <span class="math">E(t)</span> varies by day under the Hindex Algorithm, daily rewards are not fixed and reflect both the participant's relative share and the protocol's current emission rate.</p>
+  </div>
+
+  <h3 class="sub-title">C.7 Affiliate &amp; Performance Incentives (MICE Sale)</h3>
+  <h4 class="mini-title">C.7.1 Referral Incentives</h4>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Level</th><th>Reward</th><th>Currency</th></tr></thead>
+      <tbody>
+        <tr><td>Level 1 — Direct Referral</td><td>10% of sale value</td><td>USDT (on-chain)</td></tr>
+        <tr><td>Level 2 — Indirect Referral</td><td>5% of sale value</td><td>USDT (on-chain)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h4 class="mini-title">C.7.2 Group Performance Bonus</h4>
+  <p>Uses the same structure as PRE-SALE and applies the differential override mechanism. Bonuses are paid only on the performance gap, not on duplicated volume.</p>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Total Direct Group Volume (USD)</th><th>Qualified Bonus Rate</th><th>Community NFT Reward</th></tr></thead>
+      <tbody>
+        <tr><td>≥ $25,000</td><td>$1,000 fixed one-time</td><td>—</td></tr>
+        <tr><td>≥ $50,000</td><td>4%</td><td>5 × Silver NFTs</td></tr>
+        <tr><td>≥ $100,000</td><td>5%</td><td>10 × Silver NFTs</td></tr>
+        <tr><td>≥ $150,000</td><td>6%</td><td>15 × Silver NFTs</td></tr>
+        <tr><td>≥ $200,000</td><td>7%</td><td>20 × Gold NFTs</td></tr>
+        <tr><td>≥ $250,000</td><td>8% (maximum)</td><td>25 × Gold NFTs</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub-title">C.8 Revenue Allocation from MICE Sales</h3>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Allocation Category</th><th>USDT Share</th></tr></thead>
+      <tbody>
+        <tr><td>MIC Liquidity Provision</td><td class="hl">22%</td></tr>
+        <tr><td>MIC Buy &amp; Burn (Instant &amp; Automatic)</td><td class="hl">15%</td></tr>
+        <tr><td>Referral Incentives (Level 1 + Level 2)</td><td class="hl">15%</td></tr>
+        <tr><td>Group Performance Bonus (Differential Override)</td><td class="hl">≤ 8%</td></tr>
+        <tr><td>Community NFT Reward Pool</td><td class="hl">10%</td></tr>
+        <tr><td>MFP-NFT Reward Pool</td><td class="hl">10%</td></tr>
+        <tr><td>DAO Treasury + Operations &amp; Infrastructure</td><td class="hl">20%</td></tr>
+        <tr><td>Total</td><td class="hl">100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout green">
+    <p><strong>Group Performance Bonus — Cap Clarification:</strong> The Group Performance Bonus is subject to a hard cap of 8% of total MICE sale proceeds and is paid on a differential override basis only. Actual payout is typically lower than the maximum cap because no volume is rewarded twice.</p>
+  </div>
+
+  <h3 class="sub-title">C.9 Guardrails &amp; Compliance</h3>
+  <div class="wp-table-wrap">
+    <table class="wp-table">
+      <thead><tr><th>Safeguard</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Guaranteed Returns</td><td>None — MICE is an access license, not a yield instrument</td></tr>
+        <tr><td>Refund After Activation</td><td>Not allowed — activation is final and irreversible</td></tr>
+        <tr><td>Emission Manipulation</td><td>Not allowed — total emission schedule is immutable and on-chain</td></tr>
+        <tr><td>Auditability</td><td>On-chain, fully transparent — all purchase and reward records verifiable</td></tr>
+        <tr><td>Governance</td><td>DAO-controlled within protocol bounds — price bands and recycling rules</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <p><strong>Appendix C Summary:</strong> MICE establishes a disciplined, time-bound mining access layer with dynamic pricing, a dual-payment structure (50% USDT + 50% MIC), and balanced incentive distribution. By enforcing adaptive price bands, capped affiliate rewards, instant buy &amp; burn mechanics, and transparent on-chain revenue allocation, Mission Chain strengthens MIC utility and long-term ecosystem stability.</p>
+  </div>
+  <div class="formula">
+    <span class="math">Maximum Supply: 100,000 MICE · Activation Period: 360 days · Price Range: $100-$500 (liquidity-based)</span>
   </div>
 </div>
 
