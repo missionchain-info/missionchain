@@ -686,6 +686,126 @@
   .rm-period { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--cream); margin-bottom: 10px; font-weight: 600; }
   .rm-title-main { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold); margin-bottom: 12px; }
   .rm-items { font-size: 0.8rem; color: var(--text-dim); line-height: 1.9; }
+  .gtm-principles {
+    margin-top: 54px;
+    padding: 34px;
+    border-radius: 22px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background:
+      radial-gradient(circle at top right, rgba(201,168,76,0.08), transparent 34%),
+      linear-gradient(135deg, rgba(44,26,62,0.34), rgba(13,8,18,0.92));
+    box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+  }
+  .gtm-principles-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+    margin-bottom: 26px;
+  }
+  .gtm-principles-kicker {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(201,168,76,0.22);
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .gtm-principles-title {
+    margin: 0 0 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--cream);
+  }
+  .gtm-principles-copy {
+    margin: 0;
+    max-width: 660px;
+    color: var(--text-dim);
+    font-size: 0.86rem;
+    line-height: 1.75;
+  }
+  .gtm-principles-badge {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(201,168,76,0.06);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+  .gtm-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+  }
+  .gtm-principle-card {
+    min-width: 0;
+    padding: 22px 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(201,168,76,0.12);
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .gtm-principle-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201,168,76,0.3);
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(255,255,255,0.03));
+  }
+  .gtm-principle-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(201,168,76,0.22), rgba(107,26,42,0.36));
+    border: 1px solid rgba(201,168,76,0.18);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .gtm-principle-name {
+    margin: 0 0 10px;
+    color: var(--cream);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .gtm-principle-body {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+  body.theme-light .gtm-principles {
+    background:
+      radial-gradient(circle at top right, rgba(201,168,76,0.12), transparent 34%),
+      linear-gradient(135deg, rgba(255,255,255,0.92), rgba(242,234,222,0.95));
+    border-color: rgba(168,116,74,0.18);
+    box-shadow: 0 18px 44px rgba(131,99,48,0.1);
+  }
+  body.theme-light .gtm-principle-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(236,228,215,0.65));
+    border-color: rgba(168,116,74,0.14);
+  }
+  body.theme-light .gtm-principle-card:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(241,231,215,0.8));
+    border-color: rgba(168,116,74,0.24);
+  }
+  body.theme-light .gtm-principles-title,
+  body.theme-light .gtm-principle-name {
+    color: #2d2218;
+  }
 
   @media (max-width: 900px) {
     .roadmap-timeline::before { left: 20px; }
@@ -694,6 +814,8 @@
     .rm-left, .rm-right { grid-column: 2; grid-row: 1; text-align: left; }
     .rm-spacer { display: none; }
     .rm-card { padding: 20px; }
+    .gtm-principles-head { flex-direction: column; align-items: flex-start; }
+    .gtm-principles-badge { text-align: left; }
   }
 
   /* GOVERNANCE */
@@ -1760,12 +1882,42 @@
       <div class="roadmap-item"><div class="rm-spacer"></div><div class="rm-dot"><div class="rm-dot-inner"></div></div><div class="rm-card rm-right"><div class="rm-phase">Phase IV</div><div class="rm-period">Year 2+</div><div class="rm-title-main">Maturity &amp; Global Leadership</div><div class="rm-items">Launch Mission Network Layer 2 with MIC as native coin<br>Bring creative rights and RWA integrations on-chain<br>Expand cross-chain interoperability<br>Complete transition to community-governed Mission DAO</div></div></div>
     </div>
 
-    <div class="grid3" style="margin-top:48px;">
-      <div class="card card-p"><h4 class="mini-title">Community before capital</h4><p>Hub Leaders, church partners, and trusted creators are recruited before broad public launch.</p></div>
-      <div class="card card-b"><h4 class="mini-title">Education before promotion</h4><p>Every channel explains Mission Chain, MIC, and the creator-first economic model before selling access.</p></div>
-      <div class="card card-g"><h4 class="mini-title">Contribution before speculation</h4><p>MICE and MIC rewards are framed as participation infrastructure, never as investment products.</p></div>
-      <div class="card card-green"><h4 class="mini-title">Local before global</h4><p>Market entry begins through Mission Hubs and trusted local anchors before broad digital campaigns.</p></div>
-      <div class="card card-teal"><h4 class="mini-title">Proof before scale</h4><p>Each phase scales only after KPI validation across adoption, governance, and economic activity.</p></div>
+    <div class="gtm-principles">
+      <div class="gtm-principles-head">
+        <div>
+          <div class="gtm-principles-kicker">Operating Discipline</div>
+          <h3 class="gtm-principles-title">Five launch principles shape how Mission Chain goes to market.</h3>
+          <p class="gtm-principles-copy">The roadmap is not just a timeline. It is governed by a set of sequencing rules designed to protect trust, reduce speculation, and ensure that growth follows proof.</p>
+        </div>
+        <div class="gtm-principles-badge">Go-To-Market Rules</div>
+      </div>
+      <div class="gtm-principles-grid">
+        <div class="gtm-principle-card">
+          <div class="gtm-principle-num">01</div>
+          <h4 class="gtm-principle-name">Community before capital</h4>
+          <p class="gtm-principle-body">Hub Leaders, church partners, and trusted creators are recruited before broad public launch.</p>
+        </div>
+        <div class="gtm-principle-card">
+          <div class="gtm-principle-num">02</div>
+          <h4 class="gtm-principle-name">Education before promotion</h4>
+          <p class="gtm-principle-body">Every channel explains Mission Chain, MIC, and the creator-first economic model before selling access.</p>
+        </div>
+        <div class="gtm-principle-card">
+          <div class="gtm-principle-num">03</div>
+          <h4 class="gtm-principle-name">Contribution before speculation</h4>
+          <p class="gtm-principle-body">MICE and MIC rewards are framed as participation infrastructure, never as investment products.</p>
+        </div>
+        <div class="gtm-principle-card">
+          <div class="gtm-principle-num">04</div>
+          <h4 class="gtm-principle-name">Local before global</h4>
+          <p class="gtm-principle-body">Market entry begins through Mission Hubs and trusted local anchors before broad digital campaigns.</p>
+        </div>
+        <div class="gtm-principle-card">
+          <div class="gtm-principle-num">05</div>
+          <h4 class="gtm-principle-name">Proof before scale</h4>
+          <p class="gtm-principle-body">Each phase scales only after KPI validation across adoption, governance, and economic activity.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
