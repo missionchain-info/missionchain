@@ -1191,100 +1191,28 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </tbody>
 </table>
 </div>
-<h3 class="sub-title">B.4 추천 인센티브(PRE-SALE ONLY)</h3>
-<div class="callout gold">
-<p><strong>범위 경계:</strong> 추천 인센티브는 PRE-SALE 단계에만 적용됩니다. PRE-SALE이 종료되면 영구적으로 비활성화됩니다. SEED 라운드, MICE 라이선싱 또는 기타 에코시스템 구성 요소에는 추천 메커니즘이 존재하지 않습니다.</p>
-</div>
-<h4 class="mini-title">B.4.1 추천 구조</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>레벨</th><th>보상</th><th>결제 통화</th></tr></thead>
-<tbody>
-<tr><td>레벨 1 - 직접 추천</td><td>추천 구매 금액의 10%</td><td>USDT(온체인, 검증 가능)</td></tr>
-<tr><td>레벨 2 - 간접 추천</td><td>추천 구매 금액의 5%</td><td>USDT(온체인, 검증 가능)</td></tr>
-</tbody>
-</table>
-</div>
-<h4 class="mini-title">B.4.2 추천 조건</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>조건</th><th>규칙</th></tr></thead>
-<tbody>
-<tr><td>결제 통화</td><td>USDT - 온체인, 결제 시점에 확인 가능</td></tr>
-<tr><td>자금 출처</td><td>재무부, 채굴 또는 기타 풀이 아닌 PRE-SALE 수익만 발생합니다</td></tr>
-<tr><td>추천 깊이</td><td>최대 2개 레벨만 - 더 깊은 체인 보상 없음</td></tr>
-<tr><td>총 추천인 수 한도</td><td>≤ 총 PRE-SALE 수익금의 15% 이하(150만 달러 모금 시 최대 $250,000)</td></tr>
-<tr><td>추천 종료</td><td>PRE-SALE 단계 종료 시 영구적으로 비활성화 - 예외 없음</td></tr>
-</tbody>
-</table>
-</div>
-<h4 class="mini-title">B.4.3 사이빌 방지 세이프가드</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>세이프가드</th><th>설명</th></tr></thead>
-<tbody>
-<tr><td>지갑당 추천 한도</td><td>지갑 주소당 최대 50명의 직접 추천을 받을 수 있습니다. 산업적 시빌 파밍이 아닌 진정한 커뮤니티 리더에게 보상을 제공합니다.</td></tr>
-<tr><td>최소 보유 기간</td><td>추천받은 구매자는 추천 보상이 지급되기 전까지 30일 동안 보유해야 합니다. 당일 구매 및 당일 판매 파밍을 방지합니다.</td></tr>
-<tr><td>지갑 신원 확인</td><td>추천 자격은 법적으로 필요한 경우 지갑 수준의 KYC/AML 수표가 필요합니다. KYC이 아닌 추천은 레벨 1로만 제한됩니다.</td></tr>
-<tr><td>온체인 추적성</td><td>모든 추천 관계는 구매 시점에 온체인에 기록됩니다. 소급하여 추천을 할당할 수 없습니다.</td></tr>
-</tbody>
-</table>
-</div>
-<h3 class="sub-title">B.5 그룹 성과 보너스(PRE-SALE ONLY)</h3>
-<p>그룹 성과 보너스는 차등 재정의 메커니즘을 사용하여 상대적인 판매량을 기준으로 리더십 성과에 대해 보상합니다. 보너스는 중복된 볼륨이 아닌 성과 격차에 대해서만 지급됩니다.</p>
-<h4 class="mini-title">B.5.1 보너스 자격 등급</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>총 다이렉트 그룹 볼륨(USD)</th><th>적격 보너스 비율</th><th>Community NFT 보상</th></tr></thead>
-<tbody>
-<tr><td>≥ $25,000</td><td>1,000 고정 일회성 보너스</td><td>—</td></tr>
-<tr><td>≥ $50,000</td><td>4%</td><td>5 × 실버 NFTs</td></tr>
-<tr><td>≥ $100,000</td><td>5%</td><td>10 × 실버 NFTs</td></tr>
-<tr><td>≥ $150,000</td><td>6%</td><td>15 × 실버 NFTs</td></tr>
-<tr><td>≥ $200,000</td><td>7%</td><td>20 × 골드 NFTs</td></tr>
-<tr><td>≥ $250,000</td><td>8%(최대)</td><td>25 × 골드 NFTs</td></tr>
-</tbody>
-</table>
-</div>
-<h4 class="mini-title">B.5.2 차동 재정의 공식</h4>
-<div class="formula">
-<span class="math">오버라이드<sub>i</sub> = MAX(0, Rate<sub>self</sub> - 평가<sub>subgroup,i</sub>) × 볼륨<sub>subgroup,i</sub></span><br/>
-<span class="comment">각 참가자는 총 직접 그룹 볼륨에 따라 하나의 보너스 요율을 받을 자격이 있습니다. 직접 하위 그룹이 동일하거나 더 높은 요율을 받을 자격이 있는 경우 해당 하위 그룹에는 오버라이드가 지급되지 않습니다.</span>
-</div>
-<h4 class="mini-title">B.5.3 작업 예제</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>참가자</th><th>그룹 볼륨</th><th>적격 요금</th><th>계산 재정의</th></tr></thead>
-<tbody>
-<tr><td>A(리더)</td><td>$100,000</td><td>5%</td><td>—</td></tr>
-<tr><td>B(직접 하위 그룹)</td><td>$55,000</td><td>4%</td><td>5% - 4% = 1% × $55,000 = $550 mcplh00000</td></tr>
-</tbody>
-</table>
-</div>
-<div class="callout">
-<p><strong>결과 예시:</strong> A는 다음을 수신합니다 <strong>550 USDT</strong> 를 B의 하위 그룹에서 재정의합니다. B는 자신의 그룹 볼륨에 대해 전체 4% 보너스를 받습니다. 차등 재정의는 이중 계산을 방지하므로 볼륨이 두 번 보상되지 않습니다.</p>
-</div>
-<h4 class="mini-title">B.5.4 조건 및 안전장치</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>규칙</th><th>설명</th></tr></thead>
-<tbody>
-<tr><td>범위</td><td>직접 하위 그룹만 - 다단계 재정의 체인 없음</td></tr>
-<tr><td>결제 통화</td><td>USDT - 온체인, 검증 가능</td></tr>
-<tr><td>최대 보너스 비율</td><td>직접 그룹 볼륨의 8% - 하드 캡</td></tr>
-<tr><td>고정 보너스($25,000 티어)</td><td>지갑당 1회, 비차별적, 스택 불가</td></tr>
-<tr><td>총 한도</td><td>≤ 총 PRE-SALE 수익금의 8% 이하(150만 달러 모금 시 최대 $120,000)</td></tr>
-<tr><td>해지</td><td>PRE-SALE 종료 시 영구적으로 비활성화 - 예외 없음</td></tr>
-</tbody>
-</table>
-</div>
-<div class="callout green">
-<p><strong>PRE-SALE 요약:</strong> PRE-SALE은 제한적이고 상한선이 있는 인센티브, 절제된 보상, 투명한 실행, 사이빌 방지 안전장치를 통해 통제된 생태계 확장을 지원합니다.</p>
-</div>
-<div class="formula">
-<span class="math">Token 가격: $0.005 / MIC - 최소 구매: $50 - 할당: 315,000,000 MIC (4.5%)</span><br/>
-<span class="comment">모든 추천 및 그룹 성과 인센티브 메커니즘은 PRE-SALE이 종료되면 영구적으로 비활성화됩니다.</span>
-</div>
+<h3 class="sub-title">B.4 Mission Ambassador Program (PRE-SALE 전용)</h3>
+<div class="callout gold"><p><strong>적용 범위:</strong> Mission Ambassador Program은 PRE-SALE 단계에만 적용됩니다. PRE-SALE 종료와 함께 영구 비활성화됩니다. SEED 라운드, MICE 라이선싱 또는 다른 생태계 구성 요소에는 Mission Ambassador Program 메커니즘이 존재하지 않습니다.</p></div>
+<p>Mission Chain은 마케팅이 필요해서가 아니라, 공동체에 가장 가까운 사람들이 생태계 초기 성장에 함께 참여해야 한다고 믿기 때문에 메시지를 전하는 이들에게 보상합니다. 보상은 투명하고, 상한이 있으며, 기간이 제한되고, 모두 온체인에 기록됩니다.</p>
+<h4 class="mini-title">B.4.1 프로그램 구조</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>Blessing</th><th>보상</th><th>지급 통화</th></tr></thead><tbody><tr><td>Harvest Blessing — 직접 Mission Invite</td><td>초대된 구매 금액의 10%</td><td>USDT (온체인, 검증 가능)</td></tr><tr><td>Multiplication Blessing — 2단계 Mission Invite</td><td>초대된 구매 금액의 5%</td><td>USDT (온체인, 검증 가능)</td></tr></tbody></table></div>
+<h4 class="mini-title">B.4.2 조건 및 자격</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>조건</th><th>규칙</th></tr></thead><tbody><tr><td>지급 통화</td><td>USDT — 지급 시점에 온체인으로 검증 가능</td></tr><tr><td>재원 출처</td><td>PRE-SALE 수익만 사용 — 재무부, 채굴 또는 기타 풀에서 지급하지 않음</td></tr><tr><td>Ambassador 자격</td><td>추천인은 Harvest Blessing을 받기 전에 활성 MICE 운영자이거나 Community NFT 보유자여야 합니다.</td></tr><tr><td>프로그램 깊이</td><td>최대 2단계 — 그보다 깊은 체인은 보상하지 않음</td></tr><tr><td>프로그램 총 한도</td><td>PRE-SALE 총 수익의 ≤ 15% (~$1.5M 조달 시 약 $225,000)</td></tr><tr><td>프로그램 종료</td><td>PRE-SALE 종료와 함께 영구 비활성화 — 예외 없음</td></tr></tbody></table></div>
+<h4 class="mini-title">B.4.3 무결성 세이프가드</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>세이프가드</th><th>설명</th></tr></thead><tbody><tr><td>지갑별 Mission Invite 한도</td><td>지갑 주소당 직접 Mission Invite 최대 50건. 진짜 커뮤니티 리더를 보상하며, 산업형 sybil 파밍은 허용하지 않습니다.</td></tr><tr><td>최소 보유 기간</td><td>초대된 구매자는 Mission Ambassador Program 보상이 풀리기 전에 30일간 보유해야 합니다. 당일 매수-매도 파밍을 막습니다.</td></tr><tr><td>지갑 신원 검증</td><td>프로그램 자격에는 법적으로 필요한 경우 지갑 단위 KYC/AML 검증이 필요합니다. KYC 없는 Mission Invite는 Harvest Blessing까지만 허용됩니다.</td></tr><tr><td>온체인 추적성</td><td>모든 Mission Invite 관계는 구매 시점에 온체인에 기록됩니다. 소급 배정은 불가능합니다.</td></tr></tbody></table></div>
+<h3 class="sub-title">B.5 Community Growth Award (PRE-SALE 전용)</h3>
+<p>Community Growth Award는 차등 메커니즘을 통해 건강한 지역 공동체를 세우는 Hub Leaders를 인정합니다. 보상은 중복된 볼륨이 아니라 성장 격차에 대해서만 지급됩니다.</p>
+<h4 class="mini-title">B.5.1 자격 구간</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>직접 커뮤니티 볼륨(USD)</th><th>적용 비율</th><th>Community NFT 보상</th></tr></thead><tbody><tr><td>≥ $25,000</td><td>$1,000 고정 1회성 지급</td><td>—</td></tr><tr><td>≥ $50,000</td><td>4%</td><td>5 × Silver NFTs</td></tr><tr><td>≥ $100,000</td><td>5%</td><td>10 × Silver NFTs</td></tr><tr><td>≥ $150,000</td><td>6%</td><td>15 × Silver NFTs</td></tr><tr><td>≥ $200,000</td><td>7%</td><td>20 × Gold NFTs</td></tr><tr><td>≥ $250,000</td><td>8% (최대)</td><td>25 × Gold NFTs</td></tr></tbody></table></div>
+<h4 class="mini-title">B.5.2 차등 성장 공식</h4>
+<div class="formula"><span class="math">GrowthAward<sub>i</sub> = MAX(0, Rate<sub>self</sub> − Rate<sub>subgroup,i</sub>) × Volume<sub>subgroup,i</sub></span><br/><span class="comment">각 참여자는 직접 커뮤니티 볼륨에 따라 하나의 비율에만 해당합니다. 직접 하위 그룹이 동일하거나 더 높은 비율을 얻으면 해당 하위 그룹에는 차등 보상이 지급되지 않습니다.</span></div>
+<h4 class="mini-title">B.5.3 예시</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>참여자</th><th>커뮤니티 볼륨</th><th>적용 비율</th><th>보상 계산</th></tr></thead><tbody><tr><td>A (Hub Leader)</td><td>$100,000</td><td>5%</td><td>—</td></tr><tr><td>B (직접 하위 그룹)</td><td>$55,000</td><td>4%</td><td>5% − 4% = 1% × $55,000 = $550 USDT</td></tr></tbody></table></div>
+<div class="callout"><p><strong>예시 결과:</strong> A는 B 하위 그룹에서 <strong>$550 USDT</strong>의 Community Growth Award를 받습니다. B는 자신의 커뮤니티 볼륨에 대한 4% 보상을 전액 받습니다. 어떤 볼륨도 두 번 보상되지 않습니다.</p></div>
+<h4 class="mini-title">B.5.4 조건 및 세이프가드</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>규칙</th><th>설명</th></tr></thead><tbody><tr><td>범위</td><td>직접 하위 그룹만 해당 — 다단계 차등 체인은 없음</td></tr><tr><td>지급 통화</td><td>USDT — 온체인, 검증 가능</td></tr><tr><td>최대 보상 비율</td><td>직접 커뮤니티 볼륨의 8% — hard cap</td></tr><tr><td>고정 보상 ($25K 구간)</td><td>지갑당 1회, 차등 없음, 중첩 불가</td></tr><tr><td>총 한도</td><td>PRE-SALE 총 수익의 ≤ 8% (~$1.5M 조달 시 약 $120,000)</td></tr><tr><td>종료</td><td>PRE-SALE 종료와 함께 영구 비활성화 — 예외 없음</td></tr></tbody></table></div>
+<div class="callout green"><p><strong>PRE-SALE 요약:</strong> PRE-SALE은 Mission Ambassador Program, Community Growth Award, 절제된 베스팅, 투명한 실행, anti-sybil 세이프가드를 통해 통제된 생태계 확장을 지원합니다.</p></div>
+<div class="formula"><span class="math">토큰 가격: $0.005 / MIC · 최소 구매: $50 · 할당량: 315,000,000 MIC (4.5%)</span><br/><span class="comment">Mission Ambassador Program 및 Community Growth Award 메커니즘은 PRE-SALE 종료와 함께 영구적으로 비활성화됩니다.</span></div>
 </div>
 <!-- APPENDIX C -->
 <div class="section" id="appC">
@@ -1394,32 +1322,14 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <div class="callout">
 <p><strong>공식 해석:</strong> 각 참가자의 일일 보상은 해당 날짜의 총 활성 MICE 라이선스 점유율에 비례합니다. 1,000명이 활성화되어 있을 때 10개의 MICE을 보유한 참가자는 65% MICE 채굴자 풀의 1%를 얻게 됩니다. 왜냐하면 <span class="math">E(t)</span> 에 따라 매일 달라지며, 일일 보상은 고정되어 있지 않고 참여자의 상대적 몫과 프로토콜의 현재 배출량을 모두 반영합니다.</p>
 </div>
-<h3 class="sub-title">C.7 제휴 및 성과 인센티브(MICE 판매)</h3>
-<h4 class="mini-title">C.7.1 추천 인센티브</h4>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>레벨</th><th>보상</th><th>통화</th></tr></thead>
-<tbody>
-<tr><td>레벨 1 - 직접 추천</td><td>판매 금액의 10%</td><td>USDT(온체인)</td></tr>
-<tr><td>레벨 2 - 간접 추천</td><td>판매 금액의 5%</td><td>USDT(온체인)</td></tr>
-</tbody>
-</table>
-</div>
-<h4 class="mini-title">C.7.2 그룹 성과 보너스</h4>
-<p>PRE-SALE과 동일한 구조를 사용하며 차등 재정의 메커니즘을 적용합니다. 보너스는 중복된 볼륨이 아닌 성능 차이에 대해서만 지급됩니다.</p>
-<div class="wp-table-wrap">
-<table class="wp-table">
-<thead><tr><th>총 다이렉트 그룹 볼륨(USD)</th><th>적격 보너스 비율</th><th>Community NFT 보상</th></tr></thead>
-<tbody>
-<tr><td>≥ $25,000</td><td>1,000 고정 1회</td><td>—</td></tr>
-<tr><td>≥ $50,000</td><td>4%</td><td>5 × 실버 NFTs</td></tr>
-<tr><td>≥ $100,000</td><td>5%</td><td>10 × 실버 NFTs</td></tr>
-<tr><td>≥ $150,000</td><td>6%</td><td>15 × 실버 NFTs</td></tr>
-<tr><td>≥ $200,000</td><td>7%</td><td>20 × 골드 NFTs</td></tr>
-<tr><td>≥ $250,000</td><td>8%(최대)</td><td>25 × 골드 NFTs</td></tr>
-</tbody>
-</table>
-</div>
+<h3 class="sub-title">C.7 Mission Ambassador Program (MICE 판매)</h3>
+<p>Mission Chain은 마케팅이 필요해서가 아니라, 공동체에 가장 가까운 사람들이 생태계 초기 성장에 함께 참여해야 한다고 믿기 때문에 메시지를 전하는 이들에게 보상합니다. 보상은 투명하고, 상한이 있으며, 기간이 제한되고, 모두 온체인에 기록됩니다.</p>
+<h4 class="mini-title">C.7.1 Harvest Blessing &amp; Multiplication Blessing</h4>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>Blessing</th><th>보상</th><th>통화</th></tr></thead><tbody><tr><td>Harvest Blessing — 직접 Mission Invite</td><td>판매 금액의 10%</td><td>USDT (온체인)</td></tr><tr><td>Multiplication Blessing — 2단계 Mission Invite</td><td>판매 금액의 5%</td><td>USDT (온체인)</td></tr></tbody></table></div>
+<div class="callout gold"><p><strong>Ambassador 자격:</strong> 추천인은 Harvest Blessing을 받기 전에 활성 MICE 운영자이거나 Community NFT 보유자여야 합니다. Mission Invite 관계는 판매 시점에 온체인에 기록됩니다.</p></div>
+<h4 class="mini-title">C.7.2 Community Growth Award</h4>
+<p>Community Growth Award는 건강한 지역 공동체를 세우는 Hub Leaders를 인정합니다. PRE-SALE과 동일한 차등 메커니즘을 사용하며, 중복된 볼륨이 아닌 성장 격차에 대해서만 지급됩니다.</p>
+<div class="wp-table-wrap"><table class="wp-table"><thead><tr><th>직접 커뮤니티 볼륨(USD)</th><th>적용 비율</th><th>Community NFT 보상</th></tr></thead><tbody><tr><td>≥ $25,000</td><td>$1,000 고정 1회성 지급</td><td>—</td></tr><tr><td>≥ $50,000</td><td>4%</td><td>5 × Silver NFTs</td></tr><tr><td>≥ $100,000</td><td>5%</td><td>10 × Silver NFTs</td></tr><tr><td>≥ $150,000</td><td>6%</td><td>15 × Silver NFTs</td></tr><tr><td>≥ $200,000</td><td>7%</td><td>20 × Gold NFTs</td></tr><tr><td>≥ $250,000</td><td>8% (최대)</td><td>25 × Gold NFTs</td></tr></tbody></table></div>
 <h3 class="sub-title">C.8 MICE 판매에 따른 수익 배분</h3>
 <div class="wp-table-wrap">
 <table class="wp-table">
@@ -1427,8 +1337,8 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <tbody>
 <tr><td>MIC 유동성 공급</td><td class="hl">22%</td></tr>
 <tr><td>MIC Buy &amp; Burn(인스턴트 및 자동)</td><td class="hl">15%</td></tr>
-<tr><td>추천 인센티브(레벨 1 + 레벨 2)</td><td class="hl">15%</td></tr>
-<tr><td>그룹 성과 보너스(차등 재정의)</td><td class="hl">≤ 8%</td></tr>
+<tr><td>Mission Ambassador Program (Harvest Blessing + Multiplication Blessing)</td><td class="hl">15%</td></tr>
+<tr><td>Community Growth Award (Cap)</td><td class="hl">≤ 8%</td></tr>
 <tr><td>Community NFT 리워드 풀</td><td class="hl">10%</td></tr>
 <tr><td>MFP-NFT 리워드 풀</td><td class="hl">10%</td></tr>
 <tr><td>DAO 재무 + 운영 및 인프라</td><td class="hl">20%</td></tr>
@@ -1437,7 +1347,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 </table>
 </div>
 <div class="callout green">
-<p><strong>그룹 성과 보너스 - 한도 설명:</strong> 그룹 성과 보너스는 총 MICE 판매 수익의 8%라는 하드 캡이 적용되며 차등 오버라이드 방식으로만 지급됩니다. 두 번 보상되는 볼륨이 없기 때문에 실제 지급액은 일반적으로 최대 한도보다 낮습니다.</p>
+<p><strong>Community Growth Award - 한도 설명:</strong> Community Growth Award는 총 MICE 판매 수익의 8%라는 하드 캡이 적용되며 차등 오버라이드 방식으로만 지급됩니다. 두 번 보상되는 볼륨이 없기 때문에 실제 지급액은 일반적으로 최대 한도보다 낮습니다.</p>
 </div>
 <h3 class="sub-title">C.9 가드레일 및 규정 준수</h3>
 <div class="wp-table-wrap">
@@ -1754,9 +1664,10 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <li><strong>단계 III:</strong> DAO이 관리하는 파트너십 승인을 공식화하고, Layer 2 인프라를 마무리하며, 티어 1 CEX 상장을 완료합니다.</li>
 </ul>
 <h3 class="sub-title">E.6 커뮤니티 주도 성장 모델</h3>
-<p>Mission Chain의 가장 방어적인 성장 모델은 유료 인수가 아닙니다. PRE-SALE 추천 시스템, Mission Social 네트워크, Community NFT 티어 진행을 통한 커뮤니티 주도의 구조화된 성장입니다.</p>
-<h4 class="mini-title">E.6.1 추천 메커니즘 - PRE-SALE 단계</h4>
-<p>PRE-SALE 기간 동안 2단계 추천 구조(레벨 1 10% + 레벨 2 5%, 수익금의 15%로 상한)는 신뢰할 수 있는 분배를 가속화하기 위한 한시적인 온체인 커뮤니티 활성화 메커니즘입니다.</p>
+<p>Mission Chain의 가장 설득력 있는 성장 모델은 유료 획득이 아닙니다. PRE-SALE 기간의 Mission Ambassador Program, Mission Social 네트워크, Community NFT 티어 진전을 통한 구조화된 커뮤니티 주도 성장입니다.</p>
+<h4 class="mini-title">E.6.1 Mission Ambassador Program - PRE-SALE 단계</h4>
+<p>Mission Chain은 마케팅이 필요해서가 아니라, 공동체에 가장 가까운 사람들이 생태계 초기 성장에 함께 참여해야 한다고 믿기 때문에 메시지를 전하는 이들에게 보상합니다. 보상은 투명하고, 상한이 있으며, 기간이 제한되고, 모두 온체인에 기록됩니다.</p>
+<p>PRE-SALE 동안 Mission Ambassador Program은 Harvest Blessing(10%)과 Multiplication Blessing(5%)을 사용하며, 총 수익의 15%로 상한이 설정됩니다. Harvest Blessing을 받으려면 추천인은 활성 MICE 운영자이거나 Community NFT 보유자여야 합니다.</p>
 <h4 class="mini-title">E.6.2 리텐션 엔진으로서의 Community NFT 티어 프로그레션</h4>
 <p>Builder → Maker → Luminary의 진행은 비재무적 유지 엔진을 생성합니다. Mission Learn 및 Mission Work에 시간을 투자하는 참여자는 진행에 따라 가치가 증가하는 검증 가능한 온체인 신원을 구축하여 토큰 인센티브만으로 유지율을 강화할 수 있습니다.</p>
 <div class="callout green">
@@ -2123,7 +2034,7 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <thead><tr><th>비용 항목</th><th>인상 비율</th><th>USD</th></tr></thead>
 <tbody>
 <tr><td>제휴 인센티브 - 레벨 1(10%) + 레벨 2(5%)</td><td>15%</td><td>$225,000</td></tr>
-<tr><td>그룹 성과 보너스 - 하드 캡</td><td>8%</td><td>$120,000</td></tr>
+<tr><td>Community Growth Award - 하드 캡</td><td>8%</td><td>$120,000</td></tr>
 <tr><td>마케팅 및 소셜 미디어</td><td>10%</td><td>$150,000</td></tr>
 <tr><td>총 PRE-SALE 비용</td><td>33%</td><td>$495,000</td></tr>
 </tbody>
@@ -2190,8 +2101,8 @@ body.theme-light .internal-btn-secondary{color:#5b6274}
 <tbody>
 <tr><td>MIC 유동성 공급</td><td>22%</td><td>$550,000</td></tr>
 <tr><td>MIC Buy &amp; Burn</td><td>15%</td><td>375,000달러 영구 소각</td></tr>
-<tr><td>추천 인센티브</td><td>15%</td><td>$375,000</td></tr>
-<tr><td>그룹 성과 보너스</td><td>≤ 8%</td><td>≤ $200,000</td></tr>
+<tr><td>Mission Ambassador Program</td><td>15%</td><td>$375,000</td></tr>
+<tr><td>Community Growth Award</td><td>≤ 8%</td><td>≤ $200,000</td></tr>
 <tr><td>Community NFT 리워드 풀</td><td>10%</td><td>$250,000</td></tr>
 <tr><td>MFP-NFT 리워드 풀</td><td>10%</td><td>$250,000</td></tr>
 <tr><td>DAO 재무 및 운영</td><td>20%</td><td>$500,000</td></tr>
